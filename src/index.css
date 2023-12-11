@@ -11,3 +11,20 @@
 body {
   box-sizing: border-box;
 }
+
+.footer-column {
+  @apply flex flex-col text-start;
+}
+.footer-heading {
+  @apply text-[#252B42] text-2xl  pb-5;
+}
+.footer-paragraph-column {
+  @apply flex flex-col pb-2;
+}
+.footer-paragraph,
+.footer-bottom {
+  @apply text-[#737373] text-sm;
+}
+.footer-bold {
+  @apply font-bold;
+}
