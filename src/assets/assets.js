@@ -13,7 +13,9 @@ import bestseller7 from "../assets/bestsellerProducts/bestseller7.svg";
 import bestseller8 from "../assets/bestsellerProducts/bestseller8.svg";
 import headerBottomSlider from "../assets/header-bottom-slider.svg";
 import neuralUniverse from "../assets/neural-universe.svg";
-
+import featuredPost1 from "../assets/featuredPosts/featuredPost1.svg";
+import featuredPost2 from "../assets/featuredPosts/featuredPost2.svg";
+import featuredPost3 from "../assets/featuredPosts/featuredPost3.svg";
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
   editorsPick: [men, women, accessories, kids],
@@ -28,4 +30,5 @@ export const assets = {
     bestseller8,
   ],
   neuralUniverse: neuralUniverse,
+  featuredPosts: [featuredPost1, featuredPost2, featuredPost3],
 };

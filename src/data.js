@@ -149,4 +149,45 @@ export const data = {
     button2: "READ MORE",
     image: assets.neuralUniverse,
   },
+  featuredPosts: {
+    title: "Practice Advice",
+    heading: "FEATURED POSTS",
+    paragraph:
+      "Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics ",
+    card: [
+      {
+        links: ["Google", "Trending", "New"],
+        name: "Loudest à la Madison #1 (L'integral)",
+        description:
+          "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+        date: "22 April 2021",
+        comments: "10 comments",
+        learnMore: "Learn More",
+        image: assets.featuredPosts[0],
+        label: "NEW",
+      },
+      {
+        links: ["Google", "Trending", "New"],
+        name: "Loudest à la Madison #1 (L'integral)",
+        description:
+          "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+        date: "22 April 2021",
+        comments: "10 comments",
+        learnMore: "Learn More",
+        image: assets.featuredPosts[1],
+        label: "NEW",
+      },
+      {
+        links: ["Google", "Trending", "New"],
+        name: "Loudest à la Madison #1 (L'integral)",
+        description:
+          "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+        date: "22 April 2021",
+        comments: "10 comments",
+        learnMore: "Learn More",
+        image: assets.featuredPosts[2],
+        label: "NEW",
+      },
+    ],
+  },
 };
