@@ -68,44 +68,61 @@ const Header = () => {
           Bandage
         </h3>
         <div className="w-[90%] flex justify-between">
-          <div className="flex flex-row justify-between text-[#737373] pl-[3%]">
-            <div className="p-4">
-              <NavLink to="/home">Home</NavLink>
+          <div className="flex flex-row justify-between pl-[3%]">
+            <div className="p-4 ">
+              <NavLink to="/home" className="header-navlink-left">
+                Home
+              </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="/shop">Shop</NavLink>
-              <FontAwesomeIcon icon={faChevronDown} className="pl-3" />
+              <NavLink to="/shop" className="header-navlink-left">
+                Shop
+              </NavLink>
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="pl-3 text-[#737373]"
+              />
             </div>
             <div className="p-4">
-              <NavLink to="#">About</NavLink>
+              <NavLink to="#" className="header-navlink-left">
+                About
+              </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#">Blog</NavLink>
+              <NavLink to="#" className="header-navlink-left">
+                Blog
+              </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#">Contact</NavLink>
+              <NavLink to="#" className="header-navlink-left">
+                Contact
+              </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#">Pages</NavLink>
+              <NavLink to="#" className="header-navlink-left">
+                Pages
+              </NavLink>
             </div>
           </div>
-          <div className="flex flex-row text-[#23A6F0]">
+          <div className="flex flex-row ">
             <div className="p-4">
-              <FontAwesomeIcon icon={faUser} />
-              <NavLink to="#">Login / Register</NavLink>
+              <FontAwesomeIcon icon={faUser} className="header-navlink-right" />
+              <NavLink to="#" className="header-navlink-right">
+                Login / Register
+              </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#">
+              <NavLink to="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faSearch} />
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#">
+              <NavLink to="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faCartShopping} />
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#">
+              <NavLink to="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faHeart} />
               </NavLink>
             </div>

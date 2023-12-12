@@ -11,7 +11,12 @@
 body {
   box-sizing: border-box;
 }
-
+.header-navlink-left {
+  @apply text-[#737373] no-underline;
+}
+.header-navlink-right {
+  @apply text-[#23A6F0];
+}
 .footer-column {
   @apply flex flex-col text-start;
 }
