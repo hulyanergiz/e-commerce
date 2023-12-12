@@ -1,3 +1,10 @@
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Footer = () => {
   return (
     <div className="w-full h-[414px] flex-flex-col">
@@ -8,6 +15,26 @@ const Footer = () => {
             <p className="footer-paragraph font-normal">
               the quick fox jumps over the lazy dog
             </p>
+            <div className="flex- flex-row gap-x-2 justify-start">
+              <a href="https://www.facebook.com/">
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className="text-[#23A6F0] pt-1  p-[5px]"
+                />
+              </a>
+              <a href="https://www.instagram.com/">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="text-[#23A6F0] pt-1 p-[5px]"
+                />
+              </a>
+              <a href="https://www.twitter.com/">
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  className="text-[#23A6F0] pt-6 p-[5px]"
+                />
+              </a>
+            </div>
           </div>
           <div className="footer-column">
             <h3 className="footer-heading">Company Info</h3>
