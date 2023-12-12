@@ -2,9 +2,9 @@ import { data } from "../../data";
 
 const EditorsPick = () => {
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-[73%] flex  flex-col items-center justify-center py-20">
-        <div className="w-[58%] flex justify-center flex-col gap-2  align-center">
+    <div className="w-full flex justify-center bg-[#FAFAFA]">
+      <div className="w-[73%] flex  flex-col items-center justify-center py-20 ">
+        <div className="w-[58%] flex justify-center flex-col gap-2  align-center pb-8">
           <h1 className="text-2xl font-bold  text-[#252B42] tracking-wide">
             {data.editorsPick.heading}
           </h1>
