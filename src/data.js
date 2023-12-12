@@ -13,11 +13,11 @@ export const data = {
   editorsPick: {
     heading: "EDITOR'S PICK",
     paragraph: "Problems trying to resolve the conflict bewtween",
-    images: [
-      assets.editorsPick[0],
-      assets.editorsPick[1],
-      assets.editorsPick[2],
-      assets.editorsPick[3],
+    card: [
+      { name: "MEN", image: assets.editorsPick[0] },
+      { name: "WOMEN", image: assets.editorsPick[1] },
+      { name: "ACCESSORIES", image: assets.editorsPick[2] },
+      { name: "KIDS", image: assets.editorsPick[3] },
     ],
   },
 };
