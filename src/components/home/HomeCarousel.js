@@ -17,7 +17,7 @@ const HomeCarousel = () => {
             {data.slider[0].title}
           </h1>
           <p className="w-[36%] text-xl">{data.slider[0].description}</p>
-          <button className=" w-[21%] text-start pl-7 py-3 text-2xl bg-[#2DC071]">
+          <button className=" w-[21%] text-start pl-7 py-3 text-2xl bg-[#2DC071] rounded-md">
             {data.slider[0].button}
           </button>
         </div>
