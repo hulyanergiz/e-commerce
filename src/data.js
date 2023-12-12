@@ -9,6 +9,15 @@ export const data = {
       button: "SHOP NOW",
       image: assets.sliders[0],
     },
+    {
+      term: "SUMMER 2020",
+      title: "Vita Classic Product",
+      description:
+        "We know how large objects will act, We know how are objects will act, We know",
+      price: "$16.48",
+      button: "ADD TO CART",
+      image: assets.sliders[1],
+    },
   ],
   editorsPick: {
     heading: "EDITOR'S PICK",

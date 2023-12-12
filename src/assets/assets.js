@@ -11,9 +11,10 @@ import bestseller5 from "../assets/bestsellerProducts/bestseller5.svg";
 import bestseller6 from "../assets/bestsellerProducts/bestseller6.svg";
 import bestseller7 from "../assets/bestsellerProducts/bestseller7.svg";
 import bestseller8 from "../assets/bestsellerProducts/bestseller8.svg";
+import headerBottomSlider from "../assets/header-bottom-slider.svg";
 
 export const assets = {
-  sliders: [headerSlider],
+  sliders: [headerSlider, headerBottomSlider],
   editorsPick: [men, women, accessories, kids],
   bestsellerProducts: [
     bestseller1,
