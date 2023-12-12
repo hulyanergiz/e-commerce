@@ -10,4 +10,14 @@ export const data = {
       image: assets.sliders[0],
     },
   ],
+  editorsPick: {
+    heading: "EDITOR'S PICK",
+    paragraph: "Problems trying to resolve the conflict bewtween",
+    images: [
+      assets.editorsPick[0],
+      assets.editorsPick[1],
+      assets.editorsPick[2],
+      assets.editorsPick[3],
+    ],
+  },
 };
