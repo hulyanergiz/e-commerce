@@ -140,4 +140,13 @@ export const data = {
       },
     ],
   },
+  neuralUniverse: {
+    term: "SUMMER 2020",
+    title: "Part of the Neural Universe",
+    description:
+      "We know how large objects will act, but things on a small scale.",
+    button1: "BUY NOW",
+    button2: "READ MORE",
+    image: assets.neuralUniverse,
+  },
 };

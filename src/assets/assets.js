@@ -12,6 +12,7 @@ import bestseller6 from "../assets/bestsellerProducts/bestseller6.svg";
 import bestseller7 from "../assets/bestsellerProducts/bestseller7.svg";
 import bestseller8 from "../assets/bestsellerProducts/bestseller8.svg";
 import headerBottomSlider from "../assets/header-bottom-slider.svg";
+import neuralUniverse from "../assets/neural-universe.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -26,4 +27,5 @@ export const assets = {
     bestseller7,
     bestseller8,
   ],
+  neuralUniverse: neuralUniverse,
 };
