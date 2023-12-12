@@ -22,7 +22,7 @@ const FeaturedPosts = () => {
           </p>
         </div>
       </div>
-      <div className="w-[73%] flex flex-row justify-between gap-x-2.5">
+      <div className="w-[73%] flex flex-row justify-between gap-x-2.5 pb-28">
         {data.featuredPosts.card.map((item, index) => {
           return (
             <div key={index} className="flex flex-col">

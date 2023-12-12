@@ -15,12 +15,16 @@ const BestsellerProducts = () => {
             {data.bestsellerProducts.paragraph}
           </p>
         </div>
-        <div className="w-full flex flex-row justify-between pb-20">
+        <div className="w-full flex flex-row justify-between ">
           <div className="flex flex-row flex-wrap justify-between ">
             {data.bestsellerProducts.card.map((item, index) => {
               return (
-                <div key={index} className=" w-[23%]">
-                  <img src={item.image} alt="bestseller product" />
+                <div key={index} className=" w-[23%] pb-20">
+                  <img
+                    src={item.image}
+                    alt="bestseller product"
+                    className="w-full"
+                  />
                   <div className="w-full flex flex-col items-center pt-6 px-6 pb-9">
                     <p className="text-[#252B42] text-base font-bold">
                       {item.name}
