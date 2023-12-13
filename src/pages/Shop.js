@@ -8,6 +8,7 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import ShopPagination from "../components/shop/ShopPagination";
+import BrandsInShop from "../components/shop/BrandsInShop";
 
 const Shop = () => {
   return (
@@ -57,6 +58,7 @@ const Shop = () => {
       </div>
       <Products />
       <ShopPagination />
+      <BrandsInShop />
     </div>
   );
 };
