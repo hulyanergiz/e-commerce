@@ -1,8 +1,8 @@
 const ProductCard = (props) => {
   const { image, name, description, price, discounted, colors } = props.data;
   return (
-    <div className="flex flex-col items-center">
-      <img src={image} alt="bestseller product" />
+    <div className="w-full flex flex-col justify-between items-center py-6">
+      <img src={image} alt="product" />
       <div className="w-full flex flex-col items-center pt-6 px-6 pb-9">
         <p className="text-[#252B42] text-base font-bold">{name}</p>
         <p className="text-[#737373] text-sm font-bold ">{description}</p>

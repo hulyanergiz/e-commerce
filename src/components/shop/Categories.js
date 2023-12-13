@@ -3,7 +3,7 @@ import CategoryCard from "./CategoryCard";
 
 const Categories = () => {
   return (
-    <div className="flex flex-row w-[73%] m-auto  gap-x-3.5">
+    <div className="flex flex-row w-[73%] m-auto  gap-x-3.5 pb-12">
       {data.shop.categoryCards.map((item, i) => {
         return <CategoryCard data={item} key={i} />;
       })}
