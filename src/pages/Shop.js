@@ -7,6 +7,7 @@ import {
   faListCheck,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+import ShopPagination from "../components/shop/ShopPagination";
 
 const Shop = () => {
   return (
@@ -55,6 +56,7 @@ const Shop = () => {
         </div>
       </div>
       <Products />
+      <ShopPagination />
     </div>
   );
 };
