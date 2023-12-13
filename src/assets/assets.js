@@ -33,6 +33,12 @@ import productCard9 from "../assets/productCards/productCard9.svg";
 import productCard10 from "../assets/productCards/productCard10.svg";
 import productCard11 from "../assets/productCards/productCard11.svg";
 import productCard12 from "../assets/productCards/productCard12.svg";
+import brand1 from "../assets/brandsInShop/brand1.svg";
+import brand2 from "../assets/brandsInShop/brand2.svg";
+import brand3 from "../assets/brandsInShop/brand3.svg";
+import brand4 from "../assets/brandsInShop/brand4.svg";
+import brand5 from "../assets/brandsInShop/brand5.svg";
+import brand6 from "../assets/brandsInShop/brand6.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -70,4 +76,5 @@ export const assets = {
     productCard11,
     productCard12,
   ],
+  brandsInShop: [brand1, brand2, brand3, brand4, brand5, brand6],
 };

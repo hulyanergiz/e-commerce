@@ -357,4 +357,12 @@ export const data = {
       },
     ],
   },
+  brandsInShop: [
+    assets.brandsInShop[0],
+    assets.brandsInShop[1],
+    assets.brandsInShop[2],
+    assets.brandsInShop[3],
+    assets.brandsInShop[4],
+    assets.brandsInShop[5],
+  ],
 };
