@@ -16,6 +16,11 @@ import neuralUniverse from "../assets/neural-universe.svg";
 import featuredPost1 from "../assets/featuredPosts/featuredPost1.svg";
 import featuredPost2 from "../assets/featuredPosts/featuredPost2.svg";
 import featuredPost3 from "../assets/featuredPosts/featuredPost3.svg";
+import categoryCard1 from "../assets/categoryCards/categoryCard1.svg";
+import categoryCard2 from "../assets/categoryCards/categoryCard2.svg";
+import categoryCard3 from "../assets/categoryCards/categoryCard3.svg";
+import categoryCard4 from "../assets/categoryCards/categoryCard4.svg";
+import categoryCard5 from "../assets/categoryCards/categoryCard5.svg";
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
   editorsPick: [men, women, accessories, kids],
@@ -31,4 +36,11 @@ export const assets = {
   ],
   neuralUniverse: neuralUniverse,
   featuredPosts: [featuredPost1, featuredPost2, featuredPost3],
+  categoryCards: [
+    categoryCard1,
+    categoryCard2,
+    categoryCard3,
+    categoryCard4,
+    categoryCard5,
+  ],
 };

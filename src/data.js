@@ -190,4 +190,13 @@ export const data = {
       },
     ],
   },
+  shop: {
+    categoryCards: [
+      { title: "CLOTHS", amount: 5, image: assets.categoryCards[0] },
+      { title: "CLOTHS", amount: 5, image: assets.categoryCards[1] },
+      { title: "CLOTHS", amount: 5, image: assets.categoryCards[2] },
+      { title: "CLOTHS", amount: 5, image: assets.categoryCards[3] },
+      { title: "CLOTHS", amount: 5, image: assets.categoryCards[4] },
+    ],
+  },
 };
