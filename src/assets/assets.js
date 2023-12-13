@@ -21,6 +21,19 @@ import categoryCard2 from "../assets/categoryCards/categoryCard2.svg";
 import categoryCard3 from "../assets/categoryCards/categoryCard3.svg";
 import categoryCard4 from "../assets/categoryCards/categoryCard4.svg";
 import categoryCard5 from "../assets/categoryCards/categoryCard5.svg";
+import productCard1 from "../assets/productCards/productCard1.svg";
+import productCard2 from "../assets/productCards/productCard2.svg";
+import productCard3 from "../assets/productCards/productCard3.svg";
+import productCard4 from "../assets/productCards/productCard4.svg";
+import productCard5 from "../assets/productCards/productCard5.svg";
+import productCard6 from "../assets/productCards/productCard6.svg";
+import productCard7 from "../assets/productCards/productCard7.svg";
+import productCard8 from "../assets/productCards/productCard8.svg";
+import productCard9 from "../assets/productCards/productCard9.svg";
+import productCard10 from "../assets/productCards/productCard10.svg";
+import productCard11 from "../assets/productCards/productCard11.svg";
+import productCard12 from "../assets/productCards/productCard12.svg";
+
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
   editorsPick: [men, women, accessories, kids],
@@ -42,5 +55,19 @@ export const assets = {
     categoryCard3,
     categoryCard4,
     categoryCard5,
+  ],
+  productCards: [
+    productCard1,
+    productCard2,
+    productCard3,
+    productCard4,
+    productCard5,
+    productCard6,
+    productCard7,
+    productCard8,
+    productCard9,
+    productCard10,
+    productCard11,
+    productCard12,
   ],
 };
