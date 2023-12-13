@@ -26,7 +26,14 @@ const FeaturedPosts = () => {
         {data.featuredPosts.card.map((item, index) => {
           return (
             <div key={index} className="flex flex-col">
-              <img src={item.image} alt="featured post" />
+              <img
+                src={item.image}
+                alt="featured post"
+                className="flex relative"
+              />
+              <p className="flex absolute bg-[#E74040] text-white text-sm px-[10px] py-[5px] rounded-[3px] font-bold mt-[1%] ml-[1%]">
+                NEW
+              </p>
               <div className="flex flex-col pt-6 px-8 pb-9  tracking-wider">
                 <div className="flex flex-row gap-x-4 text-xs text-[#737373]">
                   {item.links.map((link, idx) => {
