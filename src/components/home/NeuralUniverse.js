@@ -4,7 +4,11 @@ const NeuralUniverse = () => {
   return (
     <div className="w-full flex flex-row justify-between items-center">
       <div className="w-1/2">
-        <img src={data.neuralUniverse.image} className="w-full" />
+        <img
+          src={data.neuralUniverse.image}
+          alt="neural universe"
+          className="w-full"
+        />
       </div>
       <div className="w-[42%] flex flex-col">
         <div className="flex flex-col gap-6 my-12  text-start tracking-wide w-[60%] py-12">
