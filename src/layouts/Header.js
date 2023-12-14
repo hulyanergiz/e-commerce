@@ -14,7 +14,7 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "reactstrap";
 const Header = () => {
   return (
     <div className="w-full h-[136px] flex flex-col">
@@ -67,15 +67,15 @@ const Header = () => {
         <h3 className="w-[10%] text-2xl text-[#252B42] font-bold py-4 pl-1 pr-3">
           Bandage
         </h3>
-        <div className="w-[90%] flex justify-between">
-          <div className="flex flex-row justify-between pl-[3%]">
-            <div className="p-4 ">
-              <NavLink to="/home" className="header-navlink-left">
+        <div className="flex flex-row justify-between w-[90%]">
+          <div className="w-[35%] flex justify-between text-[#737373]  no-underline">
+            <div className="p-4">
+              <NavLink href="/" className="header-navlink-left">
                 Home
               </NavLink>
             </div>
-            <div className="p-4">
-              <NavLink to="/shop" className="header-navlink-left">
+            <div className="p-4 flex flex-row">
+              <NavLink href="/shop" className="header-navlink-left">
                 Shop
               </NavLink>
               <FontAwesomeIcon
@@ -84,45 +84,45 @@ const Header = () => {
               />
             </div>
             <div className="p-4">
-              <NavLink to="#" className="header-navlink-left">
+              <NavLink href="#" className="header-navlink-left">
                 About
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#" className="header-navlink-left">
+              <NavLink href="#" className="header-navlink-left">
                 Blog
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#" className="header-navlink-left">
+              <NavLink href="#" className="header-navlink-left">
                 Contact
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#" className="header-navlink-left">
+              <NavLink href="#" className="header-navlink-left">
                 Pages
               </NavLink>
             </div>
           </div>
-          <div className="flex flex-row ">
-            <div className="p-4">
+          <div className="flex flex-row text-[#23A6F0]">
+            <div className="p-4 flex flex-row">
               <FontAwesomeIcon icon={faUser} className="header-navlink-right" />
-              <NavLink to="#" className="header-navlink-right">
+              <NavLink href="#" className="header-navlink-right">
                 Login / Register
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#" className="header-navlink-right">
+              <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faSearch} />
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#" className="header-navlink-right">
+              <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faCartShopping} />
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink to="#" className="header-navlink-right">
+              <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faHeart} />
               </NavLink>
             </div>
