@@ -10,7 +10,26 @@ export const data = {
       image: assets.sliders[0],
     },
     {
+      term: "FALL 2020",
+      title: "NEW COLLECTION",
+      description:
+        "We know how large objects will act, but things on a small scale.",
+      button: "SHOP NOW",
+      image: assets.sliders[0],
+    },
+  ],
+  sliderBottom: [
+    {
       term: "SUMMER 2020",
+      title: "Vita Classic Product",
+      description:
+        "We know how large objects will act, We know how are objects will act, We know",
+      price: "$16.48",
+      button: "ADD TO CART",
+      image: assets.sliders[1],
+    },
+    {
+      term: "FALL 2020",
       title: "Vita Classic Product",
       description:
         "We know how large objects will act, We know how are objects will act, We know",
