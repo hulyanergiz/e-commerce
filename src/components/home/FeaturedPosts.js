@@ -8,7 +8,7 @@ import { data } from "../../data";
 
 const FeaturedPosts = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-[#FAFAFA]">
+    <div className="w-full flex flex-col items-center justify-center">
       <div className="w-[73%] flex  flex-col items-center justify-center pt-32 pb-12 ">
         <div className="w-[58%] flex justify-center flex-col gap-2  align-center pb-8">
           <h2 className="text-sm font-bold text-[#23A6F0]">
@@ -25,7 +25,10 @@ const FeaturedPosts = () => {
       <div className="w-[73%] flex flex-row justify-between gap-x-2.5 pb-28">
         {data.featuredPosts.card.map((item, index) => {
           return (
-            <div key={index} className="flex flex-col">
+            <div
+              key={index}
+              className="flex flex-col shadow-[0_2px_4px_0_rgba(0,0,0,0.10)]"
+            >
               <img
                 src={item.image}
                 alt="featured post"
