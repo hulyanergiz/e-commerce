@@ -19,7 +19,7 @@ const HomeCarousel = () => {
                 <img
                   src={slide.image}
                   key={i}
-                  alt="collection image"
+                  alt="collection"
                   className="w-full object-cover"
                 />
 
