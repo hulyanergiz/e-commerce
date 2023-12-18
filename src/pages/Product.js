@@ -2,6 +2,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductNavigation from "../components/product/productNavigation";
 import ProductDetails from "../components/product/ProductDetails";
+import ProductBestsellers from "../components/product/productBestsellers";
 const Product = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const Product = () => {
       </div>
       <ProductNavigation />
       <ProductDetails />
+      <ProductBestsellers />
     </>
   );
 };
