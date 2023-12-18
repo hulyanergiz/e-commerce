@@ -45,6 +45,14 @@ import brand6 from "../assets/brandsInShop/brand6.svg";
 
 /* PRODUCT PAGE */
 import productDetail from "../assets/product/productDetail.svg";
+import productBestseller1 from "../assets/product-bestseller/product-bestseller-1.svg";
+import productBestseller2 from "../assets/product-bestseller/product-bestseller-2.svg";
+import productBestseller3 from "../assets/product-bestseller/product-bestseller-3.svg";
+import productBestseller4 from "../assets/product-bestseller/product-bestseller-4.svg";
+import productBestseller5 from "../assets/product-bestseller/product-bestseller-5.svg";
+import productBestseller6 from "../assets/product-bestseller/product-bestseller-6.svg";
+import productBestseller7 from "../assets/product-bestseller/product-bestseller-7.svg";
+import productBestseller8 from "../assets/product-bestseller/product-bestseller-8.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -84,4 +92,14 @@ export const assets = {
   ],
   brandsInShop: [brand1, brand2, brand3, brand4, brand5, brand6],
   product: [productDetail],
+  productBestseller: [
+    productBestseller1,
+    productBestseller2,
+    productBestseller3,
+    productBestseller4,
+    productBestseller5,
+    productBestseller6,
+    productBestseller7,
+    productBestseller8,
+  ],
 };

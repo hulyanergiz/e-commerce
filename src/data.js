@@ -387,4 +387,14 @@ export const data = {
   productDetail: {
     image: assets.product[0],
   },
+  productBestseller: [
+    assets.productBestseller[0],
+    assets.productBestseller[1],
+    assets.productBestseller[2],
+    assets.productBestseller[3],
+    assets.productBestseller[4],
+    assets.productBestseller[5],
+    assets.productBestseller[6],
+    assets.productBestseller[7],
+  ],
 };
