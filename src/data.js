@@ -384,4 +384,7 @@ export const data = {
     assets.brandsInShop[4],
     assets.brandsInShop[5],
   ],
+  productDetail: {
+    image: assets.product[0],
+  },
 };

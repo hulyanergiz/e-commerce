@@ -1,3 +1,4 @@
+/* HOME PAGE */
 import headerSlider from "../assets/header-slider-shop.svg";
 import men from "../assets/editorsPick/men.svg";
 import women from "../assets/editorsPick/women.svg";
@@ -16,6 +17,8 @@ import neuralUniverse from "../assets/neural-universe.svg";
 import featuredPost1 from "../assets/featuredPosts/featuredPost1.svg";
 import featuredPost2 from "../assets/featuredPosts/featuredPost2.svg";
 import featuredPost3 from "../assets/featuredPosts/featuredPost3.svg";
+
+/* SHOP PAGE */
 import categoryCard1 from "../assets/categoryCards/categoryCard1.svg";
 import categoryCard2 from "../assets/categoryCards/categoryCard2.svg";
 import categoryCard3 from "../assets/categoryCards/categoryCard3.svg";
@@ -39,6 +42,9 @@ import brand3 from "../assets/brandsInShop/brand3.svg";
 import brand4 from "../assets/brandsInShop/brand4.svg";
 import brand5 from "../assets/brandsInShop/brand5.svg";
 import brand6 from "../assets/brandsInShop/brand6.svg";
+
+/* PRODUCT PAGE */
+import productDetail from "../assets/product/productDetail.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -77,4 +83,5 @@ export const assets = {
     productCard12,
   ],
   brandsInShop: [brand1, brand2, brand3, brand4, brand5, brand6],
+  product: [productDetail],
 };
