@@ -1,5 +1,6 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProductNavigation from "../components/product/productNavigation";
 const Product = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Product = () => {
           <p className="text-[#BDBDBD]">Shop</p>
         </div>
       </div>
+      <ProductNavigation />
     </>
   );
 };
