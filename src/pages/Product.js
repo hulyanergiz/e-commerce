@@ -23,8 +23,10 @@ const Product = () => {
       </div>
       <ProductNavigation />
       <ProductDetails />
-      <ProductBestsellers />
-      <BrandsInShop />
+      <div className="bg-[#FAFAFA]">
+        <ProductBestsellers />
+        <BrandsInShop />
+      </div>
     </>
   );
 };

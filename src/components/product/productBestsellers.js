@@ -2,17 +2,18 @@ import { data } from "../../data";
 
 const ProductBestsellers = () => {
   return (
-    <div className="w-full flex flex-col justify-between items-center py-12">
+    <div className="w-full flex flex-col justify-between items-center py-12 my-12">
       <div className="w-[73%] flex flex-col">
         <h3 className="text-2xl font-bold tracking-wide flex justify-start">
           BESTSELLER PRODUCTS
         </h3>
+        <hr className="font-bold text-[#BDBDBD] py-2"></hr>
         <div className="flex flex-row flex-wrap justify-between gap-y-8">
           {data.productBestseller.map((item, i) => {
             return (
-              <div className=" flex flex-col" key={i}>
+              <div className=" flex flex-col bg-white" key={i}>
                 <img src={item} alt="bestseller" />
-                <div className="w-full flex flex-col items-center pt-6 px-6 pb-9">
+                <div className="w-full flex flex-col items-start pt-6 px-6 pb-9">
                   <p className="text-[#252B42] text-base font-bold">
                     {data.bestsellerProducts.card[0].name}
                   </p>
