@@ -44,6 +44,8 @@ import brand5 from "../assets/brandsInShop/brand5.svg";
 import brand6 from "../assets/brandsInShop/brand6.svg";
 
 /* PRODUCT PAGE */
+import productSlider1 from "../assets/product/product-slider/product-slider-1.svg";
+import productSlider2 from "../assets/product/product-slider/product-slider-2.svg";
 import productDetail from "../assets/product/productDetail.svg";
 import productBestseller1 from "../assets/product-bestseller/product-bestseller-1.svg";
 import productBestseller2 from "../assets/product-bestseller/product-bestseller-2.svg";
@@ -91,6 +93,7 @@ export const assets = {
     productCard12,
   ],
   brandsInShop: [brand1, brand2, brand3, brand4, brand5, brand6],
+  productSlider: [productSlider1, productSlider2],
   product: [productDetail],
   productBestseller: [
     productBestseller1,

@@ -384,6 +384,7 @@ export const data = {
     assets.brandsInShop[4],
     assets.brandsInShop[5],
   ],
+  productSlider: [assets.productSlider[0], assets.productSlider[1]],
   productDetail: {
     image: assets.product[0],
   },
