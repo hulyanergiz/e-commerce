@@ -22,6 +22,7 @@ const Product = () => {
         <ProductCarousel />
       </div>
       <ProductNavigation />
+      <hr className="w-[73%] m-auto font-bold text-[#BDBDBD] pb-4"></hr>
       <ProductDetails />
       <div className="bg-[#FAFAFA]">
         <ProductBestsellers />

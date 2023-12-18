@@ -17,7 +17,7 @@ body {
   @apply text-[#23A6F0];
 }
 .footer-column {
-  @apply flex flex-col text-start;
+  @apply flex flex-col text-start font-bold;
 }
 .footer-heading {
   @apply text-[#252B42] text-2xl  pb-5;
@@ -28,7 +28,4 @@ body {
 .footer-paragraph,
 .footer-bottom {
   @apply text-[#737373] text-sm;
-}
-.footer-bold {
-  @apply font-bold;
 }
