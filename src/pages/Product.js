@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductNavigation from "../components/product/productNavigation";
 import ProductDetails from "../components/product/ProductDetails";
 import ProductBestsellers from "../components/product/productBestsellers";
+import BrandsInShop from "../components/shop/BrandsInShop";
 const Product = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const Product = () => {
       <ProductNavigation />
       <ProductDetails />
       <ProductBestsellers />
+      <BrandsInShop />
     </>
   );
 };
