@@ -6,6 +6,7 @@
 @layer base {
   html {
     font-family: "Montserrat";
+    color: #252b42;
   }
 }
 body {
