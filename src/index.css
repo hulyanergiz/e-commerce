@@ -6,11 +6,7 @@
 @layer base {
   html {
     font-family: "Montserrat";
-<<<<<<< HEAD
     color: "#252b42";
-=======
-    color: #252b42;
->>>>>>> 6518c110d1c654843e7ed44fb360c3ab2ac8ef39
   }
 }
 body {
