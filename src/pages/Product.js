@@ -1,5 +1,6 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProductCarousel from "../components/product/productCarousel";
 import ProductNavigation from "../components/product/productNavigation";
 import ProductDetails from "../components/product/ProductDetails";
 import ProductBestsellers from "../components/product/productBestsellers";
@@ -18,6 +19,7 @@ const Product = () => {
             <p className="text-[#BDBDBD]">Shop</p>
           </div>
         </div>
+        <ProductCarousel />
       </div>
       <ProductNavigation />
       <ProductDetails />
