@@ -56,6 +56,14 @@ import productBestseller6 from "../assets/product-bestseller/product-bestseller-
 import productBestseller7 from "../assets/product-bestseller/product-bestseller-7.svg";
 import productBestseller8 from "../assets/product-bestseller/product-bestseller-8.svg";
 
+/* ABOUT PAGE */
+import aboutBgCircle from "../assets/about/about-top/aboutBGcircle.png";
+import aboutWoman from "../assets/about/about-top/aboutWoman.png";
+import aboutSmallCircle1 from "../assets/about/about-top/aboutSmallCircle1.png";
+import aboutSmallCircle2 from "../assets/about/about-top/aboutSmallCircle2.png";
+import aboutSmallestCircle1 from "../assets/about/about-top/aboutSmallestCircle1.png";
+import aboutSmallestCircle2 from "../assets/about/about-top/aboutSmallestCircle2.png";
+
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
   editorsPick: [men, women, accessories, kids],
@@ -105,4 +113,14 @@ export const assets = {
     productBestseller7,
     productBestseller8,
   ],
+  about: {
+    top: [
+      aboutBgCircle,
+      aboutWoman,
+      aboutSmallCircle1,
+      aboutSmallCircle2,
+      aboutSmallestCircle1,
+      aboutSmallestCircle2,
+    ],
+  },
 };

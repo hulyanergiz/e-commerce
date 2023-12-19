@@ -398,4 +398,12 @@ export const data = {
     assets.productBestseller[6],
     assets.productBestseller[7],
   ],
+  about: [
+    assets.about.top[0],
+    assets.about.top[1],
+    assets.about.top[2],
+    assets.about.top[3],
+    assets.about.top[4],
+    assets.about.top[5],
+  ],
 };
