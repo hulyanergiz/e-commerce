@@ -67,6 +67,7 @@ import aboutVideo from "../assets/about/aboutVideo.svg";
 import team1user1 from "../assets/about/about-team/team-1-user-1.svg";
 import team1user2 from "../assets/about/about-team/team-1-user-2.svg";
 import team1user3 from "../assets/about/about-team/team-1-user-3.svg";
+import aboutClients from "../assets/about/aboutClients.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -128,5 +129,6 @@ export const assets = {
     ],
     video: aboutVideo,
     team: [team1user1, team1user2, team1user3],
+    clients: aboutClients,
   },
 };

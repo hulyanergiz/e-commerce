@@ -408,4 +408,5 @@ export const data = {
   ],
   aboutVideo: assets.about.video,
   aboutTeam: [assets.about.team[0], assets.about.team[1], assets.about.team[2]],
+  aboutClients: assets.about.clients,
 };
