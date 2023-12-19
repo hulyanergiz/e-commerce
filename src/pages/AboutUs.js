@@ -6,13 +6,12 @@ import AboutVideo from "../components/about/AboutVideo";
 
 const AboutUs = () => {
   return (
-    <div className="w-full flex">
-      <div className="w-[73%] flex flex-col m-auto">
-        <AboutTop />
-        <AboutProblemsText />
-        <AboutTotals />
-        <AboutVideo />
-        <AboutTeam />
+    <div className="w-full flex flex-col">
+      <AboutTop />
+      <AboutProblemsText />
+      <AboutTotals />
+      <AboutVideo />
+      <AboutTeam />
       </div>
     </div>
   );

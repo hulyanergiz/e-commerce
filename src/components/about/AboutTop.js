@@ -2,7 +2,7 @@ import { data } from "../../data";
 
 const AboutTop = () => {
   return (
-    <div className="flex flex-row">
+    <div className="w-[73%] m-auto flex flex-row">
       <div className="w-1/2 flex flex-col items-start py-40  gap-9">
         <h3 className="test-base font-bold tracking-wide">ABOUT COMPANY</h3>
         <h1 className="text-6xl font-bold tracking-wider">ABOUT US</h1>

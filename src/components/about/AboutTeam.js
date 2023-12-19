@@ -8,7 +8,7 @@ import {
 
 const AboutTeam = () => {
   return (
-    <div className="flex flex-col items-center py-28">
+    <div className="w-[73%] m-auto flex flex-col items-center py-28">
       <div className="w-1/2 flex flex-col">
         <h1 className="text-[40px] font-bold tracking-wider">Meet Our Team</h1>
         <p className="text-sm tracking-wider">

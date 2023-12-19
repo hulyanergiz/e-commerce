@@ -4,7 +4,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const AboutVideo = () => {
   return (
-    <div className="flex px-8 py-28">
+    <div className="w-[73%] m-auto flex px-8 py-28">
       <img
         src={data.aboutVideo}
         alt="video"
