@@ -29,3 +29,14 @@ body {
 .footer-bottom {
   @apply text-[#737373] text-sm;
 }
+
+/*ABOUT PAGE*/
+.about-total {
+  @apply flex flex-col;
+}
+.about-total-numbers {
+  @apply text-6xl font-bold tracking-wider;
+}
+.about-total-texts {
+  @apply font-bold tracking-wide;
+}
