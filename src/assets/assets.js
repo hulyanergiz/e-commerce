@@ -63,6 +63,7 @@ import aboutSmallCircle1 from "../assets/about/about-top/aboutSmallCircle1.png";
 import aboutSmallCircle2 from "../assets/about/about-top/aboutSmallCircle2.png";
 import aboutSmallestCircle1 from "../assets/about/about-top/aboutSmallestCircle1.png";
 import aboutSmallestCircle2 from "../assets/about/about-top/aboutSmallestCircle2.png";
+import aboutVideo from "../assets/about/aboutVideo.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -122,5 +123,6 @@ export const assets = {
       aboutSmallestCircle1,
       aboutSmallestCircle2,
     ],
+    video: aboutVideo,
   },
 };

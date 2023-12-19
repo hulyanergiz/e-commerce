@@ -406,4 +406,5 @@ export const data = {
     assets.about.top[4],
     assets.about.top[5],
   ],
+  aboutVideo: assets.about.video,
 };
