@@ -1,3 +1,4 @@
+import AboutCompanies from "../components/about/AboutCompanies";
 import AboutProblemsText from "../components/about/AboutProblemsText";
 import AboutTeam from "../components/about/AboutTeam";
 import AboutTop from "../components/about/AboutTop";
@@ -12,7 +13,7 @@ const AboutUs = () => {
       <AboutTotals />
       <AboutVideo />
       <AboutTeam />
-      </div>
+      <AboutCompanies />
     </div>
   );
 };
