@@ -1,6 +1,7 @@
 import AboutProblemsText from "../components/about/AboutProblemsText";
 import AboutTop from "../components/about/AboutTop";
 import AboutTotals from "../components/about/AboutTotals";
+import AboutVideo from "../components/about/AboutVideo";
 
 const AboutUs = () => {
   return (
@@ -9,6 +10,7 @@ const AboutUs = () => {
         <AboutTop />
         <AboutProblemsText />
         <AboutTotals />
+        <AboutVideo />
       </div>
     </div>
   );
