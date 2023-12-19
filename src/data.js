@@ -409,4 +409,11 @@ export const data = {
   aboutVideo: assets.about.video,
   aboutTeam: [assets.about.team[0], assets.about.team[1], assets.about.team[2]],
   aboutClients: assets.about.clients,
+  teamHeroImages: [
+    assets.team.heroImages[0],
+    assets.team.heroImages[1],
+    assets.team.heroImages[2],
+    assets.team.heroImages[3],
+    assets.team.heroImages[4],
+  ],
 };

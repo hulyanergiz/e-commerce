@@ -69,6 +69,13 @@ import team1user2 from "../assets/about/about-team/team-1-user-2.svg";
 import team1user3 from "../assets/about/about-team/team-1-user-3.svg";
 import aboutClients from "../assets/about/aboutClients.svg";
 
+/* TEAM PAGE */
+import heroImage1 from "../assets/team/heroImages/teamHeroImage1.svg";
+import heroImage2 from "../assets/team/heroImages/teamHeroImage2.svg";
+import heroImage3 from "../assets/team/heroImages/teamHeroImage3.svg";
+import heroImage4 from "../assets/team/heroImages/teamHeroImage4.svg";
+import heroImage5 from "../assets/team/heroImages/teamHeroImage5.svg";
+
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
   editorsPick: [men, women, accessories, kids],
@@ -130,5 +137,8 @@ export const assets = {
     video: aboutVideo,
     team: [team1user1, team1user2, team1user3],
     clients: aboutClients,
+  },
+  team: {
+    heroImages: [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5],
   },
 };
