@@ -1,3 +1,4 @@
+import AboutClients from "../components/about/AboutClients";
 import AboutCompanies from "../components/about/AboutCompanies";
 import AboutProblemsText from "../components/about/AboutProblemsText";
 import AboutTeam from "../components/about/AboutTeam";
@@ -14,6 +15,7 @@ const AboutUs = () => {
       <AboutVideo />
       <AboutTeam />
       <AboutCompanies />
+      <AboutClients />
     </div>
   );
 };
