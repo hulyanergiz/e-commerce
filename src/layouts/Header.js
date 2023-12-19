@@ -84,7 +84,7 @@ const Header = () => {
               />
             </div>
             <div className="p-4">
-              <NavLink href="#" className="header-navlink-left">
+              <NavLink href="/about" className="header-navlink-left">
                 About
               </NavLink>
             </div>
