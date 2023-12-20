@@ -416,4 +416,15 @@ export const data = {
     assets.team.heroImages[3],
     assets.team.heroImages[4],
   ],
+  teamUsers: [
+    assets.team.users[0],
+    assets.team.users[1],
+    assets.team.users[2],
+    assets.team.users[3],
+    assets.team.users[4],
+    assets.team.users[5],
+    assets.team.users[6],
+    assets.team.users[7],
+    assets.team.users[8],
+  ],
 };

@@ -75,6 +75,15 @@ import heroImage2 from "../assets/team/heroImages/teamHeroImage2.svg";
 import heroImage3 from "../assets/team/heroImages/teamHeroImage3.svg";
 import heroImage4 from "../assets/team/heroImages/teamHeroImage4.svg";
 import heroImage5 from "../assets/team/heroImages/teamHeroImage5.svg";
+import user1 from "../assets/team/users/team-1-user-1.svg";
+import user2 from "../assets/team/users/team-1-user-2.svg";
+import user3 from "../assets/team/users/team-1-user-3.svg";
+import user4 from "../assets/team/users/team-1-user-4.svg";
+import user5 from "../assets/team/users/team-1-user-5.svg";
+import user6 from "../assets/team/users/team-1-user-6.svg";
+import user7 from "../assets/team/users/team-1-user-7.svg";
+import user8 from "../assets/team/users/team-1-user-8.svg";
+import user9 from "../assets/team/users/team-1-user-9.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -140,5 +149,6 @@ export const assets = {
   },
   team: {
     heroImages: [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5],
+    users: [user1, user2, user3, user4, user5, user6, user7, user8, user9],
   },
 };
