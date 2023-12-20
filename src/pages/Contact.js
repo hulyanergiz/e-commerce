@@ -1,4 +1,5 @@
 import ContactInfo from "../components/contact/ContactInfo";
+import ContactTalk from "../components/contact/ContactTalk";
 import ContactTop from "../components/contact/ContactTop";
 
 const Contact = () => {
@@ -6,6 +7,7 @@ const Contact = () => {
     <div className="w-full">
       <ContactTop />
       <ContactInfo />
+      <ContactTalk />
     </div>
   );
 };

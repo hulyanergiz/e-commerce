@@ -87,6 +87,7 @@ import user9 from "../assets/team/users/team-1-user-9.svg";
 
 /* CONTACT PAGE */
 import topImage from "../assets/contact/contactTop.svg";
+import arrow from "../assets/contact/contactArrow.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
@@ -156,5 +157,6 @@ export const assets = {
   },
   contact: {
     top: topImage,
+    arrow: arrow,
   },
 };

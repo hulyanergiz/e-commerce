@@ -428,5 +428,5 @@ export const data = {
     assets.team.users[8],
   ],
   contactTop: assets.contact.top,
-  contactTop: [assets.contact.top],
+  contactArrow: assets.contact.arrow,
 };
