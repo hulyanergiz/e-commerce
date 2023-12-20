@@ -86,7 +86,7 @@ import user8 from "../assets/team/users/team-1-user-8.svg";
 import user9 from "../assets/team/users/team-1-user-9.svg";
 
 /* CONTACT PAGE */
-import topImage from "../assets/contact/contactTop/contactTop.svg";
+import topImage from "../assets/contact/contactTop.svg";
 
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],

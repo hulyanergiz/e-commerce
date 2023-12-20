@@ -58,7 +58,7 @@ const ContactTop = () => {
           className=" flex relative object-scale-down"
         />
         <img
-          src={data.contactTop[0]}
+          src={data.contactTop}
           alt="about"
           className=" flex absolute ml-[7%] object-scale-down "
         />
