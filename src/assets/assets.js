@@ -85,6 +85,9 @@ import user7 from "../assets/team/users/team-1-user-7.svg";
 import user8 from "../assets/team/users/team-1-user-8.svg";
 import user9 from "../assets/team/users/team-1-user-9.svg";
 
+/* CONTACT PAGE */
+import topImage from "../assets/contact/contactTop/contactTop.svg";
+
 export const assets = {
   sliders: [headerSlider, headerBottomSlider],
   editorsPick: [men, women, accessories, kids],
@@ -150,5 +153,8 @@ export const assets = {
   team: {
     heroImages: [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5],
     users: [user1, user2, user3, user4, user5, user6, user7, user8, user9],
+  },
+  contact: {
+    top: topImage,
   },
 };
