@@ -1,5 +1,6 @@
 import TeamHeroImages from "../components/team/TeamHeroImages";
 import TeamTop from "../components/team/TeamTop";
+import TeamTrial from "../components/team/TeamTrial";
 import TeamUsers from "../components/team/TeamUsers";
 
 const Team = () => {
@@ -8,6 +9,7 @@ const Team = () => {
       <TeamTop />
       <TeamHeroImages />
       <TeamUsers />
+      <TeamTrial />
     </div>
   );
 };
