@@ -1,4 +1,10 @@
+import ContactTop from "../components/contact/ContactTop";
+
 const Contact = () => {
-  return <div></div>;
+  return (
+    <div className="w-full">
+      <ContactTop />
+    </div>
+  );
 };
 export default Contact;
