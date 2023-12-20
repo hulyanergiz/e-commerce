@@ -4,6 +4,7 @@ import Shop from "../pages/Shop";
 import Product from "../pages/Product";
 import AboutUs from "../pages/AboutUs";
 import Team from "../pages/Team";
+import Contact from "../pages/Contact";
 
 const PageContent = () => {
   return (
@@ -23,6 +24,9 @@ const PageContent = () => {
         </Route>
         <Route exact path="/team">
           <Team />
+        </Route>
+        <Route exact path="/contact">
+          <Contact />
         </Route>
       </Switch>
     </div>

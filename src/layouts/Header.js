@@ -94,7 +94,7 @@ const Header = () => {
               </NavLink>
             </div>
             <div className="p-4">
-              <NavLink href="#" className="header-navlink-left">
+              <NavLink href="/contact" className="header-navlink-left">
                 Contact
               </NavLink>
             </div>
