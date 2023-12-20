@@ -8,9 +8,9 @@ import { Button, Input, InputGroup } from "reactstrap";
 
 const Footer = () => {
   return (
-    <div className="w-full h-[414px] flex flex-col">
+    <div className="w-full flex flex-col">
       <div className="w-full">
-        <div className="w-[73%] flex flex-row justify-between m-auto">
+        <div className="w-[73%] flex sm:flex-row justify-between m-auto max-sm:flex-col max-sm:items-start">
           <h1 className="text-2xl font-bold tracking-wide py-10">Bandage</h1>
           <div className="flex- flex-row gap-x-2 justify-start">
             <a href="https://www.facebook.com/">
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
         </div>
         <hr className="w-[73%] m-auto font-bold text-[#BDBDBD] pb-2"></hr>
-        <div className="w-[73%] flex flex-row py-10 g-8 justify-between m-auto">
+        <div className="w-[73%] flex lg:flex-row md:flex-wrap py-10 g-8 justify-between m-auto max-md:flex-col max-md:items-start max-md:gap-y-8">
           <div className="footer-column">
             <h3 className="footer-heading">Company Info</h3>
             <p className="footer-paragraph">About Us</p>
@@ -69,12 +69,14 @@ const Footer = () => {
               <p className="footer-paragraph">API</p>
             </div>
           </div>
-          <div className="footer-column">
+          <div className="footer-column ">
             <h3 className="footer-heading">Get In Touch</h3>
             <div className="footer-paragraph-column">
-              <InputGroup>
+              <InputGroup size="lg">
                 <Input placeholder="Your Email" />
-                <Button color="primary">Subscribe</Button>
+                <Button style={{ backgroundColor: "#23A6F0" }}>
+                  Subscribe
+                </Button>
               </InputGroup>
               <p className="footer-paragraph font-normal pt-2">
                 Lore imp sum dolor Amit
@@ -83,10 +85,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[74px] bg-[#FAFAFA]">
-        <div className="w-[73%] m-auto">
-          <p className=" footer-bottom text-start font-bold py-6">
-            Made With Love By Figmaland All Rigth Reserved
+      <div className="w-full bg-[#FAFAFA]">
+        <div className="sm:w-[73%] m-auto max-sm:w-[47%]">
+          <p className=" footer-bottom sm:text-start max-sm:text-center font-bold py-6">
+            Made With Love By Finland All Rigth Reserved
           </p>
         </div>
       </div>
