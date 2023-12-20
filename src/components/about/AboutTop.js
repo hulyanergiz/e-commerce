@@ -4,7 +4,7 @@ const AboutTop = () => {
   return (
     <div className="w-[73%] m-auto flex flex-row">
       <div className="w-1/2 flex flex-col items-start py-40  gap-9">
-        <h3 className="test-base font-bold tracking-wide">ABOUT COMPANY</h3>
+        <h3 className="text-base font-bold tracking-wide">ABOUT COMPANY</h3>
         <h1 className="text-6xl font-bold tracking-wider">ABOUT US</h1>
         <p className="text-xl tracking-wider text-start">
           We know how large objects will act, but things on a small scale
