@@ -17,7 +17,7 @@ import {
 import { NavLink } from "reactstrap";
 const Header = () => {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col max-sm:bg-[#F6F6F6]">
       <div className="w-full bg-[#252B42] hidden sm:block">
         <div className="pt-[9px] pb-[3px] flex justify-between items-start shrink-0 text-sm w-[97%] m-auto lg:flex-row max-lg:flex-col max-lg:items-center">
           <div className="flex flex-row gap-4">
@@ -105,7 +105,7 @@ const Header = () => {
             </div>
           </div>
           <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[35%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
-            <div className="py-4 flex flex-row justify-center gap-3">
+            <div className="py-4 flex flex-row  justify-center max-sm:w-1/2 max-sm:justify-end gap-3">
               <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon
                   icon={faUser}
