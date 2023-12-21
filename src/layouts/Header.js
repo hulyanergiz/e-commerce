@@ -104,7 +104,7 @@ const Header = () => {
               </NavLink>
             </div>
           </div>
-          <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[30%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
+          <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[35%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
             <div className="py-4 flex flex-row justify-center gap-3">
               <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon

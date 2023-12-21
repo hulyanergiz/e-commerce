@@ -10,26 +10,17 @@ const Footer = () => {
   return (
     <div className="w-full flex flex-col">
       <div className="w-full">
-        <div className="w-[73%] flex sm:flex-row justify-between m-auto max-sm:flex-col max-sm:items-start">
-          <h1 className="text-2xl font-bold tracking-wide py-10">Bandage</h1>
-          <div className="flex- flex-row gap-x-2 justify-start">
+        <div className="w-[73%] flex sm:flex-row justify-between m-auto max-sm:flex-col max-sm:items-start max-sm:gap-2 py-10">
+          <h1 className="text-2xl font-bold tracking-wide">Bandage</h1>
+          <div className="flex flex-row gap-x-2 justify-start pt-1">
             <a href="https://www.facebook.com/">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                className="text-[#23A6F0] pt-1  p-[5px]"
-              />
+              <FontAwesomeIcon icon={faFacebook} className="text-[#23A6F0]" />
             </a>
             <a href="https://www.instagram.com/">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="text-[#23A6F0] pt-1 p-[5px]"
-              />
+              <FontAwesomeIcon icon={faInstagram} className="text-[#23A6F0]" />
             </a>
             <a href="https://www.twitter.com/">
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className="text-[#23A6F0] pt-6 p-[5px]"
-              />
+              <FontAwesomeIcon icon={faTwitter} className="text-[#23A6F0]" />
             </a>
           </div>
         </div>
