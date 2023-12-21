@@ -40,3 +40,7 @@ body {
 .about-total-texts {
   @apply font-bold tracking-wide;
 }
+/*TEAM PAGE*/
+.team-trial-icons {
+  @apply text-[#23A6F0] p-[17px];
+}

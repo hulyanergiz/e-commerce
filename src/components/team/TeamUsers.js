@@ -10,7 +10,7 @@ const TeamUsers = () => {
   return (
     <div className="flex flex-col items-center py-28 gap-28">
       <h1 className="text-[40px] font-bold tracking-wider">Meet Our Team</h1>
-      <div className="w-[73%] m-auto flex flex-row flex-wrap gap-8">
+      <div className="w-[73%] m-auto flex flex-row flex-wrap justify-center gap-8">
         {data.teamUsers.map((user, i) => {
           return (
             <div key={i} className="flex flex-col items-center">

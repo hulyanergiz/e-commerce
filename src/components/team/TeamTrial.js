@@ -8,11 +8,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TeamTrial = () => {
   return (
-    <div className="flex flex-col w-[40%] m-auto gap-8">
+    <div className="flex flex-col md:w-[40%] max-md:w-4/5 m-auto gap-8">
       <h1 className="text-[40px] font-bold tracking-wider">
         Start your 14 days free trial
       </h1>
-      <p className="w-[70%] m-auto text-sm text-[#737373] tracking-wider">
+      <p className="md:w-[70%] max-md:w-5/6 m-auto text-sm text-[#737373] tracking-wider">
         Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
         RELIT official consequent.
       </p>
@@ -27,28 +27,28 @@ const TeamTrial = () => {
           <FontAwesomeIcon
             icon={faTwitter}
             size="2xl"
-            className="text-[#23A6F0] p-[34px]"
+            className="team-trial-icons"
           />
         </a>
         <a href="https://www.facebook.com/">
           <FontAwesomeIcon
             icon={faFacebook}
             size="2xl"
-            className="text-[#23A6F0] p-[34px]"
+            className="team-trial-icons"
           />
         </a>
         <a href="https://www.instagram.com/">
           <FontAwesomeIcon
             icon={faInstagram}
             size="2xl"
-            className="text-[#23A6F0] p-[34px]"
+            className="team-trial-icons"
           />
         </a>
         <a href="https://www.linkedin.com/">
           <FontAwesomeIcon
             icon={faLinkedin}
             size="2xl"
-            className="text-[#23A6F0] p-[34px]"
+            className="team-trial-icons"
           />
         </a>
       </div>
