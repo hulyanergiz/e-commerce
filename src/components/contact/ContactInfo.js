@@ -7,15 +7,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ContactInfo = () => {
   return (
-    <div className="w-[68%] m-auto flex flex-col gap-20 py-28">
+    <div className="w-[68%] m-auto flex flex-col gap-20 py-28 max-lg:bg-[#FAFAFA]">
       <div className="flex flex-col w-[54%] m-auto">
         <h3 className="text-sm font-bold tracking-wider">VISIT OUR OFFICE</h3>
         <h1 className="text-[40px] font-bold tracking-wider">
           We help small businesses with big ideas
         </h1>
       </div>
-      <div className="flex flex-row m-auto">
-        <div className="flex flex-col items-center py-20 px-10">
+      <div className="flex flex-row flex-wrap justify-center m-auto max-lg:gap-8">
+        <div className="flex flex-col items-center py-20 px-10 bg-white">
           <FontAwesomeIcon
             icon={faPhone}
             className="text-[#23A6F0] pb-3"
@@ -51,7 +51,7 @@ const ContactInfo = () => {
             Submit Request
           </button>
         </div>
-        <div className="flex flex-col items-center py-20 px-10">
+        <div className="flex flex-col items-center py-20 px-10 bg-white">
           <FontAwesomeIcon
             icon={faEnvelope}
             className="text-[#23A6F0] pb-3"

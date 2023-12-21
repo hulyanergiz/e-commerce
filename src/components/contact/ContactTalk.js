@@ -2,7 +2,7 @@ import { data } from "../../data";
 
 const ContactTalk = () => {
   return (
-    <div className="w-[20%] m-auto flex flex-col items-center gap-4 pb-20">
+    <div className="w-full m-auto flex flex-col items-center gap-4 pb-20 max-lg:pt-8">
       <img src={data.contactArrow} alt="arrow" />
       <h3 className="text-base font-bold tracking-wide">
         WE Can't WAIT TO MEET YOU

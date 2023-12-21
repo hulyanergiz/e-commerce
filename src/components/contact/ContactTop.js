@@ -9,13 +9,13 @@ import { data } from "../../data";
 
 const ContactTop = () => {
   return (
-    <div className="w-[73%] m-auto flex flex-row justify-between">
-      <div className="w-[35%] flex flex-col items-start py-40  gap-9">
+    <div className="w-[73%] m-auto flex lg:flex-row lg:justify-between max-lg:flex-col max-lg:items-center">
+      <div className="lg:w-[35%] max-lg:w-[73%] flex flex-col lg:items-start max-lg:items-center py-40  gap-9">
         <h3 className="text-base font-bold tracking-wide">CONTACT US</h3>
-        <h1 className="text-6xl font-bold tracking-wider text-start">
+        <h1 className="text-6xl font-bold tracking-wider lg:text-start max-lg:text-center">
           Get in touch today!
         </h1>
-        <p className="text-xl text-[#737373] tracking-wider text-start">
+        <p className="text-xl text-[#737373] tracking-wider lg:text-start max-lg:text-center">
           We know how large objects will act, but things on a small scale
         </p>
         <p className="text-2xl font-bold tracking-wide">Phone : +451 215 215</p>
@@ -51,36 +51,36 @@ const ContactTop = () => {
           </a>
         </div>
       </div>
-      <div className="w-1/2 flex">
+      <div className="w-1/2 flex max-lg:m-auto">
         <img
           src={data.about[0]}
           alt="about"
-          className=" flex relative object-scale-down"
+          className=" flex relative object-contain max-lg:-translate-y-32"
         />
         <img
           src={data.contactTop}
           alt="about"
-          className=" flex absolute ml-[7%] object-scale-down "
+          className=" flex absolute max-lg:max-h-[600px] ml-[7%] object-contain max-lg:w-[50%] max-lg:-translate-y-36 max-lg:-translate-x-20 "
         />
         <img
           src={data.about[2]}
           alt="about"
-          className=" flex absolute  translate-y-12 translate-x-12"
+          className=" flex absolute  translate-y-12 translate-x-12 max-lg:-translate-x-20 max-lg:-translate-y-32"
         />
         <img
           src={data.about[3]}
           alt="about"
-          className=" flex absolute translate-y-72 translate-x-96 ml-60"
+          className=" flex absolute object-contain sm:translate-y-72 sm:translate-x-96 sm:ml-60 max-sm:translate-y-4"
         />
         <img
           src={data.about[4]}
           alt="about"
-          className="flex absolute translate-y-96 mt-20"
+          className="flex absolute object-contain  sm:translate-y-96 sm:mt-20 max-sm:translate-y-8 max-sm:left-28"
         />
         <img
           src={data.about[5]}
           alt="about"
-          className="flex absolute  translate-y-20 translate-x-96 ml-[10%]"
+          className="flex absolute object-contain  sm:translate-y-20 sm:translate-x-96 sm:ml-[10%] max-sm:-translate-y-24 max-sm:translate-x-72"
         />
       </div>
     </div>
