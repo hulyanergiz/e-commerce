@@ -10,7 +10,7 @@ const FeaturedPosts = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="w-[73%] flex  flex-col items-center justify-center pt-32 pb-12 ">
-        <div className="w-[58%] flex justify-center flex-col gap-2  align-center pb-8">
+        <div className="w-[58%] flex justify-center flex-col gap-2  align-center pb-8 max-md:w-full">
           <h2 className="text-sm font-bold text-[#23A6F0]">
             {data.featuredPosts.title}
           </h2>
@@ -22,12 +22,12 @@ const FeaturedPosts = () => {
           </p>
         </div>
       </div>
-      <div className="w-[73%] flex flex-row justify-between gap-x-2.5 pb-28">
+      <div className="w-[73%] flex flex-row flex-wrap justify-between gap-x-2.5 pb-28 ">
         {data.featuredPosts.card.map((item, index) => {
           return (
             <div
               key={index}
-              className="flex flex-col shadow-[0_2px_4px_0_rgba(0,0,0,0.10)]"
+              className="w-[31%] max-xl:w-full flex xl:flex-col max-xl:flex-row max-[950px]:flex-col shadow-[0_2px_4px_0_rgba(0,0,0,0.10)]"
             >
               <img
                 src={item.image}

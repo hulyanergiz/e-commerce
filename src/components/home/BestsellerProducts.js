@@ -4,7 +4,7 @@ const BestsellerProducts = () => {
   return (
     <div className="w-full flex justify-center">
       <div className="w-[73%] flex flex-col items-center">
-        <div className="w-[58%] flex justify-center flex-col gap-2  align-center py-20">
+        <div className="w-[58%] flex justify-center flex-col gap-2  align-center py-20 max-md:w-full">
           <h2 className="text-xl text-[#737373]">
             {data.bestsellerProducts.title}
           </h2>
@@ -16,10 +16,10 @@ const BestsellerProducts = () => {
           </p>
         </div>
         <div className="w-full flex flex-row justify-between ">
-          <div className="flex flex-row flex-wrap justify-between ">
+          <div className="flex flex-row flex-wrap justify-between">
             {data.bestsellerProducts.card.map((item, index) => {
               return (
-                <div key={index} className=" w-[23%] pb-20">
+                <div key={index} className="m-auto pb-20 max-md:w-full">
                   <img
                     src={item.image}
                     alt="bestseller product"
