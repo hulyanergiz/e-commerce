@@ -17,9 +17,9 @@ import {
 import { NavLink } from "reactstrap";
 const Header = () => {
   return (
-    <div className="w-full h-[136px] flex flex-col">
-      <div className="w-full h-[58px] bg-[#252B42]">
-        <div className=" h-[46px] pt-[9px] pb-[3px] flex flex-row justify-between items-start shrink-0 text-sm w-[97%] m-auto">
+    <div className="w-full flex flex-col">
+      <div className="w-full bg-[#252B42] hidden sm:block">
+        <div className="pt-[9px] pb-[3px] flex justify-between items-start shrink-0 text-sm w-[97%] m-auto lg:flex-row max-lg:flex-col max-lg:items-center">
           <div className="flex flex-row gap-4">
             <div className="flex flex-row p-[10px]">
               <FontAwesomeIcon icon={faPhone} className="text-white pt-1" />
@@ -31,7 +31,7 @@ const Header = () => {
               <div className="text-white">michelle.rivera@example.com</div>
             </div>
           </div>
-          <div className="text-white py-[10px]">
+          <div className="text-white py-[10px] pl-3">
             Follow Us and get a chance to win 80% off
           </div>
           <div className="flex flex-row py-[10px] p-[10px]">
@@ -63,65 +63,70 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row w-full h-[78px] py-3 pb-2 pl-9 pr-4 justify-between">
-        <h3 className="w-[10%] text-2xl text-[#252B42] font-bold py-4 pl-1 pr-3">
+      <div className="flex md:flex-row w-full py-3 pb-2 pl-9 pr-4 justify-between gap-6 max-[500px]:flex-col max-[500px]:w-[80%] max-[500px]:justify-start">
+        <h3 className="w-[20%] text-2xl text-[#252B42] font-bold py-4 pl-1 pr-3">
           Bandage
         </h3>
-        <div className="flex flex-row justify-between w-[90%]">
-          <div className="w-[35%] flex justify-between text-[#737373]  no-underline">
-            <div className="p-4">
+        <div className="flex lg:flex-row lg:justify-between w-[80%] max-lg:flex-col max-lg:items-center ">
+          <div className=" flex justify-between text-[#737373]  no-underline gap-3 sm:flex-row max-sm:flex-col lg:w-[30%] max-lg:w-[85%] max-lg:justify-start max-sm:items-start text-sm max-sm:text-[30px] sm:font-bold">
+            <div className="py-4">
               <NavLink href="/" className="header-navlink-left">
                 Home
               </NavLink>
             </div>
-            <div className="p-4 flex flex-row">
+            <div className="py-4 flex flex-row justify-center">
               <NavLink href="/shop" className="header-navlink-left">
                 Shop
               </NavLink>
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className="pl-3 text-[#737373]"
+                className="pl-3 text-[#737373] max-sm:text-xl"
               />
             </div>
-            <div className="p-4">
+            <div className="py-4">
               <NavLink href="/about" className="header-navlink-left">
                 About
               </NavLink>
             </div>
-            <div className="p-4">
+            <div className="py-4">
               <NavLink href="#" className="header-navlink-left">
                 Blog
               </NavLink>
             </div>
-            <div className="p-4">
+            <div className="py-4">
               <NavLink href="/contact" className="header-navlink-left">
                 Contact
               </NavLink>
             </div>
-            <div className="p-4">
+            <div className="py-4">
               <NavLink href="#" className="header-navlink-left">
                 Pages
               </NavLink>
             </div>
           </div>
-          <div className="flex flex-row text-[#23A6F0]">
-            <div className="p-4 flex flex-row">
-              <FontAwesomeIcon icon={faUser} className="header-navlink-right" />
+          <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[30%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
+            <div className="py-4 flex flex-row justify-center gap-3">
               <NavLink href="#" className="header-navlink-right">
-                Login / Register
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="header-navlink-right pt-1 max-sm:text-[#737373] "
+                />
+                <span className=" hidden sm:inline-block pl-2">
+                  Login / Register
+                </span>
               </NavLink>
             </div>
-            <div className="p-4">
+            <div className="py-4">
               <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faSearch} />
               </NavLink>
             </div>
-            <div className="p-4">
+            <div className="py-4">
               <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faCartShopping} />
               </NavLink>
             </div>
-            <div className="p-4">
+            <div className="py-4">
               <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faHeart} />
               </NavLink>
