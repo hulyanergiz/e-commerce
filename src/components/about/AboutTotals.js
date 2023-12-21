@@ -1,7 +1,7 @@
 const AboutTotals = () => {
   return (
-    <div className="w-[73%] flex flex-col m-auto">
-      <div className="w-[81%] flex flex-row justify-between m-auto py-20">
+    <div className="w-[73%] m-auto">
+      <div className="w-[81%] flex xl:flex-row max-xl:flex-col xl:justify-between max-xl:items-center m-auto py-20  max-xl:gap-y-24">
         <div className="about-total">
           <p className="about-total-numbers">15K</p>
           <p className="about-total-texts">Happy Customers</p>

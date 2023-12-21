@@ -16,10 +16,10 @@ const AboutTeam = () => {
           of Classical physics: Newtonian mechanics{" "}
         </p>
       </div>
-      <div className="flex flex-row pt-28 gap-x-8">
+      <div className="flex flex-row  flex-wrap justify-center pt-28 gap-x-8 m-auto">
         {data.aboutTeam.map((user, i) => {
           return (
-            <div key={i} className="flex flex-col items-center">
+            <div key={i} className="flex flex-col items-center min-w-[250px]">
               <img src={user} alt="users" />
               <div className="p-8">
                 <p className="font-bold tracking-wide">Username</p>

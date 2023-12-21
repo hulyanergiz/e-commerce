@@ -12,7 +12,7 @@ const AboutVideo = () => {
       />
       <FontAwesomeIcon
         icon={faPlay}
-        className="absolute text-white p-9 bg-[#23A6F0] rounded-full ml-[34%] mt-[18%] -translate-x-1/2  -translate-y-1/2"
+        className="absolute text-white sm:p-9 max-sm:p-5 bg-[#23A6F0] rounded-full ml-[34%] mt-[18%] -translate-x-1/2  -translate-y-1/2"
       />
     </div>
   );
