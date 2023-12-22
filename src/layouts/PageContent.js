@@ -5,6 +5,7 @@ import Product from "../pages/Product";
 import AboutUs from "../pages/AboutUs";
 import Team from "../pages/Team";
 import Contact from "../pages/Contact";
+import SignUp from "../pages/SignUp";
 
 const PageContent = () => {
   return (
@@ -27,6 +28,9 @@ const PageContent = () => {
         </Route>
         <Route exact path="/contact">
           <Contact />
+        </Route>
+        <Route exact path="/signup">
+          <SignUp />
         </Route>
       </Switch>
     </div>
