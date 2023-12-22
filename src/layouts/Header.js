@@ -106,15 +106,16 @@ const Header = () => {
           </div>
           <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[35%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
             <div className="py-4 flex flex-row  justify-center max-sm:w-1/2 max-sm:justify-end gap-3">
-              <NavLink href="#" className="header-navlink-right">
+              <NavLink href="/sign" className="header-navlink-right">
                 <FontAwesomeIcon
                   icon={faUser}
                   className="header-navlink-right pt-1 max-sm:text-[#737373] "
                 />
-                <span className=" hidden sm:inline-block pl-2">
-                  Login / Register
-                </span>
               </NavLink>
+              <div className="hidden sm:flex sm:flex-row pl-2 gap-2">
+                <NavLink href="singin">Login</NavLink>
+                <span>/</span> <NavLink href="/signup">Register</NavLink>
+              </div>
             </div>
             <div className="py-4">
               <NavLink href="#" className="header-navlink-right">
