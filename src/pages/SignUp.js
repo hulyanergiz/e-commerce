@@ -7,11 +7,15 @@ const initialState = {
   password: "",
   confirmPassword: "",
   role: "",
+  storeName: "",
+  storePhone: "",
+  storeTaxID: "",
+  storeBankAccount: "",
 };
 const SignUp = () => {
   const {
     register,
-  return <></>;
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues: { ...initialState }, mode: "onBlur" });
@@ -97,6 +101,69 @@ const SignUp = () => {
           </option>
         </select>
       </div>
+
+      {watch("role") === "store" && (
+        <>
+          <label>
+            Store Name:
+            <input
+              className="border-solid border-1 border-[#737373] rounded-[5px]"
+              type="text"
+              {...register("storeName", {
+                required: "Store name is required",
+                minLength: {
+                  value: 3,
+                  message: "Must be at least three characters long.",
+                },
+              })}
+            />
+          </label>
+          <label>
+            Store Phone:
+            <input
+              className="border-solid border-1 border-[#737373] rounded-[5px]"
+              type="tel"
+              {...register("storePhone", {
+                required: "Store phone is required",
+                pattern: {
+                  value: /^[0-9]{10}$/,
+                  message: "Must be a valid phone number",
+                },
+              })}
+            />
+          </label>
+          <label>
+            Store Tax ID:
+            <input
+              className="border-solid border-1 border-[#737373] rounded-[5px]"
+              type="text"
+              {...register("storeTaxID", {
+                required: "Store Tax ID is required",
+                pattern: {
+                  value: /^T\d{4}V\d{6}$/,
+                  message:
+                    "Must be a valid tax ID in this format: TXXXXVXXXXXX",
+                },
+              })}
+            />
+          </label>
+          <label>
+            Store Bank Account:
+            <input
+              className="border-solid border-1 border-[#737373] rounded-[5px]"
+              type="text"
+              {...register("storeBankAccount", {
+                required: "Store Tax ID is required",
+                pattern: {
+                  value: /^T\d{4}V\d{6}$/,
+                  message:
+                    "Must be a valid tax ID in this format: TXXXXVXXXXXX",
+                },
+              })}
+            />
+          </label>
+        </>
+      )}
       <button
         type="submit"
         className="bg-[#23A6F0] text-white p-3 rounded-[5px] w-[150px]"
