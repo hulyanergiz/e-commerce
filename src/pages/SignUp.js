@@ -18,6 +18,7 @@ const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
 const ibanRegex = new RegExp(
   /[A-Z]{2}\d{2} ?\d{4} ?\d{4} ?\d{4} ?\d{4} ?\d{4} ?\d{2}/gm
 );
+const turkeyPhoneRegex = new RegExp(/^(\+90)?[0-9]{10}$/);
 
 const SignUp = () => {
   const {
@@ -153,7 +154,7 @@ const SignUp = () => {
               {...register("storePhone", {
                 required: "Store phone is required",
                 pattern: {
-                  value: /^[0-9]{10}$/,
+                  value: turkeyPhoneRegex,
                   message: "Must be a valid phone number",
                 },
               })}
