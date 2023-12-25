@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { AxiosInstance } from "../api/api";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
 const initialState = {
@@ -31,6 +33,8 @@ const SignUp = () => {
   } = useForm({ defaultValues: { ...initialState }, mode: "all" });
 
   const [roles, setRoles] = useState([]);
+  const [togglePass1, setTogglePass1] = useState(false);
+  const [togglePass2, setTogglePass2] = useState(false);
   const history = useHistory();
   useEffect(() => {
     AxiosInstance.get("/roles")
@@ -95,7 +99,7 @@ const SignUp = () => {
         Password:
         <input
           className="border-solid border-1 border-[#737373] rounded-[5px]"
-          type="password"
+          type={togglePass1 ? "text" : "password"}
           {...register("password", {
             required: "Password is required",
             minLength: {
@@ -104,19 +108,41 @@ const SignUp = () => {
             },
           })}
         />
+        {togglePass1 ? (
+          <FontAwesomeIcon
+            icon={faLock}
+            onClick={() => setTogglePass1(!togglePass1)}
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={faEye}
+            onClick={() => setTogglePass1(!togglePass1)}
+          />
+        )}
       </label>
       {errors.password && <p>{errors.password.message}</p>}
       <label>
         Confirm Password:
         <input
           className="border-solid border-1 border-[#737373] rounded-[5px]"
-          type="password"
+          type={togglePass2 ? "text" : "password"}
           {...register("confirmPassword", {
             required: "Password is required",
             validate: (value) =>
               value === getValues("password") || "Passwords are not matched",
           })}
         />
+        {togglePass2 ? (
+          <FontAwesomeIcon
+            icon={faLock}
+            onClick={() => setTogglePass2(!togglePass2)}
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={faEye}
+            onClick={() => setTogglePass2(!togglePass2)}
+          />
+        )}
       </label>
       {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
       <div>
