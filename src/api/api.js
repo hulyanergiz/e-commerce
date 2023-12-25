@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const createAxiosInstance = () => {
   return axios.create({
-    baseURL: "https://workintech-fe-ecommerce.onrender.com/",
+    baseURL: "https://workintech-fe-ecommerce.onrender.com",
     headers: {},
   });
 };
