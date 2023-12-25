@@ -27,7 +27,7 @@ const SignUp = () => {
     getValues,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({ defaultValues: { ...initialState }, mode: "all" });
 
   const [roles, setRoles] = useState([]);
@@ -199,7 +199,12 @@ const SignUp = () => {
       )}
       <button
         type="submit"
-        className="bg-[#23A6F0] text-white p-3 rounded-[5px] w-[150px]"
+        disabled={!isValid}
+        className={
+          !isValid
+            ? "bg-[#23A6F0] text-white p-3 rounded-[5px] w-[150px]"
+            : " bg-[#23856D] text-white p-3 rounded-[5px] w-[150px] cursor-pointer"
+        }
       >
         Sign Up
       </button>
