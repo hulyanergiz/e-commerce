@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
 import { AxiosInstance } from "../api/api";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const initialState = {
   name: "",
   email: "",
   password: "",
   confirmPassword: "",
-  role: "customer",
+  role_id: "3",
   storeName: "",
   storePhone: "",
   storeTaxID: "",
@@ -22,23 +24,36 @@ const SignUp = () => {
     register,
     watch,
     getValues,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues: { ...initialState }, mode: "all" });
-  } = useForm({ defaultValues: { ...initialState }, mode: "onBlur" });
 
-  const submitHandler = (formData) => {
-    AxiosInstance.post(
-      "https://workintech-fe-ecommerce.onrender.com/",
-      formData
-    )
+  const [roles, setRoles] = useState([]);
+  const history = useHistory();
+  useEffect(() => {
+    AxiosInstance.get("/roles")
       .then((res) => {
-        console.log(res);
+        console.log("Role gets", res);
+        setRoles(res.data);
       })
       .catch((err) => {
-        console.error(err);
+        console.error("Role gets error:", err);
       });
+  }, []);
+  const submitHandler = (formData) => {
+    AxiosInstance.post("/signup", formData)
+      .then((res) => {
+        console.log("Post", res);
+        history.back();
+      })
+      .catch((err) => {
+        console.error("Post error:", err);
+      });
+    console.log("formData:", formData);
+    reset();
   };
+
   return (
     <form
       onSubmit={handleSubmit(submitHandler)}
@@ -104,16 +119,16 @@ const SignUp = () => {
       </label>
       {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
       <div>
-        <select {...register("role")}>
-          <option value="customer">Customer</option>
-          <option value="admin">Admin</option>
-          <option value="store" name="store" id="store">
-            Store
-          </option>
+        <select id="role_id" {...register("role_id")}>
+          {roles.map((role, i) => (
+            <option key={i} value={role.id}>
+              {role.code}
+            </option>
+          ))}
         </select>
       </div>
 
-      {watch("role") === "store" && (
+      {watch("role_id") === "2" && (
         <>
           <label>
             Store Name:
@@ -166,6 +181,7 @@ const SignUp = () => {
             <input
               className="border-solid border-1 border-[#737373] rounded-[5px]"
               type="text"
+              id="storeBankAccount"
               {...register("storeBankAccount", {
                 required: "Store Bank Account is required",
                 pattern: {
