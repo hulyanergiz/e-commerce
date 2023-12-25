@@ -6,18 +6,25 @@ const initialState = {
   email: "",
   password: "",
   confirmPassword: "",
-  role: "",
+  role: "customer",
   storeName: "",
   storePhone: "",
   storeTaxID: "",
   storeBankAccount: "",
 };
+const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
+const ibanRegex = new RegExp(
+  /[A-Z]{2}\d{2} ?\d{4} ?\d{4} ?\d{4} ?\d{4} ?\d{4} ?\d{2}/gm
+);
+
 const SignUp = () => {
   const {
     register,
     watch,
+    getValues,
     handleSubmit,
     formState: { errors },
+  } = useForm({ defaultValues: { ...initialState }, mode: "all" });
   } = useForm({ defaultValues: { ...initialState }, mode: "onBlur" });
 
   const submitHandler = (formData) => {
@@ -52,6 +59,7 @@ const SignUp = () => {
           })}
         />
       </label>
+      {errors.name && <p>{errors.name.message}</p>}
       <label>
         Email:
         <input
@@ -59,10 +67,14 @@ const SignUp = () => {
           type="email"
           {...register("email", {
             required: "Email is required.",
-            email: "Must be a valid email address.",
+            pattern: {
+              value: emailRegex,
+              message: "Must be a valid email address.",
+            },
           })}
         />
       </label>
+      {errors.email?.message && <p>{errors.email.message}</p>}
       <label>
         Password:
         <input
@@ -77,6 +89,7 @@ const SignUp = () => {
           })}
         />
       </label>
+      {errors.password && <p>{errors.password.message}</p>}
       <label>
         Confirm Password:
         <input
@@ -84,16 +97,14 @@ const SignUp = () => {
           type="password"
           {...register("confirmPassword", {
             required: "Password is required",
-            minLength: {
-              value: 6,
-              message: "Must be at least 6 characters long.",
-            },
+            validate: (value) =>
+              value === getValues("password") || "Passwords are not matched",
           })}
         />
       </label>
+      {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
       <div>
         <select {...register("role")}>
-          <option value="">Choose a role</option>
           <option value="customer">Customer</option>
           <option value="admin">Admin</option>
           <option value="store" name="store" id="store">
@@ -118,6 +129,7 @@ const SignUp = () => {
               })}
             />
           </label>
+          {errors.storeName && <p>{errors.storeName.message}</p>}
           <label>
             Store Phone:
             <input
@@ -132,6 +144,7 @@ const SignUp = () => {
               })}
             />
           </label>
+          {errors.storePhone && <p>{errors.storePhone.message}</p>}
           <label>
             Store Tax ID:
             <input
@@ -147,21 +160,24 @@ const SignUp = () => {
               })}
             />
           </label>
+          {errors.storeTaxID && <p>{errors.storeTaxID.message}</p>}
           <label>
             Store Bank Account:
             <input
               className="border-solid border-1 border-[#737373] rounded-[5px]"
               type="text"
               {...register("storeBankAccount", {
-                required: "Store Tax ID is required",
+                required: "Store Bank Account is required",
                 pattern: {
-                  value: /^T\d{4}V\d{6}$/,
-                  message:
-                    "Must be a valid tax ID in this format: TXXXXVXXXXXX",
+                  value: ibanRegex,
+                  message: "Must be a valid store bank account",
                 },
               })}
             />
           </label>
+          {errors.storeBankAccount?.message && (
+            <p>{errors.storeBankAccount.message}</p>
+          )}
         </>
       )}
       <button
