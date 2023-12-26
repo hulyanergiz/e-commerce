@@ -59,7 +59,7 @@ const SignUp = () => {
       })
       .catch((err) => {
         console.error("Post error:", err);
-        toast.error(res.error);
+        toast.error(err.error);
       });
     console.log("formData:", formData);
     reset();
