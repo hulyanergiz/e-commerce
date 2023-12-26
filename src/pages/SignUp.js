@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
 const ibanRegex = new RegExp(
@@ -53,10 +54,12 @@ const SignUp = () => {
     await AxiosInstance.post("/signup", formData)
       .then((res) => {
         console.log("Post", res.data.message);
+        toast.success(res.data.message);
         history.push("/");
       })
       .catch((err) => {
         console.error("Post error:", err);
+        toast.error(res.error);
       });
     console.log("formData:", formData);
     reset();

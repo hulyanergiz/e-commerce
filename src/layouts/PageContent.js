@@ -6,6 +6,8 @@ import AboutUs from "../pages/AboutUs";
 import Team from "../pages/Team";
 import Contact from "../pages/Contact";
 import SignUp from "../pages/SignUp";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PageContent = () => {
   return (
@@ -33,6 +35,17 @@ const PageContent = () => {
           <SignUp />
         </Route>
       </Switch>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };
