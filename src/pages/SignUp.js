@@ -5,17 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
-const initialState = {
-  name: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  role_id: "3",
-  storeName: "",
-  storePhone: "",
-  storeTaxID: "",
-  storeBankAccount: "",
-};
 const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
 const ibanRegex = new RegExp(
   /[A-Z]{2}\d{2} ?\d{4} ?\d{4} ?\d{4} ?\d{4} ?\d{4} ?\d{2}/gm
@@ -30,7 +19,7 @@ const SignUp = () => {
     reset,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm({ defaultValues: { ...initialState }, mode: "all" });
+  } = useForm({ defaultValues: { role_id: "3" }, mode: "all" });
 
   const [roles, setRoles] = useState([]);
   const [togglePass1, setTogglePass1] = useState(false);
@@ -46,11 +35,25 @@ const SignUp = () => {
         console.error("Role gets error:", err);
       });
   }, []);
-  const submitHandler = (formData) => {
-    AxiosInstance.post("/signup", formData)
+  const submitHandler = async (data) => {
+    const formData = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      role_id: watch("role_id"),
+    };
+    if (watch("role_id") === "2") {
+      formData.store = {
+        name: data.name,
+        phone: data.phone,
+        tax_no: data.tax_no,
+        bank_account: data.bank_account,
+      };
+    }
+    await AxiosInstance.post("/signup", formData)
       .then((res) => {
-        console.log("Post", res);
-        history.back();
+        console.log("Post", res.data.message);
+        history.push("/");
       })
       .catch((err) => {
         console.error("Post error:", err);
@@ -162,7 +165,8 @@ const SignUp = () => {
             <input
               className="border-solid border-1 border-[#737373] rounded-[5px]"
               type="text"
-              {...register("storeName", {
+              id="name"
+              {...register("name", {
                 required: "Store name is required",
                 minLength: {
                   value: 3,
@@ -171,13 +175,13 @@ const SignUp = () => {
               })}
             />
           </label>
-          {errors.storeName && <p>{errors.storeName.message}</p>}
+          {errors.name && <p>{errors.name.message}</p>}
           <label>
             Store Phone:
             <input
               className="border-solid border-1 border-[#737373] rounded-[5px]"
               type="tel"
-              {...register("storePhone", {
+              {...register("phone", {
                 required: "Store phone is required",
                 pattern: {
                   value: turkeyPhoneRegex,
@@ -186,13 +190,13 @@ const SignUp = () => {
               })}
             />
           </label>
-          {errors.storePhone && <p>{errors.storePhone.message}</p>}
+          {errors.phone && <p>{errors.phone.message}</p>}
           <label>
             Store Tax ID:
             <input
               className="border-solid border-1 border-[#737373] rounded-[5px]"
               type="text"
-              {...register("storeTaxID", {
+              {...register("tax_no", {
                 required: "Store Tax ID is required",
                 pattern: {
                   value: /^T\d{4}V\d{6}$/,
@@ -202,14 +206,13 @@ const SignUp = () => {
               })}
             />
           </label>
-          {errors.storeTaxID && <p>{errors.storeTaxID.message}</p>}
+          {errors.tax_no && <p>{errors.tax_no.message}</p>}
           <label>
             Store Bank Account:
             <input
               className="border-solid border-1 border-[#737373] rounded-[5px]"
               type="text"
-              id="storeBankAccount"
-              {...register("storeBankAccount", {
+              {...register("bank_account", {
                 required: "Store Bank Account is required",
                 pattern: {
                   value: ibanRegex,
@@ -218,9 +221,7 @@ const SignUp = () => {
               })}
             />
           </label>
-          {errors.storeBankAccount?.message && (
-            <p>{errors.storeBankAccount.message}</p>
-          )}
+          {errors.bank_account && <p>{errors.bank_account.message}</p>}
         </>
       )}
       <button
