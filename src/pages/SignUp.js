@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import { PulseLoader } from "react-spinners";
 
 const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
 const ibanRegex = new RegExp(
@@ -23,6 +24,7 @@ const SignUp = () => {
   } = useForm({ defaultValues: { role_id: "3" }, mode: "all" });
 
   const [roles, setRoles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [togglePass1, setTogglePass1] = useState(false);
   const [togglePass2, setTogglePass2] = useState(false);
   const history = useHistory();
@@ -227,17 +229,30 @@ const SignUp = () => {
           {errors.bank_account && <p>{errors.bank_account.message}</p>}
         </>
       )}
-      <button
-        type="submit"
-        disabled={!isValid}
-        className={
-          !isValid
-            ? "bg-[#23A6F0] text-white p-3 rounded-[5px] w-[150px]"
-            : " bg-[#23856D] text-white p-3 rounded-[5px] w-[150px] cursor-pointer"
-        }
-      >
-        Sign Up
-      </button>
+      {!isLoading ? (
+        <button
+          type="submit"
+          disabled={!isValid}
+          className={
+            !isValid
+              ? "bg-[#23A6F0] text-white p-3 rounded-[5px] w-[150px]"
+              : " bg-[#23856D] text-white p-3 rounded-[5px] w-[150px] cursor-pointer"
+          }
+        >
+          Sign Up
+        </button>
+      ) : (
+        <>
+          <PulseLoader />
+          <button
+            type="submit"
+            disabled={isLoading}
+            className={" bg-[#23A6F0] text-white p-3 rounded-[5px] w-[150px]"}
+          >
+            Signing Up
+          </button>
+        </>
+      )}
     </form>
   );
 };
