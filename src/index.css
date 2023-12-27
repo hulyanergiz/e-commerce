@@ -44,3 +44,16 @@ body {
 .team-trial-icons {
   @apply text-[#23A6F0] p-[17px];
 }
+/*SIGN UP PAGE*/
+.label-input {
+  @apply w-full flex flex-col items-start gap-4 text-xl;
+}
+.input {
+  @apply w-full px-4 py-1 border-solid border-2 border-[#737373] rounded-[5px];
+}
+.input-icon {
+  @apply flex flex-row w-full items-center;
+}
+.error {
+  @apply text-xl bg-red-300 py-1 w-full rounded-md;
+}
