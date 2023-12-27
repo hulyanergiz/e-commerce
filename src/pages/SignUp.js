@@ -59,8 +59,10 @@ const SignUp = () => {
     await AxiosInstance.post("/signup", formData)
       .then((res) => {
         console.log("Post", res.data.message);
-        toast.success(res.data.message);
-        history.push("/");
+        toast.success(
+          "You need to click link in email to activate your account!"
+        );
+        history.go(-1);
       })
       .catch((err) => {
         console.error("Post error:", err);
