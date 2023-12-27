@@ -29,6 +29,7 @@ const SignUp = () => {
   const [togglePass2, setTogglePass2] = useState(false);
   const history = useHistory();
   useEffect(() => {
+    setIsLoading(true);
     AxiosInstance.get("/roles")
       .then((res) => {
         console.log("Role gets", res);
@@ -36,7 +37,8 @@ const SignUp = () => {
       })
       .catch((err) => {
         console.error("Role gets error:", err);
-      });
+      })
+      .finally(() => setIsLoading(false));
   }, []);
   const submitHandler = async (data) => {
     const formData = {
@@ -47,12 +49,13 @@ const SignUp = () => {
     };
     if (watch("role_id") === "2") {
       formData.store = {
-        name: data.name,
+        name: data.store_name,
         phone: data.phone,
         tax_no: data.tax_no,
         bank_account: data.bank_account,
       };
     }
+    setIsLoading(true);
     await AxiosInstance.post("/signup", formData)
       .then((res) => {
         console.log("Post", res.data.message);
@@ -62,7 +65,8 @@ const SignUp = () => {
       .catch((err) => {
         console.error("Post error:", err);
         toast.error(err.error);
-      });
+      })
+      .finally(() => setIsLoading(false));
     console.log("formData:", formData);
     reset();
   };
@@ -195,12 +199,12 @@ const SignUp = () => {
         {watch("role_id") === "2" && (
           <>
             <div className="label-input">
-              <label htmlFor="name">Store Name:</label>
+              <label htmlFor="store_name">Store Name:</label>
               <input
                 className="input"
                 type="text"
-                id="name"
-                {...register("name", {
+                id="store_name"
+                {...register("store_name", {
                   required: "Store name is required",
                   minLength: {
                     value: 3,
@@ -209,7 +213,7 @@ const SignUp = () => {
                 })}
               />
             </div>
-            {errors.name && <p>{errors.name.message}</p>}
+            {errors.store_name && <p>{errors.store_name.message}</p>}
             <div className="label-input">
               <label htmlFor="phone">Store Phone:</label>
               <input
