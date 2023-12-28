@@ -113,7 +113,7 @@ const Header = () => {
                 />
               </NavLink>
               <div className="hidden sm:flex sm:flex-row pl-2 gap-2">
-                <NavLink href="singin">Login</NavLink>
+                <NavLink href="/login">Login</NavLink>
                 <span>/</span> <NavLink href="/signup">Register</NavLink>
               </div>
             </div>
