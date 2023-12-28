@@ -62,7 +62,9 @@ const SignUp = () => {
         toast.success(
           "You need to click link in email to activate your account!"
         );
-        history.go(-1);
+        setTimeout(() => {
+          history.go(-1);
+        }, 2000);
       })
       .catch((err) => {
         console.error("Post error:", err);
