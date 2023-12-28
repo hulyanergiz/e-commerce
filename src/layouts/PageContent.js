@@ -6,6 +6,7 @@ import AboutUs from "../pages/AboutUs";
 import Team from "../pages/Team";
 import Contact from "../pages/Contact";
 import SignUp from "../pages/SignUp";
+import Login from "../pages/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -33,6 +34,9 @@ const PageContent = () => {
         </Route>
         <Route exact path="/signup">
           <SignUp />
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
       </Switch>
       <ToastContainer
