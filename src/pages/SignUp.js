@@ -59,6 +59,7 @@ const SignUp = () => {
     await AxiosInstance.post("/signup", formData)
       .then((res) => {
         console.log("Post", res.data.message);
+        localStorage.setItem("token", res.data.token);
         toast.success(
           "You need to click link in email to activate your account!"
         );
