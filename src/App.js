@@ -21,7 +21,7 @@ function App() {
           const userData = res.data;
           dispatch(setUser(userData));
           renewAxiosInstance();
-          history.go(-1);
+          history.push("/");
         })
         .catch((err) => {
           console.error("verify", err);
