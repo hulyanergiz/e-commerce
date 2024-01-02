@@ -2,6 +2,7 @@ import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../store/actions/userActions";
@@ -17,7 +18,8 @@ const Login = () => {
     formState: { errors, isValid, isLoading },
   } = useForm({ mode: "all" });
   const [togglePass1, setTogglePass1] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [token, setToken] = useLocalStorage("token", "");
+  const [name, setName] = useLocalStorage("name", "");
   const history = useHistory();
   const dispatch = useDispatch();
 
