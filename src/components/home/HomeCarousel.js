@@ -15,10 +15,12 @@ const HomeCarousel = () => {
         >
           {data.slider.map((slide, i) => {
             return (
-              <div className="w-full flex relative items-center justify-center">
+              <div
+                key={i}
+                className="w-full flex relative items-center justify-center"
+              >
                 <img
                   src={slide.image}
-                  key={i}
                   alt="collection"
                   className="w-full max-lg:h-[714px] object-cover"
                 />

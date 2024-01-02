@@ -15,7 +15,7 @@ const HomeBottomCarousel = () => {
       >
         {data.sliderBottom.map((slide, i) => {
           return (
-            <div className="w-full pt-12">
+            <div key={i} className="w-full pt-12">
               <div className=" flex lg:flex-row  max-lg:flex-col lg:gap-12 max-lg:gap-3 text-white tracking-wide w-[73%] m-auto ">
                 <div className="flex lg:relative max-lg:block items-center justify-center lg:my-12 max-lg:my-0 text-white sm:text-start max-sm:text-center  tracking-wide lg:w-[45%] max-lg:[73%] sm:h-[410px] max-sm:h-[480px] lg:pt-12 max-lg:pt-12">
                   <div className="flex flex-col absolute xl:gap-9 max-xl:gap-4  max-lg:m-auto">
@@ -37,7 +37,6 @@ const HomeBottomCarousel = () => {
                 <div className="lg:w-[45%] max-lg:w-full bottom-0 flex relative">
                   <img
                     src={slide.image}
-                    key={i}
                     alt="collection image"
                     className="lg:flex lg:absolute max-lg:block w-full lg:h-[90%] max-lg:h-[500px] object-contain bottom-0"
                   />
