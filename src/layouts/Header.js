@@ -15,7 +15,13 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "reactstrap";
+import { useDispatch } from "react-redux";
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const name = JSON.parse(localStorage.getItem("name"));
+  const token = localStorage.getItem("token");
+
   return (
     <div className="w-full flex flex-col max-sm:bg-[#F6F6F6]">
       <div className="w-full bg-[#252B42] hidden sm:block">
@@ -105,18 +111,22 @@ const Header = () => {
             </div>
           </div>
           <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[35%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
-            <div className="py-4 flex flex-row  justify-center max-sm:w-1/2 max-sm:justify-end gap-3">
-              <NavLink href="/sign" className="header-navlink-right">
-                <FontAwesomeIcon
-                  icon={faUser}
-                  className="header-navlink-right pt-1 max-sm:text-[#737373] "
-                />
-              </NavLink>
-              <div className="hidden sm:flex sm:flex-row pl-2 gap-2">
-                <NavLink href="/login">Login</NavLink>
-                <span>/</span> <NavLink href="/signup">Register</NavLink>
+            {token ? (
+                <p className="font-bold">{name}</p>
+            ) : (
+              <div className="py-4 flex flex-row  justify-center max-sm:w-1/2 max-sm:justify-end gap-3">
+                <NavLink href="/sign" className="header-navlink-right">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="header-navlink-right pt-1 max-sm:text-[#737373] "
+                  />
+                </NavLink>
+                <div className="hidden sm:flex sm:flex-row pl-2 gap-2">
+                  <NavLink href="/login">Login</NavLink>
+                  <span>/</span> <NavLink href="/signup">Register</NavLink>
+                </div>
               </div>
-            </div>
+            )}
             <div className="py-4">
               <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faSearch} />
