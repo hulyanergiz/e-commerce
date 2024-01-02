@@ -1,10 +1,10 @@
 import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
-import { AxiosInstance } from "../api/api";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../store/actions/userActions";
 import { PulseLoader } from "react-spinners";
 
 const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
@@ -14,37 +14,20 @@ const Login = () => {
     register,
     reset,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isLoading },
   } = useForm({ mode: "all" });
   const [togglePass1, setTogglePass1] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  const submitHandler = async (data) => {
-    const formData = {
-      email: data.email,
-      password: data.password,
-    };
-    setIsLoading(true);
-    await AxiosInstance.post("/login", formData)
-      .then((res) => {
-        console.log("Post", res.data.message);
-        toast.success("Successfull login!");
-        setTimeout(() => {
-          history.push("/");
-        }, 2000);
-      })
-      .catch((err) => {
-        console.error("Post error:", err);
-        toast.error(err.error);
-      })
-      .finally(() => setIsLoading(false));
-    console.log("formData:", formData);
+  const loginSubmitHandler = (formData) => {
+    dispatch(userLogin(formData, history, setToken, setName));
     reset();
   };
   return (
     <form
-      onSubmit={handleSubmit(submitHandler)}
+      onSubmit={handleSubmit(loginSubmitHandler)}
       className="flex  flex-col items-center m-auto"
     >
       <div className="flex flex-col gap-4 items-center w-[30%]">
