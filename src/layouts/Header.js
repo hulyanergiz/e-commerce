@@ -16,12 +16,18 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "reactstrap";
 import { useDispatch } from "react-redux";
+import { removeUser } from "../store/actions/userActions";
 const Header = () => {
   const dispatch = useDispatch();
 
   const name = JSON.parse(localStorage.getItem("name"));
   const token = localStorage.getItem("token");
 
+  const deleteTokenName = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    dispatch(removeUser());
+  };
   return (
     <div className="w-full flex flex-col max-sm:bg-[#F6F6F6]">
       <div className="w-full bg-[#252B42] hidden sm:block">
@@ -112,7 +118,12 @@ const Header = () => {
           </div>
           <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[35%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
             {token ? (
+              <div className="flex flex-col justify-center">
                 <p className="font-bold">{name}</p>
+                <button onClick={deleteTokenName} className="cursor-pointer">
+                  (Log Out)
+                </button>
+              </div>
             ) : (
               <div className="py-4 flex flex-row  justify-center max-sm:w-1/2 max-sm:justify-end gap-3">
                 <NavLink href="/sign" className="header-navlink-right">
