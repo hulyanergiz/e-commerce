@@ -15,9 +15,11 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "reactstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../store/actions/userActions";
+import Gravatar from "react-gravatar";
 const Header = () => {
+  const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
   const name = JSON.parse(localStorage.getItem("name"));
@@ -119,7 +121,10 @@ const Header = () => {
           <div className="max-sm:order-first sm:order-last flex gap-4  text-[#23A6F0] flex-row lg:justify-between max-lg:justify-start lg:w-[35%] max-lg:w-[85%] max-sm:text-[#737373] text-sm max-sm:text-[30px]">
             {token ? (
               <div className="flex flex-col justify-center">
-                <p className="font-bold">{name}</p>
+                <div className="flex flex-row justify-between gap-x-1">
+                  <Gravatar email={user.email} className="w-4 h-4 rounded" />
+                  <p className="font-bold">{name}</p>
+                </div>
                 <button onClick={deleteTokenName} className="cursor-pointer">
                   (Log Out)
                 </button>
