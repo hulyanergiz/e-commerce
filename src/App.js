@@ -2,33 +2,33 @@ import "./App.css";
 import Header from "./layouts/Header";
 import PageContent from "./layouts/PageContent";
 import Footer from "./layouts/Footer";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AxiosInstance, renewAxiosInstance } from "./api/api";
-import { setUser } from "./store/actions/userActions";
+import { setUserSuccess } from "./store/actions/userActions";
 import { useEffect } from "react";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useHistory } from "react-router-dom";
 
 function App() {
   const { user } = useSelector((store) => store.user.user);
-  const tokenExist = localStorage.getItem("token");
+  const dispatch = useDispatch();
   const history = useHistory();
+  const [token, setToken] = useLocalStorage("token", "");
 
   useEffect(() => {
-    if (tokenExist) {
+    if (token) {
       AxiosInstance.get("/verify")
         .then((res) => {
           console.log("verify", res);
-          const userData = res.data;
-          dispatch(setUser(userData));
-          renewAxiosInstance();
-          history.push("/");
+          dispatch(setUserSuccess(res.data));
         })
         .catch((err) => {
           console.error("verify", err);
           localStorage.removeItem("token");
           renewAxiosInstance();
         });
+    } else {
+      history.push("/login");
     }
   }, []);
 
