@@ -122,7 +122,10 @@ const Header = () => {
             {token ? (
               <div className="flex flex-col justify-center">
                 <div className="flex flex-row justify-between gap-x-1">
-                  <Gravatar email={user.email} className="w-4 h-4 rounded" />
+                  <Gravatar
+                    email={user.email}
+                    className="w-6 h-6 rounded-full"
+                  />
                   <p className="font-bold">{name}</p>
                 </div>
                 <button onClick={deleteTokenName} className="cursor-pointer">
