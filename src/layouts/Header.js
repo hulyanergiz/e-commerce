@@ -134,7 +134,7 @@ const Header = () => {
               </div>
             ) : (
               <div className="py-4 flex flex-row  justify-center max-sm:w-1/2 max-sm:justify-end gap-3">
-                <NavLink href="/sign" className="header-navlink-right">
+                <NavLink href="/login" className="header-navlink-right">
                   <FontAwesomeIcon
                     icon={faUser}
                     className="header-navlink-right pt-1 max-sm:text-[#737373] "
