@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./layouts/Header";
 import PageContent from "./layouts/PageContent";
 import Footer from "./layouts/Footer";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { AxiosInstance, renewAxiosInstance } from "./api/api";
 import { setUser } from "./store/actions/userActions";
@@ -9,7 +10,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 function App() {
-  const dispatch = useDispatch();
+  const { user } = useSelector((store) => store.user.user);
   const tokenExist = localStorage.getItem("token");
   const history = useHistory();
 
