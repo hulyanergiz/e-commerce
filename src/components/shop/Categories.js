@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import CategoryCard from "./CategoryCard";
+import { NavLink } from "reactstrap";
 
 const Categories = () => {
   const categories = useSelector((store) => store.global.categories);
@@ -9,7 +10,18 @@ const Categories = () => {
   return (
     <div className="flex lg:flex-row w-[73%] m-auto  gap-x-3.5 pb-12 max-lg:flex-col max-lg:gap-y-2 md:max-lg:w-[50%]">
       {sortedCategories.map((item, i) => {
-        return <CategoryCard data={item} key={i} />;
+        return (
+          <div className="w-[19%]">
+            <NavLink
+              href={`/shopping/:${
+                item.gender === "k" ? "kadin" : "erkek"
+              }/:${item.code.slice(2)}`}
+              className="h-full"
+            >
+              <CategoryCard data={item} key={i} />
+            </NavLink>
+          </div>
+        );
       })}
     </div>
   );
