@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../store/actions/userActions";
 import { PulseLoader } from "react-spinners";
+import { NavLink } from "reactstrap";
 
 const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
 
@@ -109,6 +110,12 @@ const Login = () => {
             </button>
           </>
         )}
+      </div>
+      <div className="text-2xl flex flex-row gap-2">
+        <p>To create a new account:</p>
+        <span className="text-[#23A6F0]">
+          <NavLink href="/signup">Click Here</NavLink>
+        </span>
       </div>
     </form>
   );
