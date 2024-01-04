@@ -1,7 +1,7 @@
 const CategoryCard = (props) => {
   const { title, img, gender } = props.data;
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full h-full flex justify-center items-center cursor-pointer">
       <img src={img} alt="cloths" className="flex relative w-full h-full" />
 
       <div className="flex flex-col absolute tracking-wide">
