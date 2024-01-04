@@ -9,8 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ShopPagination from "../components/shop/ShopPagination";
 import BrandsInShop from "../components/shop/BrandsInShop";
+import { useSelector } from "react-redux";
 
 const Shop = () => {
+  const categories = useSelector((store) => store.global.categories);
   return (
     <div>
       <div className="w-full bg-[#FAFAFA]">

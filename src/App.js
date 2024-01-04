@@ -8,6 +8,7 @@ import { setUserSuccess } from "./store/actions/userActions";
 import { useEffect } from "react";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useHistory } from "react-router-dom";
+import { setCategories } from "./store/actions/globalActions";
 
 function App() {
   const { user } = useSelector((store) => store.user.user);
@@ -30,6 +31,7 @@ function App() {
     } else {
       history.push("/login");
     }
+    dispatch(setCategories());
   }, []);
 
   return (
