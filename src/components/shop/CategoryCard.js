@@ -1,11 +1,11 @@
 const CategoryCard = (props) => {
-  const { image, title, amount } = props.data;
+  const { title, img } = props.data;
   return (
     <div className="w-full flex justify-center items-center">
-      <img src={image} alt="cloths" className="flex relative w-full" />
+      <img src={img} alt="cloths" className="flex relative w-full" />
       <div className="flex flex-col absolute tracking-wide">
         <p className="text-base text-white font-bold -mb-2">{title}</p>
-        <p className="text-sm text-white">{amount} Items</p>
+        <p className="text-sm text-white">5 Items</p>
       </div>
     </div>
   );
