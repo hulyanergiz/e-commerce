@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 
 const Shop = () => {
   const categories = useSelector((store) => store.global.categories);
+  const productList = useSelector((store) => store.product.productList);
   return (
     <div>
       <div className="w-full bg-[#FAFAFA]">

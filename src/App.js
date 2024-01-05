@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useHistory } from "react-router-dom";
 import { setCategories } from "./store/actions/globalActions";
+import { setProductList } from "./store/actions/productActions";
 
 function App() {
   const { user } = useSelector((store) => store.user.user);
@@ -32,6 +33,7 @@ function App() {
       history.push("/login");
     }
     dispatch(setCategories());
+    dispatch(setProductList());
   }, []);
 
   return (
