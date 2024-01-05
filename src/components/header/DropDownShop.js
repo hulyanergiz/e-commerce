@@ -34,7 +34,12 @@ const DropDownShop = () => {
         isOpen={dropdownOpen}
         toggle={() => setDropdownOpen(!dropdownOpen)}
       >
-        <DropdownToggle caret>Shop</DropdownToggle>
+        <DropdownToggle
+          caret
+          style={{ backgroundColor: "white", color: "#737373", border: "none" }}
+        >
+          Shop
+        </DropdownToggle>
         <DropdownMenu>
           <div className="flex flex-row">
             <div className="flex flex-col">
