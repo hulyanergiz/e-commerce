@@ -18,6 +18,7 @@ import { NavLink } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../store/actions/userActions";
 import Gravatar from "react-gravatar";
+import DropDownShop from "../components/header/DropDownShop";
 const Header = () => {
   const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
@@ -88,14 +89,17 @@ const Header = () => {
                 Home
               </NavLink>
             </div>
-            <div className="py-4 flex flex-row justify-center">
-              <NavLink href="/shop" className="header-navlink-left">
+            <div className="py-4 flex flex-row justify-center items-start">
+              {/* <NavLink href="/shop" className="header-navlink-left">
                 Shop
-              </NavLink>
-              <FontAwesomeIcon
+              </NavLink> */}
+              <div className="flex -mt-14 -mx-8">
+                <DropDownShop />
+              </div>
+              {/* <FontAwesomeIcon
                 icon={faChevronDown}
                 className="pl-3 text-[#737373] max-sm:text-xl"
-              />
+              /> */}
             </div>
             <div className="py-4">
               <NavLink href="/about" className="header-navlink-left">
