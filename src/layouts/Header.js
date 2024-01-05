@@ -93,7 +93,7 @@ const Header = () => {
               {/* <NavLink href="/shop" className="header-navlink-left">
                 Shop
               </NavLink> */}
-              <div className="flex -mt-14 -mx-8">
+              <div className="flex -mt-[7px]">
                 <DropDownShop />
               </div>
               {/* <FontAwesomeIcon

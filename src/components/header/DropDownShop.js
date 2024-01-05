@@ -29,21 +29,29 @@ const DropDownShop = () => {
   );
   const [dropdownOpen, setDropdownOpen] = useState(false);
   return (
-    <div className="flex p-5">
+    <div className="flex">
       <Dropdown
         isOpen={dropdownOpen}
         toggle={() => setDropdownOpen(!dropdownOpen)}
       >
         <DropdownToggle
           caret
-          style={{ backgroundColor: "white", color: "#737373", border: "none" }}
+          style={{
+            backgroundColor: "white",
+            color: "#737373",
+            fontWeight: "bold",
+            fontSize: "14px",
+            border: "none",
+          }}
         >
           Shop
         </DropdownToggle>
         <DropdownMenu>
           <div className="flex flex-row">
             <div className="flex flex-col">
-              <DropdownItem header>KADIN</DropdownItem>
+              <DropdownItem header className="ml-2">
+                KADIN
+              </DropdownItem>
               {categoriesWomen.map((category, i) => {
                 return (
                   <NavLink
@@ -51,7 +59,7 @@ const DropDownShop = () => {
                     href={`/shopping/:${
                       category.gender === "k" ? "kadin" : "erkek"
                     }/:${category.code.slice(2)}`}
-                    className="h-full"
+                    className="p-2"
                   >
                     <DropdownItem>{category.title}</DropdownItem>
                   </NavLink>
@@ -59,7 +67,9 @@ const DropDownShop = () => {
               })}
             </div>
             <div className="flex flex-col">
-              <DropdownItem header>ERKEK</DropdownItem>
+              <DropdownItem header className="ml-2">
+                ERKEK
+              </DropdownItem>
               {categoriesMen.map((category, i) => {
                 return (
                   <NavLink
@@ -67,7 +77,7 @@ const DropDownShop = () => {
                     href={`/shopping/:${
                       category.gender === "k" ? "kadin" : "erkek"
                     }/:${category.code.slice(2)}`}
-                    className="h-full"
+                    className="p-2"
                   >
                     <DropdownItem>{category.title}</DropdownItem>
                   </NavLink>
