@@ -6,11 +6,14 @@ const Products = () => {
   const productList = useSelector((store) => store.product.productList);
 
   return (
-    <div className="flex md:flex-row max-md:flex-col justify-between md:flex-wrap md:w-[73%] m-auto gap-x-3 py-6">
-      {data.shop.productCards.map((item, i) => {
+    <div className="flex sm:flex-row max-sm:flex-col justify-between md:flex-wrap md:w-[73%] mx-auto gap-x-3 py-6">
+      {productList.products.map((item, i) => {
         return (
-          <div className="flex md:m-auto max-sm:w-full">
-            <ProductCard data={item} key={i} />
+          <div
+            key={i}
+            className="flex flex-row items-start md:m-auto w-[24%] sm:max-h-[675px] max-sm:w-full"
+          >
+            <ProductCard data={item} />
           </div>
         );
       })}
