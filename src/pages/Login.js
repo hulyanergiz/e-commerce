@@ -1,4 +1,4 @@
-import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -72,7 +72,7 @@ const Login = () => {
               {togglePass1 ? (
                 <FontAwesomeIcon
                   size="xl"
-                  icon={faLock}
+                  icon={faEyeSlash}
                   onClick={() => setTogglePass1(!togglePass1)}
                 />
               ) : (

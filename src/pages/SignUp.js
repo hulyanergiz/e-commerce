@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { AxiosInstance } from "../api/api";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { PulseLoader } from "react-spinners";
@@ -64,7 +64,7 @@ const SignUp = () => {
           "You need to click link in email to activate your account!"
         );
         setTimeout(() => {
-          history.go(-1);
+          history.push("/login");
         }, 2000);
       })
       .catch((err) => {
@@ -138,7 +138,7 @@ const SignUp = () => {
               {togglePass1 ? (
                 <FontAwesomeIcon
                   size="xl"
-                  icon={faLock}
+                  icon={faEyeSlash}
                   onClick={() => setTogglePass1(!togglePass1)}
                 />
               ) : (
@@ -170,7 +170,7 @@ const SignUp = () => {
               {togglePass2 ? (
                 <FontAwesomeIcon
                   size="xl"
-                  icon={faLock}
+                  icon={faEyeSlash}
                   onClick={() => setTogglePass2(!togglePass2)}
                 />
               ) : (
