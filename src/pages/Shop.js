@@ -34,7 +34,7 @@ const Shop = () => {
       </div>
       <div className="flex lg:flex-row max-lg:flex-col justify-between w-[73%] py-6 m-auto items-center max-lg:gap-y-2">
         <p className="text-sm text-[#737373] font-bold pt-3">
-          Showing all 12 results
+          Showing all {productList.products?.length} results
         </p>
         <div className="flex flex-row gap-4">
           <p className="flex self-center pt-3 text-sm font-bold text-[#737373]">
