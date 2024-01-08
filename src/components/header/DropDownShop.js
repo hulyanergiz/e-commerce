@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import {
   Dropdown,
   DropdownToggle,
@@ -10,26 +11,18 @@ import {
 
 const DropDownShop = () => {
   const categories = useSelector((store) => store.global.categories);
-  console.log("categorşes", categories);
-  const sortedAllCategories = categories.sort((a, b) => a.gender - b.gender);
-  console.log("SORTED ALL", sortedAllCategories);
-  let categoriesWomen = [];
-  let categoriesMen = [];
-  let firstManCategoryIndex = 0;
-  for (let i = 0; i < sortedAllCategories.length; i++) {
-    if (sortedAllCategories[i].gender === "e") {
-      firstManCategoryIndex = i;
-      break;
-    }
-  }
-  categoriesWomen = sortedAllCategories.slice(0, firstManCategoryIndex);
-  categoriesMen = sortedAllCategories.slice(
-    firstManCategoryIndex,
-    categories.length
-  );
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const history = useHistory();
+  console.log("categories", categories);
+  const categoriesWomen = categories.filter(
+    (category) => category.gender === "k"
+  );
+  const categoriesMen = categories.filter(
+    (category) => category.gender === "e"
+  );
+
   return (
-    <div className="flex">
+    <div className="flex" onClick={() => history.push("/shop")}>
       <Dropdown
         isOpen={dropdownOpen}
         toggle={() => setDropdownOpen(!dropdownOpen)}
