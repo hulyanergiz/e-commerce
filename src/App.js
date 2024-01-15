@@ -21,16 +21,15 @@ function App() {
     if (token) {
       AxiosInstance.get("/verify")
         .then((res) => {
-          console.log("verify", res);
+          console.log("verify", res.data);
           dispatch(setUserSuccess(res.data));
         })
         .catch((err) => {
           console.error("verify", err);
           localStorage.removeItem("token");
+          localStorage.removeItem("name");
           renewAxiosInstance();
         });
-    } else {
-      history.push("/login");
     }
     dispatch(setCategories());
     dispatch(setProductList());
