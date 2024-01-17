@@ -9,11 +9,51 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ShopPagination from "../components/shop/ShopPagination";
 import BrandsInShop from "../components/shop/BrandsInShop";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { setProductList } from "../store/actions/productActions";
 
 const Shop = () => {
+  const dispatch = useDispatch();
   const categories = useSelector((store) => store.global.categories);
   const productList = useSelector((store) => store.product.productList);
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const urlFilter = queryParams.get("filter") || "";
+  const urlSort = queryParams.get("sort") || "";
+  const [sort, setSort] = useState(urlSort);
+  const [filter, setFilter] = useState(urlFilter);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(setProductList(filter, sort));
+    if (filter) {
+      queryParams.set("filter", filter);
+      productList?.products?.filter((item) =>
+        item.description.toLowerCase().includes(filter)
+      );
+    }
+    if (sort) {
+      queryParams.set("sort", sort);
+      if (sort === "rating:asc") {
+        console.log("rating:asc");
+        productList?.products?.sort((a, b) => a.rating - b.rating);
+      } else if (sort === "rating:desc") {
+        console.log("rating:desc");
+        productList?.product?.sort((a, b) => b.rating - a.rating);
+      } else if (sort === "price:asc") {
+        console.log("price:asc");
+        productList?.product?.sort((a, b) => a.price - b.price);
+      } else if (sort === "price:desc") {
+        console.log("price:desc");
+        productList?.product?.sort((a, b) => b.price - a.price);
+      }
+    }
+    const queryParamsStr = queryParams.toString();
+    const urlToGo = `?${queryParamsStr ? `${queryParamsStr}` : ""}`;
+    window.history.pushState(productList, "", urlToGo);
+  };
+
   return (
     <div>
       <div className="w-full bg-[#FAFAFA]">
@@ -50,16 +90,36 @@ const Shop = () => {
           />
         </div>
         <div className="flex flex-row gap-x-4 justify-between">
-          <button className="text-[#737373] tracking-wider bg-[#F9F9F9] py-3 px-3 border-solid border-[#DDD] rounded-[5px] w-[141px]">
-            Popularity
-            <FontAwesomeIcon icon={faChevronDown} className="pl-2" />
-          </button>
-          <button className="text-white font-bold tracking-wider bg-[#23A6F0] py-3 px-3 rounded-[5px] w-[94px]">
-            Filter
-          </button>
+          <form onSubmit={submitHandler}>
+            <select
+              value={sort}
+              onChange={(e) => setSort(e.target.value)}
+              className="text-[#737373] tracking-wider bg-[#F9F9F9] py-3 px-3 border-solid border-[#DDD] rounded-[5px] w-[230px]"
+            >
+              <option value="">Order By</option>
+              <option value="rating:asc">Popularity: low to high</option>
+              <option value="rating:desc">Popularity: high to low</option>
+              <option value="price:asc">Price: low to high</option>
+              <option value="price:desc">Price: high to low</option>
+            </select>
+            {/* <FontAwesomeIcon icon={faChevronDown} className="pl-2" /> */}
+            <input
+              type="text"
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              placeholder="Type to search"
+              className="py-3 px-3 border-solid  border-[#737373] rounded-[5px] w-[230px]"
+            />
+            <button
+              type="submit"
+              className="text-white font-bold tracking-wider bg-[#23A6F0] py-3 px-3 rounded-[5px] w-[94px]"
+            >
+              Filter
+            </button>
+          </form>
         </div>
       </div>
-      <Products />
+      <Products filter={filter} sort={sort} />
       <ShopPagination />
       <BrandsInShop />
     </div>
