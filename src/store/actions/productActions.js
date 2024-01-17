@@ -6,8 +6,10 @@ export const SET_PAGE_COUNT = "SET_PAGE_COUNT";
 export const SET_ACTIVE_PAGE = "SET_ACTIVE_PAGE";
 export const SET_FETCH_STATE = "SET_FETCH_STATE";
 
-export const setProductList = () => (dispatch) => {
-  return AxiosInstance.get("/products")
+export const setProductList = (filter, sort) => (dispatch) => {
+  return AxiosInstance.get("/products", {
+    params: { filter: filter, sort: sort },
+  })
     .then((res) => {
       dispatch({
         type: SET_PRODUCT_LIST,
