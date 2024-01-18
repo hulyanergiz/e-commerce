@@ -7,17 +7,23 @@ export const SET_ACTIVE_PAGE = "SET_ACTIVE_PAGE";
 export const SET_FETCH_STATE = "SET_FETCH_STATE";
 
 export const setProductList = (filter, sort) => (dispatch) => {
+  dispatch(setFetchState("fetching"));
   return AxiosInstance.get("/products", {
     params: { filter: filter, sort: sort },
   })
     .then((res) => {
-      dispatch({
-        type: SET_PRODUCT_LIST,
-        payload: res.data,
-      });
+      setTimeout(() => {
+        dispatch(setFetchState("fetched"));
+
+        dispatch({
+          type: SET_PRODUCT_LIST,
+          payload: res.data,
+        });
+      }, 1000);
     })
     .catch((err) => {
       console.log("products error", err);
+      dispatch(setFetchState("fetch failed"));
     });
 };
 export const setTotalProductCount = (totalProductCount) => ({
