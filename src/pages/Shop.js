@@ -12,11 +12,12 @@ import BrandsInShop from "../components/shop/BrandsInShop";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { setProductList } from "../store/actions/productActions";
+import { PulseLoader } from "react-spinners";
 
 const Shop = () => {
   const dispatch = useDispatch();
   const categories = useSelector((store) => store.global.categories);
-  const productList = useSelector((store) => store.product.productList);
+  const { fetchState, productList } = useSelector((store) => store.product);
 
   const queryParams = new URLSearchParams(window.location.search);
   const urlFilter = queryParams.get("filter") || "";
@@ -119,7 +120,9 @@ const Shop = () => {
           </form>
         </div>
       </div>
-      <Products filter={filter} sort={sort} />
+      {fetchState === "fetching" && <PulseLoader />}
+      {fetchState === "fetched" && <Products />}
+
       <ShopPagination />
       <BrandsInShop />
     </div>
