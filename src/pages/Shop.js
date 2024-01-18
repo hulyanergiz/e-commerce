@@ -10,7 +10,7 @@ import {
 import ShopPagination from "../components/shop/ShopPagination";
 import BrandsInShop from "../components/shop/BrandsInShop";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { setProductList } from "../store/actions/productActions";
 import { PulseLoader } from "react-spinners";
 
@@ -30,25 +30,9 @@ const Shop = () => {
     dispatch(setProductList(filter, sort));
     if (filter) {
       queryParams.set("filter", filter);
-      productList?.products?.filter((item) =>
-        item.description.toLowerCase().includes(filter)
-      );
     }
     if (sort) {
       queryParams.set("sort", sort);
-      if (sort === "rating:asc") {
-        console.log("rating:asc");
-        productList?.products?.sort((a, b) => a.rating - b.rating);
-      } else if (sort === "rating:desc") {
-        console.log("rating:desc");
-        productList?.product?.sort((a, b) => b.rating - a.rating);
-      } else if (sort === "price:asc") {
-        console.log("price:asc");
-        productList?.product?.sort((a, b) => a.price - b.price);
-      } else if (sort === "price:desc") {
-        console.log("price:desc");
-        productList?.product?.sort((a, b) => b.price - a.price);
-      }
     }
     const queryParamsStr = queryParams.toString();
     const urlToGo = `?${queryParamsStr ? `${queryParamsStr}` : ""}`;
