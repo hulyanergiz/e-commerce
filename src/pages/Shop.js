@@ -81,13 +81,15 @@ const Shop = () => {
               onChange={(e) => setSort(e.target.value)}
               className="text-[#737373] tracking-wider bg-[#F9F9F9] py-3 px-3 border-solid border-[#DDD] rounded-[5px] w-[230px]"
             >
-              <option value="">Order By</option>
+              <option value="">
+                Order By
+                <FontAwesomeIcon icon={faChevronDown} className="pr-2" />
+              </option>
               <option value="rating:asc">Popularity: low to high</option>
               <option value="rating:desc">Popularity: high to low</option>
               <option value="price:asc">Price: low to high</option>
               <option value="price:desc">Price: high to low</option>
             </select>
-            {/* <FontAwesomeIcon icon={faChevronDown} className="pl-2" /> */}
             <input
               type="text"
               value={filter}
