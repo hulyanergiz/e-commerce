@@ -17,7 +17,10 @@ const initialState = {
 export const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PRODUCT_LIST:
-      return { ...state, productList: action.payload };
+      return {
+        ...state,
+        productList: [...state.productList, ...action.payload],
+      };
     case SET_TOTAL_PRODUCT_COUNT:
       return { ...state, totalProductCount: action.payload };
     case SET_PAGE_COUNT:

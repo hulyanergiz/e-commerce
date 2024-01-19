@@ -11,23 +11,38 @@ import ShopPagination from "../components/shop/ShopPagination";
 import BrandsInShop from "../components/shop/BrandsInShop";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { setProductList } from "../store/actions/productActions";
+import {
+  setProductList,
+  setTotalProductCount,
+} from "../store/actions/productActions";
 import { PulseLoader } from "react-spinners";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Shop = () => {
   const dispatch = useDispatch();
   const categories = useSelector((store) => store.global.categories);
-  const { fetchState, productList } = useSelector((store) => store.product);
+  const { fetchState, productList, totalProductCount } = useSelector(
+    (store) => store.product
+  );
+
+  console.log("productList!!", productList);
 
   const queryParams = new URLSearchParams(window.location.search);
   const urlFilter = queryParams.get("filter") || "";
   const urlSort = queryParams.get("sort") || "";
   const [sort, setSort] = useState(urlSort);
   const [filter, setFilter] = useState(urlFilter);
+  const [limit, setLimit] = useState(24);
+  const [offset, setOffset] = useState(0);
+  const lastOffset = offset + limit;
+  const moreProducts = () => {
+    setOffset(lastOffset);
+    dispatch(setProductList(filter, sort, limit, lastOffset));
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(setProductList(filter, sort));
+    dispatch(setProductList(filter, sort, limit, offset));
     if (filter) {
       queryParams.set("filter", filter);
     }
@@ -59,7 +74,7 @@ const Shop = () => {
       </div>
       <div className="flex lg:flex-row max-lg:flex-col justify-between w-[73%] py-6 m-auto items-center max-lg:gap-y-2">
         <p className="text-sm text-[#737373] font-bold pt-3">
-          Showing all {productList.products?.length} results
+          Showing all {lastOffset} results
         </p>
         <div className="flex flex-row gap-4">
           <p className="flex self-center pt-3 text-sm font-bold text-[#737373]">
@@ -106,8 +121,19 @@ const Shop = () => {
           </form>
         </div>
       </div>
+
       {fetchState === "fetching" && <PulseLoader />}
-      {fetchState === "fetched" && <Products />}
+
+      {fetchState === "fetched" && (
+        <InfiniteScroll
+          dataLength={lastOffset}
+          next={moreProducts}
+          hasMore={totalProductCount > lastOffset}
+        >
+          {" "}
+          <Products />
+        </InfiniteScroll>
+      )}
 
       <ShopPagination />
       <BrandsInShop />

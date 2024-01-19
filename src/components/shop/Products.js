@@ -7,7 +7,7 @@ const Products = () => {
 
   return (
     <div className="flex sm:flex-row max-sm:flex-col justify-between md:flex-wrap md:w-[73%] mx-auto gap-x-3 py-6">
-      {productList?.products?.map((item, i) => {
+      {productList?.map((item, i) => {
         return (
           <div
             key={i}
