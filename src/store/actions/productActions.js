@@ -5,6 +5,7 @@ export const SET_TOTAL_PRODUCT_COUNT = "SET_TOTAL_PRODUCT_COUNT";
 export const SET_PAGE_COUNT = "SET_PAGE_COUNT";
 export const SET_ACTIVE_PAGE = "SET_ACTIVE_PAGE";
 export const SET_FETCH_STATE = "SET_FETCH_STATE";
+export const DEFAULT_PRODUCT_LIST = "DEFAULT_PRODUCT_LIST";
 
 export const setProductList =
   (filter, sort, limit = 24, offset = 0) =>
@@ -21,6 +22,8 @@ export const setProductList =
             type: SET_PRODUCT_LIST,
             payload: res.data.products,
           });
+          dispatch(setTotalProductCount(res.data.total));
+          dispatch(setFetchState("fetched"));
         }, 1000);
       })
       .catch((err) => {
@@ -28,6 +31,9 @@ export const setProductList =
         dispatch(setFetchState("fetch failed"));
       });
   };
+export const defaultProductList = () => ({
+  type: DEFAULT_PRODUCT_LIST,
+});
 export const setTotalProductCount = (totalProductCount) => ({
   type: SET_TOTAL_PRODUCT_COUNT,
   payload: totalProductCount,

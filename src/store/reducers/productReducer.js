@@ -1,4 +1,5 @@
 import {
+  DEFAULT_PRODUCT_LIST,
   SET_ACTIVE_PAGE,
   SET_FETCH_STATE,
   SET_PAGE_COUNT,
@@ -20,6 +21,11 @@ export const productReducer = (state = initialState, action) => {
       return {
         ...state,
         productList: [...state.productList, ...action.payload],
+      };
+    case DEFAULT_PRODUCT_LIST:
+      return {
+        ...state,
+        productList: [],
       };
     case SET_TOTAL_PRODUCT_COUNT:
       return { ...state, totalProductCount: action.payload };
