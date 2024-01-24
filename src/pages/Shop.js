@@ -12,6 +12,7 @@ import BrandsInShop from "../components/shop/BrandsInShop";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {
+  defaultProductList,
   setProductList,
   setTotalProductCount,
 } from "../store/actions/productActions";
@@ -42,13 +43,15 @@ const Shop = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(setProductList(filter, sort, limit, offset));
+    dispatch(defaultProductList());
     if (filter) {
       queryParams.set("filter", filter);
     }
     if (sort) {
       queryParams.set("sort", sort);
     }
+
+    dispatch(setProductList(filter, sort, limit, 0));
     const queryParamsStr = queryParams.toString();
     const urlToGo = `?${queryParamsStr ? `${queryParamsStr}` : ""}`;
     window.history.pushState(productList, "", urlToGo);
