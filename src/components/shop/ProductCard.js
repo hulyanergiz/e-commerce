@@ -14,7 +14,7 @@ const ProductCard = (props) => {
   return (
     <div className="w-full h-full flex flex-col justify-between items-center py-6">
       <img src={images[0].url} alt="product" className="max-sm:w-[73%]" />
-      <div className="flex flex-col items-center justify-start pt-6 px-6 pb-9 w-[73%] h-50">
+      <div className="flex flex-col items-center justify-start pt-6 px-6 pb-9 w-[73%] h-72">
         <p className="text-[#252B42] text-base font-bold">{name}</p>
         <p className="text-[#737373] text-sm font-bold ">{description}</p>
         <p className="text-[#BDBDBD] text-base font-bold">
