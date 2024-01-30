@@ -8,16 +8,19 @@ export const SET_FETCH_STATE = "SET_FETCH_STATE";
 export const DEFAULT_PRODUCT_LIST = "DEFAULT_PRODUCT_LIST";
 
 export const setProductList =
-  (filter, sort, limit = 24, offset = 0) =>
-  (dispatch) => {
+  (category, filter, sort, limit, offset) => (dispatch) => {
     dispatch(setFetchState("fetching"));
     return AxiosInstance.get("/products", {
-      params: { filter: filter, sort: sort, limit: limit, offset: offset },
+      params: {
+        category: category,
+        filter: filter,
+        sort: sort,
+        limit: limit,
+        offset: offset,
+      },
     })
       .then((res) => {
         setTimeout(() => {
-          dispatch(setFetchState("fetched"));
-          dispatch(setTotalProductCount(res.data.total));
           dispatch({
             type: SET_PRODUCT_LIST,
             payload: res.data.products,

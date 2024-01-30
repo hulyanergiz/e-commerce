@@ -10,14 +10,14 @@ import {
 import ShopPagination from "../components/shop/ShopPagination";
 import BrandsInShop from "../components/shop/BrandsInShop";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   defaultProductList,
   setProductList,
-  setTotalProductCount,
 } from "../store/actions/productActions";
 import { PulseLoader } from "react-spinners";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useParams } from "react-router-dom";
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -29,6 +29,7 @@ const Shop = () => {
   console.log("productList!!", productList);
 
   const queryParams = new URLSearchParams(window.location.search);
+  const { category } = useParams();
   const urlFilter = queryParams.get("filter") || "";
   const urlSort = queryParams.get("sort") || "";
   const [sort, setSort] = useState(urlSort);
@@ -38,7 +39,7 @@ const Shop = () => {
   const lastOffset = offset + limit;
   const moreProducts = () => {
     setOffset(lastOffset);
-    dispatch(setProductList(filter, sort, limit, lastOffset));
+    dispatch(setProductList(category, filter, sort, limit, lastOffset));
   };
 
   const submitHandler = (e) => {
@@ -51,11 +52,15 @@ const Shop = () => {
       queryParams.set("sort", sort);
     }
 
-    dispatch(setProductList(filter, sort, limit, 0));
+    dispatch(setProductList(category, filter, sort, limit, 0));
     const queryParamsStr = queryParams.toString();
     const urlToGo = `?${queryParamsStr ? `${queryParamsStr}` : ""}`;
     window.history.pushState(productList, "", urlToGo);
   };
+
+  useEffect(() => {
+    dispatch(setProductList(category, urlFilter, urlSort, limit, lastOffset));
+  }, [category]);
 
   return (
     <div>
@@ -132,6 +137,7 @@ const Shop = () => {
           dataLength={productList.length}
           next={moreProducts}
           hasMore={totalProductCount > productList.length}
+          height={2000}
         >
           {" "}
           <Products />
