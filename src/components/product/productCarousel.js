@@ -9,7 +9,8 @@ import {
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ProductCarousel = () => {
+const ProductCarousel = (props) => {
+  const product = props;
   return (
     <div className="w-full flex justify-center">
       <div className="w-[73%] flex flex-row items-stretch gap-x-8">
@@ -22,10 +23,10 @@ const ProductCarousel = () => {
             infiniteLoop={true}
             swipeable={true}
           >
-            {data.productSlider.map((slide, i) => {
+            {product?.product[0]?.images?.map((slide, i) => {
               return (
                 <img
-                  src={slide}
+                  src={slide.url}
                   key={i}
                   alt="collection"
                   className=" object-cover"
@@ -35,7 +36,9 @@ const ProductCarousel = () => {
           </Carousel>
         </div>
         <div className="flex flex-col text-start tracking-wide w-1/2 gap-y-2">
-          <h2 className="text-xl tracking-wider pt-2">Floating Phone</h2>
+          <h2 className="text-xl tracking-wider pt-2">
+            {product?.product[0]?.name}
+          </h2>
           <div className="flex flex-row gap-x-[5px]">
             <FontAwesomeIcon
               icon={faStar}
@@ -67,14 +70,14 @@ const ProductCarousel = () => {
             </p>
           </div>
 
-          <h1 className="text-2xl font-bold tracking-wide">$1,139.33</h1>
+          <h1 className="text-2xl font-bold tracking-wide">
+            ${product?.product[0]?.price}
+          </h1>
           <p className="text-sm font-bold tracking-wider">
             Availability : <span className="text-[#23A6F0]">In Stock </span>
           </p>
           <p className="text-[#858585] text-sm tracking-wider">
-            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-            RELIT official consequent door ENIM RELIT Mollie. Excitation venial
-            consequent sent nostrum met.
+            {product?.product[0]?.description}
           </p>
           <hr />
           <div className="flex flex-row gap-x-1.5">
