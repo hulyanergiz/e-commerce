@@ -8,6 +8,7 @@ import ProductNavigation from "../components/product/productNavigation";
 import ProductDetails from "../components/product/ProductDetails";
 import ProductBestsellers from "../components/product/productBestsellers";
 import BrandsInShop from "../components/shop/BrandsInShop";
+import { NavLink } from "reactstrap";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../store/actions/productActions";
@@ -26,7 +27,16 @@ const Product = () => {
   return (
     <>
       <div className="bg-[#FAFAFA] flex flex-col">
-        <div className="w-[73%] flex m-auto py-6">
+        <div className="w-[73%] flex flex-row justify-between m-auto py-6">
+          <NavLink href={"/shop"}>
+            <div className="flex flex-row gap-x-4">
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                className="text-[#BDBDBD] pt-1"
+              />
+              <p className="text-[#BDBDBD]">Back</p>
+            </div>
+          </NavLink>
           <div className="flex flex-row gap-x-4  justify-start">
             <p>Home</p>
             <FontAwesomeIcon
