@@ -20,9 +20,10 @@ const PageContent = () => {
         <Route exact path="/shop">
           <Shop />
         </Route>
-        <Route exact path="/product">
+        <Route exact path="/shop/:category/:productId/:productNameSlug">
           <Product />
         </Route>
+
         <Route exact path="/about">
           <AboutUs />
         </Route>
