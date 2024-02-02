@@ -32,6 +32,11 @@ const ProductCard = (props) => {
           </div>
         </div>
       </NavLink>
+      <div>
+        <button className="text-white font-bold tracking-wider bg-[#23A6F0] py-3 px-1 rounded-[5px] w-36">
+          Add To Cart
+        </button>
+      </div>
     </div>
   );
 };
