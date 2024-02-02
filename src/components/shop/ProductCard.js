@@ -29,13 +29,7 @@ const ProductCard = (props) => {
                 {rating}
               </span>
             </p>
-
-          {/* <div className="flex flex-row gap-x-1.5">
-          <div className={colors[0]}></div>
-          <div className={colors[1]}></div>
-          <div className={colors[2]}></div>
-          <div className={colors[3]}></div>
-        </div> */}
+          </div>
         </div>
       </NavLink>
     </div>
