@@ -1,6 +1,61 @@
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "reactstrap";
 const ShoppingCartDropDown = () => {
+  const cart = useSelector((store) => store.shoppingCart.cart);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
+
   return (
     <div>
+      <Dropdown
+        isOpen={dropdownOpen}
+        toggle={() => setDropdownOpen(!dropdownOpen)}
+      >
+        <DropdownToggle
+          style={{
+            backgroundColor: "white",
+            color: "#23A6F0",
+            fontWeight: "bold",
+            fontSize: "14px",
+            border: "none",
+          }}
+        >
+          <div className="flex flex-row mt-3">
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              className="text-[#23A6F0] mt-1"
+            />
+          </div>
+        </DropdownToggle>
+        <DropdownMenu className="w-[500px]">
+          {dropdownOpen && (
+            <>
+
+              <div className="flex flex-col justify-between px-4 gap-y-1">
+                {cart.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-row items-center gap-x-2 border-solid border-2 rounded-sm border-sky-200"
+                  >
+                    <img src={item.images[0].url} className="w-24 py-1 pl-2" />
+                    <div className="flex flex-col justify-between py-[6px]">
+                      <p className="text-[#737373]">{item.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </DropdownMenu>
+      </Dropdown>
     </div>
   );
 };
