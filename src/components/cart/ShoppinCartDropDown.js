@@ -7,6 +7,7 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
+  NavLink,
 } from "reactstrap";
 import {
   decreaseItemCount,
@@ -75,12 +76,16 @@ const ShoppingCartDropDown = () => {
                 ))}
               </div>
               <div className="flex flex-row  justify-between px-4 py-1">
+                <NavLink href="/cart">
                   <button className="bg-[#23A6F0] text-white text-xl rounded-md px-3 py-2">
                     Sepete Git
                   </button>
+                </NavLink>
+                <NavLink href="/order">
                   <button className="bg-[#23A6F0] text-white text-xl rounded-md px-3 py-2">
                     Siparişi Tamamla
                   </button>
+                </NavLink>
               </div>
             </>
           )}
