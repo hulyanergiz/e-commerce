@@ -1,5 +1,7 @@
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const INCREASE_ITEM_COUNT = "INCREASE_ITEM_COUNT";
+export const DECREASE_ITEM_COUNT = "DECREASE_ITEM_COUNT";
 export const SET_PAYMENT = "SET_PAYMENT";
 export const SET_ADDRESS = "SET_ADDRESS";
 
