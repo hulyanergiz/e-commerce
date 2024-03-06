@@ -20,6 +20,10 @@ const ShoppingCartDropDown = () => {
   const dispatch = useDispatch();
 
   const totalItemCount = cart.reduce((total, item) => total + item.count, 0);
+  const totalPrice = cart
+    .reduce((total, item) => total + item.price * item.count, 0)
+    .toFixed(2);
+
   return (
     <div>
       <Dropdown
@@ -88,6 +92,12 @@ const ShoppingCartDropDown = () => {
                   </div>
                 ))}
               </div>
+              <p className="text-[#737373] px-4 pt-3">
+                Sepet Toplamı:{" "}
+                <span className="text-[#23A6F0] text-lg font-bold">
+                  {totalPrice} TL
+                </span>{" "}
+              </p>
               <div className="flex flex-row  justify-between px-4 py-1">
                 <NavLink href="/cart">
                   <button className="bg-[#23A6F0] text-white text-xl rounded-md px-3 py-2">
