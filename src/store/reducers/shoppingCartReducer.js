@@ -1,5 +1,6 @@
 import {
   ADD_TO_CART,
+  DECREASE_ITEM_COUNT,
   INCREASE_ITEM_COUNT,
   REMOVE_FROM_CART,
   SET_ADDRESS,
@@ -47,6 +48,24 @@ export const shoppingCartReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: increasedCart,
+      };
+
+    case DECREASE_ITEM_COUNT:
+      const decreasedCart = state.cart
+        .map((item) => {
+          if (item.id === action.payload) {
+            return {
+              ...item,
+              count: item.count - 1,
+            };
+          }
+          return item;
+        })
+        .filter((item) => item.count > 0);
+
+      return {
+        ...state,
+        cart: decreasedCart,
       };
 
     case SET_PAYMENT:
