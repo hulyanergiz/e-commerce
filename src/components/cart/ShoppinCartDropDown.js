@@ -74,6 +74,14 @@ const ShoppingCartDropDown = () => {
                   </div>
                 ))}
               </div>
+              <div className="flex flex-row  justify-between px-4 py-1">
+                  <button className="bg-[#23A6F0] text-white text-xl rounded-md px-3 py-2">
+                    Sepete Git
+                  </button>
+                  <button className="bg-[#23A6F0] text-white text-xl rounded-md px-3 py-2">
+                    Siparişi Tamamla
+                  </button>
+              </div>
             </>
           )}
         </DropdownMenu>
