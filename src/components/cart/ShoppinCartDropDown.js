@@ -19,6 +19,7 @@ const ShoppingCartDropDown = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();
 
+  const totalItemCount = cart.reduce((total, item) => total + item.count, 0);
   return (
     <div>
       <Dropdown
@@ -39,11 +40,15 @@ const ShoppingCartDropDown = () => {
               icon={faCartShopping}
               className="text-[#23A6F0] mt-1"
             />
+            <p className="pl-2">{totalItemCount}</p>
           </div>
         </DropdownToggle>
         <DropdownMenu className="w-[500px]">
           {dropdownOpen && (
             <>
+              <DropdownItem header className="ml-2 w-full">
+                SEPETİM - {totalItemCount} ürün
+              </DropdownItem>
 
               <div className="flex flex-col justify-between px-4 gap-y-1">
                 {cart.map((item, index) => (
