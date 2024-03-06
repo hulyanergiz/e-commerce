@@ -2,10 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
   faEnvelope,
-  faChevronDown,
   faUser,
   faSearch,
-  faCartShopping,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -19,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../store/actions/userActions";
 import Gravatar from "react-gravatar";
 import DropDownShop from "../components/header/DropDownShop";
+import ShoppingCartDropDown from "../components/cart/ShoppinCartDropDown";
 const Header = () => {
   const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
@@ -31,6 +30,7 @@ const Header = () => {
     localStorage.removeItem("name");
     dispatch(removeUser());
   };
+
   return (
     <div className="w-full flex flex-col max-sm:bg-[#F6F6F6]">
       <div className="w-full bg-[#252B42] hidden sm:block">
@@ -155,11 +155,7 @@ const Header = () => {
                 <FontAwesomeIcon icon={faSearch} />
               </NavLink>
             </div>
-            <div className="py-4">
-              <NavLink href="#" className="header-navlink-right">
-                <FontAwesomeIcon icon={faCartShopping} />
-              </NavLink>
-            </div>
+            <ShoppingCartDropDown className="w-96" />
             <div className="py-4">
               <NavLink href="#" className="header-navlink-right">
                 <FontAwesomeIcon icon={faHeart} />
