@@ -10,7 +10,18 @@ export const removeFromCart = (productID) => ({
   type: REMOVE_FROM_CART,
   payload: productID,
 });
-export const setPayment = (payment) => ({ type: SET_PAYMENT, paylad: payment });
+export const increaseItemCount = (productId) => ({
+  type: INCREASE_ITEM_COUNT,
+  payload: productId,
+});
+export const decreaseItemCount = (productId) => ({
+  type: DECREASE_ITEM_COUNT,
+  payload: productId,
+});
+export const setPayment = (payment) => ({
+  type: SET_PAYMENT,
+  payload: payment,
+});
 export const setAddress = (address) => ({
   type: SET_ADDRESS,
   payload: address,
