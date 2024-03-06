@@ -76,6 +76,14 @@ const ShoppingCartDropDown = () => {
                           +
                         </button>
                       </div>
+                      <div className="flex flex-row gap-x-2 items-center w-full">
+                        <p className="text-[#23A6F0] font-bold">
+                          {(item.price * item.count).toFixed(2)} TL
+                        </p>
+                        <p className="text-[#737373] text-sm">
+                          (Adet: {item.price.toFixed(2)} TL)
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
