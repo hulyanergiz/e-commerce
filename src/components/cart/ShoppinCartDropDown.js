@@ -8,6 +8,11 @@ import {
   DropdownMenu,
   DropdownToggle,
 } from "reactstrap";
+import {
+  decreaseItemCount,
+  increaseItemCount,
+} from "../../store/actions/shoppingCartActions";
+
 const ShoppingCartDropDown = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -48,6 +53,23 @@ const ShoppingCartDropDown = () => {
                     <img src={item.images[0].url} className="w-24 py-1 pl-2" />
                     <div className="flex flex-col justify-between py-[6px]">
                       <p className="text-[#737373]">{item.name}</p>
+                      <div className="flex flex-row items-center gap-x-2">
+                        <button
+                          onClick={() => dispatch(decreaseItemCount(item.id))}
+                          className="bg-[#23A6F0] text-white text-lg font-bold rounded-md px-3 py-2"
+                        >
+                          -
+                        </button>
+                        <p className="text-[#737373] pt-3 w-16 text-center">
+                          Adet:{item.count}
+                        </p>
+                        <button
+                          onClick={() => dispatch(increaseItemCount(item.id))}
+                          className="bg-[#23A6F0] text-white text-lg font-bold rounded-md px-3 py-2"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
