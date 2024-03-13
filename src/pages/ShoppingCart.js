@@ -1,4 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
+import {
+  decreaseItemCount,
+  increaseItemCount,
+} from "../store/actions/shoppingCartActions";
 const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
@@ -21,6 +25,23 @@ const ShoppingCart = () => {
                     <strong>39 dakika</strong> içinde sipariş verirsen{" "}
                     <strong>en geç yarın</strong> kargoda!
                   </p>
+                </div>
+                <div className="flex flex-row items-center gap-x-2">
+                  <button
+                    onClick={() => dispatch(decreaseItemCount(item.id))}
+                    className="bg-[#23A6F0] text-white text-lg font-bold rounded-md px-3 py-2"
+                  >
+                    -
+                  </button>
+                  <p className="text-[#737373] pt-3 w-16 text-center">
+                    Adet:{item.count}
+                  </p>
+                  <button
+                    onClick={() => dispatch(increaseItemCount(item.id))}
+                    className="bg-[#23A6F0] text-white text-lg font-bold rounded-md px-3 py-2"
+                  >
+                    +
+                  </button>
                 </div>
                 </div>
             </div>
