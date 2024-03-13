@@ -7,7 +7,7 @@ const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
   return (
-    <>
+    <div className="w-[73%] flex flex-col mx-auto">
       <h2> SEPETİM - {totalItemCount} ürün</h2>
       {cart.length > 0 ? (
         <div className="flex flex-col">
@@ -50,7 +50,7 @@ const ShoppingCart = () => {
       ) : (
         <p>Sepetin boş</p>
       )}
-    </>
+    </div>
   );
 };
 export default ShoppingCart;
