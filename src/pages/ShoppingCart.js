@@ -6,6 +6,7 @@ import {
 const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
+  const totalItemCount = cart.reduce((total, item) => total + item.count, 0);
   return (
     <div className="w-[73%] flex flex-col mx-auto">
       <h2> SEPETİM - {totalItemCount} ürün</h2>
@@ -43,6 +44,9 @@ const ShoppingCart = () => {
                     +
                   </button>
                 </div>
+                  <p className="text-[#737373] text-sm">
+                    (Adet: {item.price.toFixed(2)} TL)
+                  </p>
                 </div>
             </div>
           ))}
