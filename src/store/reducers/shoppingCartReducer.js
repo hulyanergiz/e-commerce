@@ -12,6 +12,10 @@ const initialState = { cart: [], payment: {}, address: {} };
 function writeCartItemsToLS(state) {
   return localStorage.setItem("cart", JSON.stringify(state.cart));
 }
+const cartFromLS = localStorage.getItem("cart");
+const savedState = cartFromLS ? { cart: JSON.parse(cartFromLS) } : initialState;
+
+export const shoppingCartReducer = (state = savedState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       const existingItemIndex = state.cart.findIndex(
