@@ -39,7 +39,7 @@ export const shoppingCartReducer = (state = savedState, action) => {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        cart: state.cart.filter((item) => item.product.id !== action.payload),
+        cart: state.cart.filter((item) => item.id !== action.payload),
       };
 
     case INCREASE_ITEM_COUNT:
