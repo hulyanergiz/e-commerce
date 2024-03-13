@@ -16,6 +16,29 @@ const ShoppingCart = () => {
     .reduce((total, item) => total + item.price * item.count, 0)
     .toFixed(2);
 
+  const now = new Date();
+  const currentHour = now.getHours();
+  const currentMinutes = now.getMinutes();
+
+  let remainingMinutes = 0;
+
+  if (currentHour < 17) {
+    remainingMinutes = (17 - currentHour - 1) * 60 + (60 - currentMinutes);
+  } else {
+    remainingMinutes = 24 * 60 - (currentHour * 60 + currentMinutes);
+  }
+
+  let deliveryMessage = "";
+  if (remainingMinutes > 0) {
+    if (remainingMinutes <= 60) {
+      deliveryMessage = `${remainingMinutes} dakika içinde sipariş verirsenyarın kargoda!`;
+    } else {
+      const remainingHours = Math.floor(remainingMinutes / 60);
+      const remainingMins = remainingMinutes % 60;
+      deliveryMessage = `${remainingHours} saat ${remainingMins} dakika içinde sipariş verirsen yarın kargoda!`;
+    }
+  }
+
   return (
     <div className="w-[73%] flex flex-col mx-auto">
       <h2> SEPETİM - {totalItemCount} ürün</h2>
@@ -38,10 +61,7 @@ const ShoppingCart = () => {
                 <img src={item.images[0].url} className="w-24 py-1 pl-2" />
                 <div className="flex flex-col justify-between py-[6px]">
                   <p className="text-[#737373]">{item.name}</p>
-                  <p>
-                    <strong>39 dakika</strong> içinde sipariş verirsen{" "}
-                    <strong>en geç yarın</strong> kargoda!
-                  </p>
+                  <p>{deliveryMessage}</p>
                 </div>
                 <div className="flex flex-row items-center gap-x-2">
                   <button
