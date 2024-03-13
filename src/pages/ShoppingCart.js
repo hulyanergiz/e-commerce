@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   decreaseItemCount,
   increaseItemCount,
+  removeFromCart,
 } from "../store/actions/shoppingCartActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -55,7 +56,8 @@ const ShoppingCart = () => {
                   </p>
                   <FontAwesomeIcon
                     icon={faTrash}
-                    className="text-[#23A6F0] mb-3"
+                    className="text-[#23A6F0] mb-3 cursor-pointer"
+                    onClick={() => dispatch(removeFromCart(item.id))}
                   />
                 </div>
                 </div>
