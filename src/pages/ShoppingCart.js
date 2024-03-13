@@ -12,6 +12,10 @@ const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
   const totalItemCount = cart.reduce((total, item) => total + item.count, 0);
+  const totalPrice = cart
+    .reduce((total, item) => total + item.price * item.count, 0)
+    .toFixed(2);
+
   return (
     <div className="w-[73%] flex flex-col mx-auto">
       <h2> SEPETİM - {totalItemCount} ürün</h2>
@@ -21,6 +25,13 @@ const ShoppingCart = () => {
             Sepetindeki ürünleri Bireysel veya Kurumsal Fatura Seçerek
             alabilirsin.
           </p>
+          {totalPrice < 300 && (
+            <p>
+              Sepete en az {300 - totalPrice} TL'lik ürün eklemeniz durumunda
+              kargo bedava!
+            </p>
+          )}
+          {totalPrice >= 300 && <p>Kargo Bedava</p>}
           {cart.map((item, index) => (
             <div key={index} className="shadow-sm">
               <div className="flex flex-row ">
