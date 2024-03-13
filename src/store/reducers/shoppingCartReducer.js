@@ -9,7 +9,9 @@ import {
 
 const initialState = { cart: [], payment: {}, address: {} };
 
-export const shoppingCartReducer = (state = initialState, action) => {
+function writeCartItemsToLS(state) {
+  return localStorage.setItem("cart", JSON.stringify(state.cart));
+}
   switch (action.type) {
     case ADD_TO_CART:
       const existingItemIndex = state.cart.findIndex(
@@ -19,13 +21,14 @@ export const shoppingCartReducer = (state = initialState, action) => {
       if (existingItemIndex !== -1) {
         const updatedCart = [...state.cart];
         updatedCart[existingItemIndex].count += 1;
-
+        writeCartItemsToLS({ ...state, cart: updatedCart });
         return { ...state, cart: updatedCart };
       } else {
         const stateAfterAdding = {
           ...state,
           cart: [...state.cart, { ...action.payload, count: 1 }],
         };
+        writeCartItemsToLS(stateAfterAdding);
         return stateAfterAdding;
       }
 
