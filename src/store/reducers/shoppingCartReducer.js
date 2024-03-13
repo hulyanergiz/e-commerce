@@ -22,10 +22,11 @@ export const shoppingCartReducer = (state = initialState, action) => {
 
         return { ...state, cart: updatedCart };
       } else {
-        return {
+        const stateAfterAdding = {
           ...state,
           cart: [...state.cart, { ...action.payload, count: 1 }],
         };
+        return stateAfterAdding;
       }
 
     case REMOVE_FROM_CART:
