@@ -3,6 +3,8 @@ import {
   decreaseItemCount,
   increaseItemCount,
 } from "../store/actions/shoppingCartActions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
@@ -51,6 +53,10 @@ const ShoppingCart = () => {
                   <p className="text-[#23A6F0] font-bold">
                     {(item.price * item.count).toFixed(2)} TL
                   </p>
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    className="text-[#23A6F0] mb-3"
+                  />
                 </div>
                 </div>
             </div>
