@@ -6,6 +6,8 @@ import {
 } from "../store/actions/shoppingCartActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
+
 const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
@@ -32,7 +34,23 @@ const ShoppingCart = () => {
                 </div>
                 <div className="flex flex-row items-center gap-x-2">
                   <button
-                    onClick={() => dispatch(decreaseItemCount(item.id))}
+                    onClick={() => {
+                      if (item.count === 1) {
+                        Swal.fire({
+                          text: "Sepetinden bu ürünü tamamen silmek üzeresin. Silmek istediğine emin misin?",
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonText: "Sil",
+                          cancelButtonText: "İptal",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            dispatch(decreaseItemCount(item.id));
+                          }
+                        });
+                      } else {
+                        dispatch(decreaseItemCount(item.id));
+                      }
+                    }}
                     className="bg-[#23A6F0] text-white text-lg font-bold rounded-md px-3 py-2"
                   >
                     -
