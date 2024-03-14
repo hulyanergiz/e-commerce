@@ -186,6 +186,33 @@ const ShoppingCart = () => {
           </button>
         </div>
       )}
+      {totalPrice < 300 && (
+        <div className="w-[30%] h-[350px] mx-auto pt-4 px-12 shadow-[-5px_-5px_5px_5px_rgba(0,0,0,0.1)] rounded-lg">
+          <h4>Sipariş özeti</h4>
+          <hr />
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between">
+              <p>Ara Toplam: </p>
+              <p>{totalPrice} TL</p>
+            </div>
+            <div className="flex flex-row justify-between">
+              <p>Kargo ücreti: </p>
+              <p>29.99 TL</p>
+            </div>
+            <hr className="mt-0" />
+            <div className="flex flex-row justify-between">
+              <p>Toplam: </p>
+              <p className="text-[#23A6F0]font-bold">
+                {Number(totalPrice) + Number(29.99)} TL
+              </p>
+            </div>
+          </div>
+          <p className="border-2 rounded-md w-[65%] mx-auto mt-2 cursor-pointer">
+            İndirim Kodu Gir
+          </p>
+          <button className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer">
+            Sepeti Onayla{" "}
+          </button>
       </div>
       )}
     </div>
