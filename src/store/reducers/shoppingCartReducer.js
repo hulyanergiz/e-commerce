@@ -1,5 +1,6 @@
 import {
   ADD_TO_CART,
+  CHECK_ITEM,
   DECREASE_ITEM_COUNT,
   INCREASE_ITEM_COUNT,
   REMOVE_FROM_CART,
@@ -75,6 +76,18 @@ export const shoppingCartReducer = (state = savedState, action) => {
         ...state,
         cart: decreasedCart,
       };
+
+    case CHECK_ITEM:
+      const updatedCartAfterChecking = state.cart.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, checked: !item.checked };
+        }
+        return item;
+      });
+      const stateAfterChecking = { ...state, cart: updatedCartAfterChecking };
+      writeCartItemsToLS(stateAfterChecking);
+      console.log("state checked", stateAfterChecking);
+      return stateAfterChecking;
 
     case SET_PAYMENT:
       return { ...state, payment: action.payload };
