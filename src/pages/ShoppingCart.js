@@ -39,6 +39,14 @@ const ShoppingCart = () => {
       deliveryMessage = `${remainingHours} saat ${remainingMins} dakika içinde sipariş verirsen yarın kargoda!`;
     }
   }
+
+  const totalPrice = cart
+    .reduce(
+      (total, item) => (item.checked ? total + item.price * item.count : total),
+      0
+    )
+    .toFixed(2);
+
   const handleCheckboxChange = (productId) => {
     dispatch(checkItem(productId));
   };
@@ -53,12 +61,15 @@ const ShoppingCart = () => {
             alabilirsin.
           </p>
           {totalPrice < 300 && (
-            <p>
-              Sepete en az {300 - totalPrice} TL'lik ürün eklemeniz durumunda
-              kargo bedava!
+                <p className="text-[#a9dbf9] font-bold">
+                  Sepete en az {(300 - totalPrice).toFixed(2)} TL'lik ürün
+                  eklemeniz durumunda kargo bedava!
             </p>
           )}
-          {totalPrice >= 300 && <p>Kargo Bedava</p>}
+              {totalPrice >= 300 && (
+                <p className="text-[#a9dbf9] font-bold">Kargo Bedava</p>
+              )}
+            </div>
           {cart.map((item, index) => (
                   <input
                     size="lg"
