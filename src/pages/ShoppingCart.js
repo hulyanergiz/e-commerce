@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
+  checkItem,
   decreaseItemCount,
   increaseItemCount,
   removeFromCart,
@@ -38,6 +39,9 @@ const ShoppingCart = () => {
       deliveryMessage = `${remainingHours} saat ${remainingMins} dakika içinde sipariş verirsen yarın kargoda!`;
     }
   }
+  const handleCheckboxChange = (productId) => {
+    dispatch(checkItem(productId));
+  };
 
   return (
     <div className="w-[73%] flex flex-col mx-auto">
@@ -56,14 +60,12 @@ const ShoppingCart = () => {
           )}
           {totalPrice >= 300 && <p>Kargo Bedava</p>}
           {cart.map((item, index) => (
-            <div key={index} className="shadow-sm">
-              <div className="flex flex-row ">
-                <img src={item.images[0].url} className="w-24 py-1 pl-2" />
-                <div className="flex flex-col justify-between py-[6px]">
-                  <p className="text-[#737373]">{item.name}</p>
-                  <p>{deliveryMessage}</p>
-                </div>
-                <div className="flex flex-row items-center gap-x-2">
+                  <input
+                    size="lg"
+                    type="checkbox"
+                    checked={item.checked}
+                    onChange={() => handleCheckboxChange(item.id)}
+                  ></input>
                   <button
                     onClick={() => {
                       if (item.count === 1) {
