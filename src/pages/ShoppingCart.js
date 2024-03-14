@@ -7,6 +7,8 @@ import {
 } from "../store/actions/shoppingCartActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faChevronRight,
+  faPlus,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
@@ -179,10 +181,17 @@ const ShoppingCart = () => {
             </div>
           </div>
           <p className="border-2 rounded-md w-[65%] mx-auto mt-2 cursor-pointer">
+            <FontAwesomeIcon size="lg" icon={faPlus} color="#23A6F0" />
             İndirim Kodu Gir
           </p>
           <button className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer">
             Sepeti Onayla{" "}
+            <FontAwesomeIcon
+              size="md"
+              icon={faChevronRight}
+              color="#fff"
+              className="pl-2"
+            />
           </button>
         </div>
       )}
@@ -208,10 +217,17 @@ const ShoppingCart = () => {
             </div>
           </div>
           <p className="border-2 rounded-md w-[65%] mx-auto mt-2 cursor-pointer">
+            <FontAwesomeIcon size="lg" icon={faPlus} color="#23A6F0" />
             İndirim Kodu Gir
           </p>
           <button className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer">
             Sepeti Onayla{" "}
+            <FontAwesomeIcon
+              size="md"
+              icon={faChevronRight}
+              color="#fff"
+              className="pl-2"
+            />
           </button>
       </div>
       )}
