@@ -6,6 +6,7 @@ import {
   removeFromCart,
 } from "../store/actions/shoppingCartActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
@@ -153,6 +154,38 @@ const ShoppingCart = () => {
         <p>Sepetin boş</p>
         )}
       </div>
+      {totalPrice >= 300 && (
+        <div className="w-[30%] h-[400px] mx-auto pt-4 px-8 shadow-[-5px_-5px_5px_5px_rgba(0,0,0,0.1)] rounded-lg">
+          <h4>Sipariş özeti</h4>
+          <hr />
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between">
+              <p>Sepet Toplamı: </p>
+              <p>{totalPrice} TL</p>
+            </div>
+            <div className="flex flex-row justify-between">
+              <p>Kargo ücreti: </p>
+              <p>29.99 TL</p>
+            </div>
+
+            <div className="flex flex-row justify-between">
+              <p>300 TL ve üzeri Kargo Bedava </p>
+              <p className="text-[#23A6F0]">-29.99 TL</p>
+            </div>
+            <hr className="mt-0" />
+            <div className="flex flex-row justify-between">
+              <p>Toplam: </p>
+              <p>{totalPrice} TL</p>
+            </div>
+          </div>
+          <p className="border-2 rounded-md w-[65%] mx-auto mt-2 cursor-pointer">
+            İndirim Kodu Gir
+          </p>
+          <button className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer">
+            Sepeti Onayla{" "}
+          </button>
+        </div>
+      )}
       </div>
       )}
     </div>
