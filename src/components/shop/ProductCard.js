@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "reactstrap";
 import { addToCart } from "../../store/actions/shoppingCartActions";
 
@@ -15,6 +15,8 @@ const ProductCard = (props) => {
     sell_count,
     images,
   } = props.data;
+  const dispatch = useDispatch();
+  const cart = useSelector((store) => store.shoppingCart.cart);
   return (
     <div className="w-full h-92 flex flex-col justify-between items-center py-6 shadow-md hover:shadow-2xl">
       <NavLink href={`/shop/${category_id}/${id}/${name}`}>
@@ -33,7 +35,10 @@ const ProductCard = (props) => {
         </div>
       </NavLink>
       <div>
-        <button className="text-white font-bold tracking-wider bg-[#23A6F0] py-3 px-1 rounded-[5px] w-36">
+        <button
+          onClick={() => dispatch(addToCart(props.data))}
+          className="text-white font-bold tracking-wider bg-[#23A6F0] py-3 px-1 rounded-[5px] w-36"
+        >
           Add To Cart
         </button>
       </div>
