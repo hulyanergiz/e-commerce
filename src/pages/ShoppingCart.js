@@ -6,16 +6,14 @@ import {
   removeFromCart,
 } from "../store/actions/shoppingCartActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 
 const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
   const totalItemCount = cart.reduce((total, item) => total + item.count, 0);
-  const totalPrice = cart
-    .reduce((total, item) => total + item.price * item.count, 0)
-    .toFixed(2);
 
   const now = new Date();
   const currentHour = now.getHours();
@@ -52,9 +50,12 @@ const ShoppingCart = () => {
   };
 
   return (
-    <div className="w-[73%] flex flex-col mx-auto">
-      <h2> SEPETİM - {totalItemCount} ürün</h2>
+    <div className="flex flex-row mt-6">
+      <div className="w-[50%] flex flex-col mx-auto">
+        <h3> SEPETİM - {totalItemCount} ürün</h3>
+        <hr />
       {cart.length > 0 ? (
+          <div className="flex flex-col gap-y-4">
         <div className="flex flex-col">
           <p className="text-[#737373]">
             Sepetindeki ürünleri Bireysel veya Kurumsal Fatura Seçerek
@@ -71,12 +72,27 @@ const ShoppingCart = () => {
               )}
             </div>
           {cart.map((item, index) => (
+              <div
+                key={index}
+                className="shadow-[-5px_-5px_5px_5px_rgba(0,0,0,0.1)] rounded-lg flex flex-col"
+              >
+                <div className="flex flex-row px-5 py-3 justify-around items-center">
                   <input
                     size="lg"
                     type="checkbox"
                     checked={item.checked}
                     onChange={() => handleCheckboxChange(item.id)}
                   ></input>
+                  <img
+                    src={item.images[0].url}
+                    className="w-1/5"
+                    alt="product"
+                  />
+                  <div className="w-3/5 flex flex-col justify-center">
+                    <p className="text-start font-bold">{item.name}</p>
+                    <hr className="mt-0" />
+                    <div className="flex flex-row items-center justify-between">
+                      <div className="flex flex-row gap-x-2">
                   <button
                     onClick={() => {
                       if (item.count === 1) {
@@ -85,6 +101,7 @@ const ShoppingCart = () => {
                           icon: "warning",
                           showCancelButton: true,
                           confirmButtonText: "Sil",
+                                confirmButtonColor: "#23A6F0",
                           cancelButtonText: "İptal",
                         }).then((result) => {
                           if (result.isConfirmed) {
@@ -95,7 +112,7 @@ const ShoppingCart = () => {
                         dispatch(decreaseItemCount(item.id));
                       }
                     }}
-                    className="bg-[#23A6F0] text-white text-lg font-bold rounded-md px-3 py-2"
+                          className="bg-[#a9dbf9] text-white text-lg font-bold rounded-md px-[13px] my-2"
                   >
                     -
                   </button>
@@ -104,30 +121,39 @@ const ShoppingCart = () => {
                   </p>
                   <button
                     onClick={() => dispatch(increaseItemCount(item.id))}
-                    className="bg-[#23A6F0] text-white text-lg font-bold rounded-md px-3 py-2"
+                          className="bg-[#a9dbf9] text-white text-lg font-bold rounded-md px-[13px] my-2"
                   >
                     +
                   </button>
                 </div>
-                <div className="flex flex-row  gap-x-5 items-center">
+                      <div className="flex flex-col justify-between">
                   <p className="text-[#737373] text-sm">
                     (Adet: {item.price.toFixed(2)} TL)
                   </p>
-                  <p className="text-[#23A6F0] font-bold">
+                        <p className="text-[#23A6F0] font-bold self-end mb-0">
                     {(item.price * item.count).toFixed(2)} TL
                   </p>
+                      </div>
+                    </div>
+                    <p className="text-[#737373] text-sm text-start mb-0 mt-3">
+                      {deliveryMessage}
+                    </p>
+                  </div>
                   <FontAwesomeIcon
+                    size="xl"
                     icon={faTrash}
-                    className="text-[#23A6F0] mb-3 cursor-pointer"
+                    className="text-[#23A6F0] cursor-pointer"
                     onClick={() => dispatch(removeFromCart(item.id))}
                   />
-                </div>
                 </div>
             </div>
           ))}
         </div>
       ) : (
         <p>Sepetin boş</p>
+        )}
+      </div>
+      </div>
       )}
     </div>
   );
