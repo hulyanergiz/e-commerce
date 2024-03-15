@@ -49,7 +49,7 @@ const ShoppingCartDropDown = () => {
         </DropdownToggle>
         <DropdownMenu className="w-[500px]">
           {dropdownOpen && (
-            <>
+            <div className="py-[1.5rem] px-[2rem]">
               <DropdownItem header className="ml-2 w-full">
                 SEPETİM - {totalItemCount} ürün
               </DropdownItem>
@@ -110,7 +110,7 @@ const ShoppingCartDropDown = () => {
                   </button>
                 </NavLink>
               </div>
-            </>
+            </div>
           )}
         </DropdownMenu>
       </Dropdown>
