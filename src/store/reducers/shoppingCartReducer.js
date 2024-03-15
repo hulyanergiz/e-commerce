@@ -31,7 +31,7 @@ export const shoppingCartReducer = (state = savedState, action) => {
       } else {
         const stateAfterAdding = {
           ...state,
-          cart: [...state.cart, { ...action.payload, count: 1 }],
+          cart: [...state.cart, { ...action.payload, count: 1, checked: true }],
         };
         writeCartItemsToLS(stateAfterAdding);
         return stateAfterAdding;
