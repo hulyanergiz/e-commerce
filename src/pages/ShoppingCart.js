@@ -57,24 +57,24 @@ const ShoppingCart = () => {
       <div className="w-[50%] flex flex-col mx-auto">
         <h3> SEPETİM - {totalItemCount} ürün</h3>
         <hr />
-      {cart.length > 0 ? (
+        {cart.length > 0 ? (
           <div className="flex flex-col gap-y-4">
-        <div className="flex flex-col">
-          <p className="text-[#737373]">
-            Sepetindeki ürünleri Bireysel veya Kurumsal Fatura Seçerek
-            alabilirsin.
-          </p>
-          {totalPrice < 300 && (
+            <div className="flex flex-col">
+              <p className="text-[#737373]">
+                Sepetindeki ürünleri Bireysel veya Kurumsal Fatura Seçerek
+                alabilirsin.
+              </p>
+              {totalPrice < 300 && (
                 <p className="text-[#a9dbf9] font-bold">
                   Sepete en az {(300 - totalPrice).toFixed(2)} TL'lik ürün
                   eklemeniz durumunda kargo bedava!
-            </p>
-          )}
+                </p>
+              )}
               {totalPrice >= 300 && (
                 <p className="text-[#a9dbf9] font-bold">Kargo Bedava</p>
               )}
             </div>
-          {cart.map((item, index) => (
+            {cart.map((item, index) => (
               <div
                 key={index}
                 className="shadow-[-5px_-5px_5px_5px_rgba(0,0,0,0.1)] rounded-lg flex flex-col"
@@ -96,46 +96,46 @@ const ShoppingCart = () => {
                     <hr className="mt-0" />
                     <div className="flex flex-row items-center justify-between">
                       <div className="flex flex-row gap-x-2">
-                  <button
-                    onClick={() => {
-                      if (item.count === 1) {
-                        Swal.fire({
-                          text: "Sepetinden bu ürünü tamamen silmek üzeresin. Silmek istediğine emin misin?",
-                          icon: "warning",
-                          showCancelButton: true,
-                          confirmButtonText: "Sil",
+                        <button
+                          onClick={() => {
+                            if (item.count === 1) {
+                              Swal.fire({
+                                text: "Sepetinden bu ürünü tamamen silmek üzeresin. Silmek istediğine emin misin?",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonText: "Sil",
                                 confirmButtonColor: "#23A6F0",
-                          cancelButtonText: "İptal",
-                        }).then((result) => {
-                          if (result.isConfirmed) {
-                            dispatch(decreaseItemCount(item.id));
-                          }
-                        });
-                      } else {
-                        dispatch(decreaseItemCount(item.id));
-                      }
-                    }}
+                                cancelButtonText: "İptal",
+                              }).then((result) => {
+                                if (result.isConfirmed) {
+                                  dispatch(decreaseItemCount(item.id));
+                                }
+                              });
+                            } else {
+                              dispatch(decreaseItemCount(item.id));
+                            }
+                          }}
                           className="bg-[#a9dbf9] text-white text-lg font-bold rounded-md px-[13px] my-2"
-                  >
-                    -
-                  </button>
-                  <p className="text-[#737373] pt-3 w-16 text-center">
-                    Adet:{item.count}
-                  </p>
-                  <button
-                    onClick={() => dispatch(increaseItemCount(item.id))}
+                        >
+                          -
+                        </button>
+                        <p className="text-[#737373] pt-3 w-16 text-center">
+                          Adet:{item.count}
+                        </p>
+                        <button
+                          onClick={() => dispatch(increaseItemCount(item.id))}
                           className="bg-[#a9dbf9] text-white text-lg font-bold rounded-md px-[13px] my-2"
-                  >
-                    +
-                  </button>
-                </div>
+                        >
+                          +
+                        </button>
+                      </div>
                       <div className="flex flex-col justify-between">
-                  <p className="text-[#737373] text-sm">
-                    (Adet: {item.price.toFixed(2)} TL)
-                  </p>
+                        <p className="text-[#737373] text-sm">
+                          (Adet: {item.price.toFixed(2)} TL)
+                        </p>
                         <p className="text-[#23A6F0] font-bold self-end mb-0">
-                    {(item.price * item.count).toFixed(2)} TL
-                  </p>
+                          {(item.price * item.count).toFixed(2)} TL
+                        </p>
                       </div>
                     </div>
                     <p className="text-[#737373] text-sm text-start mb-0 mt-3">
@@ -149,11 +149,11 @@ const ShoppingCart = () => {
                     onClick={() => dispatch(removeFromCart(item.id))}
                   />
                 </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p>Sepetin boş</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>Sepetin boş</p>
         )}
       </div>
       {totalPrice >= 300 && (
@@ -212,7 +212,7 @@ const ShoppingCart = () => {
             <div className="flex flex-row justify-between">
               <p>Toplam: </p>
               <p className="text-[#23A6F0]font-bold">
-                {Number(totalPrice) + Number(29.99)} TL
+                {(Number(totalPrice) + Number(29.99)).toFixed(2)} TL
               </p>
             </div>
           </div>
@@ -229,7 +229,7 @@ const ShoppingCart = () => {
               className="pl-2"
             />
           </button>
-      </div>
+        </div>
       )}
     </div>
   );
