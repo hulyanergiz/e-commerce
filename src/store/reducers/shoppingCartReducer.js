@@ -38,10 +38,12 @@ export const shoppingCartReducer = (state = savedState, action) => {
       }
 
     case REMOVE_FROM_CART:
-      return {
+      const stateAfterRemoving = {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
+      writeCartItemsToLS(stateAfterRemoving);
+      return stateAfterRemoving;
 
     case INCREASE_ITEM_COUNT:
       const increasedCart = state.cart.map((item) => {
@@ -53,11 +55,12 @@ export const shoppingCartReducer = (state = savedState, action) => {
         }
         return item;
       });
-
-      return {
+      const stateAfterIncreasing = {
         ...state,
         cart: increasedCart,
       };
+      writeCartItemsToLS(stateAfterIncreasing);
+      return stateAfterIncreasing;
 
     case DECREASE_ITEM_COUNT:
       const decreasedCart = state.cart
@@ -72,10 +75,12 @@ export const shoppingCartReducer = (state = savedState, action) => {
         })
         .filter((item) => item.count > 0);
 
-      return {
+      const stateAfterDecreasing = {
         ...state,
         cart: decreasedCart,
       };
+      writeCartItemsToLS(stateAfterDecreasing);
+      return stateAfterDecreasing;
 
     case CHECK_ITEM:
       const updatedCartAfterChecking = state.cart.map((item) => {
