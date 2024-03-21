@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ShoppingCart from "../pages/ShoppingCart";
+import Order from "../pages/Order";
 
 const PageContent = () => {
   return (
@@ -42,6 +43,9 @@ const PageContent = () => {
         </Route>
         <Route exact path="/cart">
           <ShoppingCart />
+        </Route>
+        <Route exact path="/order">
+            <Order />
         </Route>
       </Switch>
       <ToastContainer
