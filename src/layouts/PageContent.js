@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ShoppingCart from "../pages/ShoppingCart";
 import Order from "../pages/Order";
+import ProtectedRoute from "../pages/ProtectedRoute";
 
 const PageContent = () => {
   return (
@@ -45,7 +46,9 @@ const PageContent = () => {
           <ShoppingCart />
         </Route>
         <Route exact path="/order">
+          <ProtectedRoute>
             <Order />
+          </ProtectedRoute>
         </Route>
       </Switch>
       <ToastContainer
