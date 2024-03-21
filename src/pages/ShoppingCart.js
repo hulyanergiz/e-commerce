@@ -12,10 +12,12 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
+import { useHistory } from "react-router-dom";
 
 const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
+  const history = useHistory();
   const totalItemCount = cart.reduce((total, item) => total + item.count, 0);
 
   const now = new Date();
@@ -220,7 +222,7 @@ const ShoppingCart = () => {
             <FontAwesomeIcon size="lg" icon={faPlus} color="#23A6F0" />
             İndirim Kodu Gir
           </p>
-          <button className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer">
+                onClick={() => history.push("/order")}
             Sepeti Onayla{" "}
             <FontAwesomeIcon
               size="md"
