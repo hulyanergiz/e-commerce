@@ -155,7 +155,7 @@ const ShoppingCart = () => {
             ))}
           </div>
         ) : (
-          <p>Sepetin boş</p>
+          <p>Sepetim boş</p>
         )}
       </div>
       {totalPrice >= 300 && (
@@ -218,11 +218,22 @@ const ShoppingCart = () => {
               </p>
             </div>
           </div>
+          {totalPrice > 29.99 && (
+            <div>
           <p className="border-2 rounded-md w-[65%] mx-auto mt-2 cursor-pointer">
-            <FontAwesomeIcon size="lg" icon={faPlus} color="#23A6F0" />
+                <FontAwesomeIcon
+                  size="lg"
+                  icon={faPlus}
+                  color="#23A6F0"
+                  className="pr-2"
+                />
             İndirim Kodu Gir
           </p>
+
+              <button
                 onClick={() => history.push("/order")}
+                className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer"
+              >
             Sepeti Onayla{" "}
             <FontAwesomeIcon
               size="md"
@@ -231,6 +242,8 @@ const ShoppingCart = () => {
               className="pl-2"
             />
           </button>
+            </div>
+          )}
         </div>
       )}
     </div>
