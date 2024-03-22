@@ -65,7 +65,10 @@ const Order = () => {
                 Adres Başlığı:
               </label>
               <input
+                {...register("addressTitle")}
                 id="addressTitle"
+                className="w-[73%] py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
+                placeholder="  Adresinize bir başlık giriniz"
               />
               <div className="w-[73%] flex flex-row justify-between">
                 <div className="flex flex-col">
@@ -73,7 +76,10 @@ const Order = () => {
                     Ad:
                   </label>
                   <input
+                    {...register("name", { required: true })}
                     id="name"
+                    className=" py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
+                    placeholder="  Adınızı giriniz"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -81,7 +87,10 @@ const Order = () => {
                     Soyad:
                   </label>
                   <input
+                    {...register("surname", { required: true })}
                     id="surname"
+                    className="py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
+                    placeholder="  Soyadınızı giriniz"
                   />
                 </div>
               </div>
@@ -90,7 +99,13 @@ const Order = () => {
                 Cep telefonu:
               </label>
               <input
+                {...register("phone", {
+                  required: true,
+                  pattern: /^[0-9]{10}$/,
+                })}
                 id="phone"
+                className="w-[73%] py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
+                placeholder="  Cep telefonunuzu giriniz (5xxxxxxxxx)"
               />
               <label
                 htmlFor="addressDetails"
@@ -98,6 +113,9 @@ const Order = () => {
               />
               <input
                 type="text"
+                {...register("addressDetails")}
+                placeholder="Adres detaylarını yazınız"
+                className="w-[73%] py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
               />
             </div>
           </form>
