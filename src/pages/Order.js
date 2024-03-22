@@ -2,12 +2,14 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 const Order = () => {
   const [openForm, setOpenForm] = useState(false);
   const {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
@@ -22,6 +24,17 @@ const Order = () => {
     },
     mode: "onBlur",
   });
+  const dispatch = useDispatch();
+  const closeFormWithoutSubmitting = () => {
+    setOpenForm(!openForm);
+    reset();
+  };
+  const onSubmit = (address) => {
+    dispatch(setAddress(address));
+    setOpenForm(!openForm);
+    reset();
+  };
+
   return (
     <div className="flex flex-col relative  w-[73%] m-auto">
       <div className="flex flex-row gap-x-3">
