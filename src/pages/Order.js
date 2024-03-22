@@ -70,6 +70,9 @@ const Order = () => {
                 className="w-[73%] py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
                 placeholder="  Adresinize bir başlık giriniz"
               />
+              {errors.addressTitle && (
+                <span className="text-red-500">Bu alan gereklidir.</span>
+              )}
               <div className="w-[73%] flex flex-row justify-between">
                 <div className="flex flex-col">
                   <label htmlFor="name" className="w-[73%] text-start py-1">
@@ -81,6 +84,9 @@ const Order = () => {
                     className=" py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
                     placeholder="  Adınızı giriniz"
                   />
+                  {errors.name && (
+                    <span className="text-red-500">Bu alan gereklidir.</span>
+                  )}
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="surname" className="w-[73%] text-start py-1">
@@ -92,6 +98,9 @@ const Order = () => {
                     className="py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
                     placeholder="  Soyadınızı giriniz"
                   />
+                  {errors.surname && (
+                    <span className="text-red-500">Bu alan gereklidir.</span>
+                  )}
                 </div>
               </div>
 
@@ -107,6 +116,14 @@ const Order = () => {
                 className="w-[73%] py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
                 placeholder="  Cep telefonunuzu giriniz (5xxxxxxxxx)"
               />
+              {errors.phone && errors.phone.type === "required" && (
+                <span className="text-red-500">Bu alan gereklidir.</span>
+              )}
+              {errors.phone && errors.phone.type === "pattern" && (
+                <span className="text-red-500">
+                  Geçerli bir telefon numarası giriniz.
+                </span>
+              )}
               <label
                 htmlFor="addressDetails"
                 className="w-[73%] text-start py-1"
