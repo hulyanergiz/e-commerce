@@ -101,7 +101,12 @@ export const shoppingCartReducer = (state = savedState, action) => {
       return { ...state, payment: action.payload };
 
     case SET_ADDRESS:
-      return { ...state, address: action.payload };
+      const stateAfterAddressAdding = {
+        ...state,
+        address: [...state.address, { ...action.payload }],
+      };
+      writeAddressToLS(stateAfterAddressAdding);
+      return stateAfterAddressAdding;
 
     default:
       return state;
