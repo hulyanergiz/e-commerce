@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   getCities,
+  getDistrictsByCityCode,
 } from "turkey-neighbourhoods";
 const Order = () => {
   const [openForm, setOpenForm] = useState(false);
@@ -30,6 +31,16 @@ const Order = () => {
   const [cities, setCities] = useState(getCities());
   const [districts, setDistricts] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
+
+  const handleCityChange = (selectedCity) => {
+    setValue("city", selectedCity);
+    const selectedCityInfo = cities.find((city) => city.name === selectedCity);
+    if (selectedCityInfo) {
+      const selectedDistricts = getDistrictsByCityCode(selectedCityInfo.code);
+      setDistricts(selectedDistricts);
+      setNeighborhoods([]);
+    }
+  };
 
   const closeFormWithoutSubmitting = () => {
     setOpenForm(!openForm);
@@ -134,6 +145,7 @@ const Order = () => {
                 <select
                   className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
                   {...register("city")}
+                  onChange={(e) => handleCityChange(e.target.value)}
                 >
                   <option value="">İl seçiniz</option>
                 </select>
