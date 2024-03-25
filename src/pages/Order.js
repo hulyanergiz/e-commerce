@@ -187,6 +187,11 @@ const Order = () => {
                   {...register("neighborhood")}
                 >
                   <option value="">Mahalle Seçiniz</option>
+                  {neighborhoods.map((neighborhood, index) => (
+                    <option key={index} value={neighborhood}>
+                      {neighborhood}
+                    </option>
+                  ))}
                 </select>
               </div>
               <label
