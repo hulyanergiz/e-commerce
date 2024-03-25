@@ -148,6 +148,11 @@ const Order = () => {
                   onChange={(e) => handleCityChange(e.target.value)}
                 >
                   <option value="">İl seçiniz</option>
+                  {cities.map((city, index) => (
+                    <option key={index} value={city.name}>
+                      {city.name}
+                    </option>
+                  ))}
                 </select>
                 <select
                   className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
