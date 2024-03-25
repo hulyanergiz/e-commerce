@@ -131,14 +131,17 @@ const Order = () => {
                 </span>
               )}
                 <select
+                  {...register("city")}
                 >
                   <option value="">İl seçiniz</option>
                 </select>
                 <select
+                  {...register("district")}
                 >
                   <option value="">İlçe Seçiniz</option>
                 </select>
                 <select
+                  {...register("neighborhood")}
                 >
                   <option value="">Mahalle Seçiniz</option>
                 </select>
