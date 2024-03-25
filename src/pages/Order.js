@@ -2,7 +2,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import {
+  getCities,
+} from "turkey-neighbourhoods";
 const Order = () => {
   const [openForm, setOpenForm] = useState(false);
   const {
@@ -25,6 +27,10 @@ const Order = () => {
     mode: "onBlur",
   });
   const dispatch = useDispatch();
+  const [cities, setCities] = useState(getCities());
+  const [districts, setDistricts] = useState([]);
+  const [neighborhoods, setNeighborhoods] = useState([]);
+
   const closeFormWithoutSubmitting = () => {
     setOpenForm(!openForm);
     reset();
