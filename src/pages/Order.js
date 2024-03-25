@@ -176,6 +176,11 @@ const Order = () => {
                   onChange={(e) => handleDistrictChange(e.target.value)}
                 >
                   <option value="">İlçe Seçiniz</option>
+                  {districts?.map((district, index) => (
+                    <option key={index} value={district}>
+                      {district}
+                    </option>
+                  ))}
                 </select>
                 <select
                   className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
