@@ -124,6 +124,18 @@ const Order = () => {
                   Geçerli bir telefon numarası giriniz.
                 </span>
               )}
+                <select
+                >
+                  <option value="">İl seçiniz</option>
+                </select>
+                <select
+                >
+                  <option value="">İlçe Seçiniz</option>
+                </select>
+                <select
+                >
+                  <option value="">Mahalle Seçiniz</option>
+                </select>
               <label
                 htmlFor="addressDetails"
                 className="w-[73%] text-start py-1"
