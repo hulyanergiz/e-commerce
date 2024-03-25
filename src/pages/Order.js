@@ -130,21 +130,26 @@ const Order = () => {
                   Geçerli bir telefon numarası giriniz.
                 </span>
               )}
+              <div className="flex flex-col gap-y-2 py-4">
                 <select
+                  className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
                   {...register("city")}
                 >
                   <option value="">İl seçiniz</option>
                 </select>
                 <select
+                  className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
                   {...register("district")}
                 >
                   <option value="">İlçe Seçiniz</option>
                 </select>
                 <select
+                  className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
                   {...register("neighborhood")}
                 >
                   <option value="">Mahalle Seçiniz</option>
                 </select>
+              </div>
               <label
                 htmlFor="addressDetails"
                 className="w-[73%] text-start py-1"
