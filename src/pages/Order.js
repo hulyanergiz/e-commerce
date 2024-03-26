@@ -8,6 +8,8 @@ import {
   getDistrictsByCityCode,
   getNeighbourhoodsByCityCodeAndDistrict,
 } from "turkey-neighbourhoods";
+import OrderSummary from "../components/order/OrderSummary";
+
 const Order = () => {
   const [openForm, setOpenForm] = useState(false);
   const {
@@ -140,115 +142,7 @@ const Order = () => {
                 </div>
               </div>
 
-              <label htmlFor="phone" className="w-[73%] text-start py-1">
-                Cep telefonu:
-              </label>
-              <input
-                {...register("phone", {
-                  required: true,
-                  pattern: /^[0-9]{10}$/,
-                })}
-                id="phone"
-                className="w-[73%] py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
-                placeholder="  Cep telefonunuzu giriniz (5xxxxxxxxx)"
-              />
-              {errors.phone && errors.phone.type === "required" && (
-                <span className="text-red-500">Bu alan gereklidir.</span>
-              )}
-              {errors.phone && errors.phone.type === "pattern" && (
-                <span className="text-red-500">
-                  Geçerli bir telefon numarası giriniz.
-                </span>
-              )}
-              <div className="flex flex-col gap-y-2 py-4">
-                <select
-                  className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
-                  {...register("city")}
-                  onChange={(e) => handleCityChange(e.target.value)}
-                >
-                  <option value="">İl seçiniz</option>
-                  {cities.map((city, index) => (
-                    <option key={index} value={city.name}>
-                      {city.name}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
-                  {...register("district")}
-                  onChange={(e) => handleDistrictChange(e.target.value)}
-                >
-                  <option value="">İlçe Seçiniz</option>
-                  {districts?.map((district, index) => (
-                    <option key={index} value={district}>
-                      {district}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  className="py-2 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
-                  {...register("neighborhood")}
-                >
-                  <option value="">Mahalle Seçiniz</option>
-                  {neighborhoods.map((neighborhood, index) => (
-                    <option key={index} value={neighborhood}>
-                      {neighborhood}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <label
-                htmlFor="addressDetails"
-                className="w-[73%] text-start py-1"
-              />
-              <input
-                type="text"
-                {...register("addressDetails")}
-                placeholder="Adres detaylarını yazınız"
-                className="w-[73%] py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
-              />
-              <div className="flex flex-row w-1/3 justify-between py-3">
-                <button
-                  type="submit"
-                  className={`bg-[${
-                    isValid ? "#23A6F0" : "zinc-300"
-                  }]  font-bold py-2 px-4 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md`}
-                  disabled={!isValid}
-                >
-                  Kaydet
-                </button>
-                <button
-                  onClick={closeFormWithoutSubmitting}
-                  className="bg-[#a9dbf9] text-white font-bold py-2 px-4 shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.1)] rounded-md"
-                >
-                  Vazgeç
-                </button>
-              </div>
-            </div>
-          </form>
-        )}
-        {addresses && (
-          <div className="flex flex-row gap-x-4 pt-[2rem] justify-between">
-            {addresses.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white w-[40%] flex flex-col py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
-              >
-                <h3 className="font-bold">{item.addressTitle}</h3>
-                <p>
-                  {item.name} {item.surname} ({item.phone})
-                </p>
-                <p>
-                  {item.neighborhood} {item.addressDetails}
-                </p>
-                <p>
-                  {item.district}/{item.city}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <OrderSummary buttonText="Siparişi Onayla" />
     </div>
   );
 };
