@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-const OrderSummary = () => {
+const OrderSummary = ({ buttonText }) => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const history = useHistory();
   const totalPrice = cart
@@ -90,7 +90,7 @@ const OrderSummary = () => {
                 onClick={() => history.push("/order")}
                 className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer"
               >
-                Sepeti Onayla{" "}
+                {buttonText}{" "}
                 <FontAwesomeIcon
                   size="md"
                   icon={faChevronRight}
