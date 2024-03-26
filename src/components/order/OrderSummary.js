@@ -42,8 +42,11 @@ const OrderSummary = ({ buttonText }) => {
             <FontAwesomeIcon size="lg" icon={faPlus} color="#23A6F0" />
             İndirim Kodu Gir
           </p>
-          <button className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer">
-            Sepeti Onayla{" "}
+          <button
+            onClick={() => history.push("/order")}
+            className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer"
+          >
+            {buttonText}{" "}
             <FontAwesomeIcon
               size="md"
               icon={faChevronRight}
