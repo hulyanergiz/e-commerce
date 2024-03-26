@@ -2,6 +2,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 import {
   getCities,
   getDistrictsByCityCode,
@@ -29,6 +30,8 @@ const Order = () => {
     },
     mode: "onBlur",
   });
+
+  const addresses = useSelector((store) => store.shoppingCart.address);
   const dispatch = useDispatch();
   const [cities, setCities] = useState(getCities());
   const [districts, setDistricts] = useState([]);
@@ -223,6 +226,17 @@ const Order = () => {
               </div>
             </div>
           </form>
+        )}
+        {addresses && (
+          <div>
+            {addresses.map((item, index) => (
+              <div
+                key={index}
+              >
+                <h3 className="font-bold">{item.addressTitle}</h3>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>
