@@ -228,10 +228,11 @@ const Order = () => {
           </form>
         )}
         {addresses && (
-          <div>
+          <div className="flex flex-row gap-x-4 pt-[2rem] justify-between">
             {addresses.map((item, index) => (
               <div
                 key={index}
+                className="bg-white w-[40%] flex flex-col py-2 shadow-[-3px_-3px_3px_3px_rgba(0,0,0,0.1)] rounded-md"
               >
                 <h3 className="font-bold">{item.addressTitle}</h3>
                 <p>
