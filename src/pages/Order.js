@@ -234,6 +234,15 @@ const Order = () => {
                 key={index}
               >
                 <h3 className="font-bold">{item.addressTitle}</h3>
+                <p>
+                  {item.name} {item.surname} ({item.phone})
+                </p>
+                <p>
+                  {item.neighborhood} {item.addressDetails}
+                </p>
+                <p>
+                  {item.district}/{item.city}
+                </p>
               </div>
             ))}
           </div>
