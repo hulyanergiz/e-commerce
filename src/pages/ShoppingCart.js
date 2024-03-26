@@ -13,7 +13,6 @@ import OrderSummary from "../components/order/OrderSummary";
 const ShoppingCart = () => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const dispatch = useDispatch();
-  const history = useHistory();
   const totalItemCount = cart.reduce((total, item) => total + item.count, 0);
 
   const now = new Date();
@@ -51,14 +50,14 @@ const ShoppingCart = () => {
   };
 
   return (
-    <div className="flex flex-row mt-6">
-      <div className="w-[50%] flex flex-col mx-auto">
+    <div className="flex flex-row mt-6 justify-evenly">
+      <div className="w-[50%] flex flex-col">
         <h3> SEPETİM - {totalItemCount} ürün</h3>
         <hr />
         {cart.length > 0 ? (
           <div className="flex flex-col gap-y-4">
             <div className="flex flex-col">
-              <p className="text-[#737373]">
+              <p className="text-[#343434]">
                 Sepetindeki ürünleri Bireysel veya Kurumsal Fatura Seçerek
                 alabilirsin.
               </p>
@@ -117,7 +116,7 @@ const ShoppingCart = () => {
                         >
                           -
                         </button>
-                        <p className="text-[#737373] pt-3 w-16 text-center">
+                        <p className="text-[#5d5c5c] pt-3 w-16 text-center">
                           Adet:{item.count}
                         </p>
                         <button
