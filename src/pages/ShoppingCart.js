@@ -153,7 +153,7 @@ const ShoppingCart = () => {
           <p>Sepetim boş</p>
         )}
       </div>
-      <OrderSummary />
+      <OrderSummary buttonText="Sepeti Tamamla" />
     </div>
   );
 };
