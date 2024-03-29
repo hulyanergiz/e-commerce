@@ -62,7 +62,7 @@ const ShoppingCartDropDown = () => {
                     key={index}
                     className="flex flex-row items-center gap-x-2 border-solid border-2 rounded-sm border-sky-200"
                   >
-                    <img src={item.images[0].url} className="w-24 py-1 pl-2" />
+                    <img src={item.images[0].url} className="w-24 py-1 pl-2" alt="product in Cart"/>
                     <div className="flex flex-col justify-between py-[6px]">
                       <p className="text-[#737373]">{item.name}</p>
                       <div className="flex flex-row items-center gap-x-2">
