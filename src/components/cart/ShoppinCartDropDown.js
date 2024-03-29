@@ -29,6 +29,8 @@ const ShoppingCartDropDown = () => {
       <Dropdown
         isOpen={dropdownOpen}
         toggle={() => setDropdownOpen(!dropdownOpen)}
+        onMouseEnter={() => setDropdownOpen(true)}
+        onMouseLeave={() => setDropdownOpen(false)}
       >
         <DropdownToggle
           style={{
