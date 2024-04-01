@@ -8,9 +8,14 @@ import {
   faStar,
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/actions/shoppingCartActions";
 
 const ProductCarousel = (props) => {
   const product = props;
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
   return (
     <div className="w-full flex justify-center">
       <div className="w-[73%] flex flex-row items-stretch gap-x-8">
@@ -86,9 +91,19 @@ const ProductCarousel = (props) => {
             <div className="w-6 h-6 rounded-full bg-[#E77C40]"></div>
             <div className="w-6 h-6 rounded-full bg-[#252B42]"></div>
           </div>
+          <div>
+            {quantity > 0 && (
+              <button onClick={() => setQuantity(quantity - 1)}>-</button>
+            )}
+            <span>{quantity}</span>
+            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+          </div>
           <div className="flex flex-row items-center gap-x-3 pt-10">
-            <button className=" w-[160px] text-center py-[10px] text-sm text-white font-bold  tracking-wider bg-[#23A6F0] rounded-md">
-              Select Options
+            <button
+              onClick={() => dispatch(addToCart(product.product.id))}
+              className=" w-[160px] text-center py-[10px] text-sm text-white font-bold  tracking-wider bg-[#23A6F0] rounded-md"
+            >
+              Add to Cart
             </button>
             <FontAwesomeIcon
               icon={faHeart}
