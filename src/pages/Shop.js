@@ -143,8 +143,6 @@ const Shop = () => {
           <Products />
         </InfiniteScroll>
       )}
-
-      <ShopPagination />
       <BrandsInShop />
     </div>
   );
