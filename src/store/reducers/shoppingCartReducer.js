@@ -17,10 +17,16 @@ function writeCartItemsToLS(state) {
 function writeAddressToLS(state) {
   return localStorage.setItem("address", JSON.stringify(state.address));
 }
-const cartFromLS = localStorage.getItem("cart");
-const savedState = cartFromLS ? { cart: JSON.parse(cartFromLS) } : initialState;
-
-export const shoppingCartReducer = (state = savedState, action) => {
+const cartFromLS =
+  JSON.parse(localStorage.getItem("cart")) || initialState.cart;
+const addressFromLS =
+  JSON.parse(localStorage.getItem("address")) || initialState.address;
+const combinedState = {
+  cart: cartFromLS,
+  payment: [],
+  address: addressFromLS,
+};
+export const shoppingCartReducer = (state = combinedState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       const existingItemIndex = state.cart.findIndex(
@@ -104,7 +110,7 @@ export const shoppingCartReducer = (state = savedState, action) => {
     case SET_ADDRESS:
       const stateAfterAddressAdding = {
         ...state,
-        address: [...state.address, { ...action.payload }],
+        address: [...state.address, action.payload],
       };
       writeAddressToLS(stateAfterAddressAdding);
       return stateAfterAddressAdding;
