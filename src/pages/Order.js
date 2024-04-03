@@ -1,6 +1,6 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,6 +8,9 @@ import {
   getDistrictsByCityCode,
   getNeighbourhoodsByCityCodeAndDistrict,
 } from "turkey-neighbourhoods";
+import {
+  getAddresses,
+} from "../store/actions/shoppingCartActions";
 import OrderSummary from "../components/order/OrderSummary";
 
 const Order = () => {
@@ -38,6 +41,10 @@ const Order = () => {
   const [cities, setCities] = useState(getCities());
   const [districts, setDistricts] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
+
+  useEffect(() => {
+    dispatch(getAddresses());
+  }, [dispatch]);
 
   const handleCityChange = (selectedCity) => {
     setValue("city", selectedCity);
