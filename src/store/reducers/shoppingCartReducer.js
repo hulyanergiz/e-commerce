@@ -2,13 +2,14 @@ import {
   ADD_TO_CART,
   CHECK_ITEM,
   DECREASE_ITEM_COUNT,
+  GET_ADDRESS,
   INCREASE_ITEM_COUNT,
   REMOVE_FROM_CART,
   SET_ADDRESS,
   SET_PAYMENT,
 } from "../actions/shoppingCartActions";
 
-const initialState = { cart: [], payment: {}, address: {} };
+const initialState = { cart: [], payment: [], address: [] };
 
 function writeCartItemsToLS(state) {
   return localStorage.setItem("cart", JSON.stringify(state.cart));
@@ -107,6 +108,9 @@ export const shoppingCartReducer = (state = savedState, action) => {
       };
       writeAddressToLS(stateAfterAddressAdding);
       return stateAfterAddressAdding;
+
+    case GET_ADDRESS:
+      return { ...state, address: [...state.address, action.payload] };
 
     default:
       return state;
