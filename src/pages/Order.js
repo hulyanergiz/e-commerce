@@ -10,6 +10,7 @@ import {
 } from "turkey-neighbourhoods";
 import {
   getAddresses,
+  postAddress,
 } from "../store/actions/shoppingCartActions";
 import OrderSummary from "../components/order/OrderSummary";
 
@@ -74,7 +75,11 @@ const Order = () => {
     setOpenForm(!openForm);
     reset();
   };
-  const onSubmit = (address) => {
+  const onSubmit = async (address) => {
+    dispatch(postAddress(address));
+    reset();
+    setOpenForm(!openForm);
+  };
     dispatch(setAddress(address));
     setOpenForm(!openForm);
     reset();
