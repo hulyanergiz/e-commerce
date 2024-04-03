@@ -38,6 +38,26 @@ export const getAddress = (address) => ({
   type: GET_ADDRESS,
   payload: address,
 });
+
+export const postAddress = (address) => {
+  return (dispatch) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    AxiosInstance.post("/user/address", address, {
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then((res) => {
+        console.log("adres post resdata", res.data);
+        dispatch(setAddress(res.data));
+      })
+      .catch((err) => {
+        console.log("address post error: ", err);
+      });
+  };
+};
+
 export const getAddresses = () => {
   return (dispatch) => {
     AxiosInstance.get("/user/address")
