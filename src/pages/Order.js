@@ -43,6 +43,8 @@ const Order = () => {
   const [districts, setDistricts] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
 
+  const [billingCheck, setBillingCheck] = useState(true);
+
   useEffect(() => {
     dispatch(getAddresses());
   }, [dispatch]);
@@ -97,6 +99,17 @@ const Order = () => {
           </div>
         </div>
         <div className="bg-[#f2f7f9] flex flex-col p-4  mt-[1rem] shadow-[-5px_-5px_5px_5px_rgba(0,0,0,0.1)] rounded-lg">
+              <div className="flex flex-row w-4/5 justify between">
+                <h3 className="py-[1rem]">Teslimat Adresi</h3>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={billingCheck}
+                    onChange={() => setBillingCheck(!billingCheck)}
+                  />
+                  Faturamı aynı adrese gönder
+                </label>
+              </div>
                     <label htmlFor="title" className="w-[73%] text-start py-1">
                       Adres Başlığı:
                     </label>
