@@ -2,6 +2,7 @@ import {
   SET_USER_LOGGED_OUT,
   SET_USER_LOGIN_FAILURE,
   SET_USER_LOGIN_SUCCESS,
+  TOKEN_VERIFY,
 } from "../actions/userActions";
 
 const initialState = {
@@ -23,7 +24,8 @@ export const userReducer = (state = initialState, action) => {
       return { ...state, isLoading: false, error: action.payload };
     case SET_USER_LOGGED_OUT:
       return { ...state, user: {}, isLoading: false, error: null };
-
+    case TOKEN_VERIFY:
+      return { ...state, user: { ...state.user, token: action.payload } };
     default:
       return state;
   }
