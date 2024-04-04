@@ -4,6 +4,7 @@ import { AxiosInstance, renewAxiosInstance } from "../../api/api";
 export const SET_USER_LOGIN_SUCCESS = "SET_USER_LOGIN_SUCCESS";
 export const SET_USER_LOGIN_FAILURE = "SET_USER_LOGIN_FAILURE";
 export const SET_USER_LOGGED_OUT = "SET_USER_LOGGED_OUT";
+export const TOKEN_VERIFY = "TOKEN_VERIFY";
 
 export const setUserSuccess = (user) => ({
   type: SET_USER_LOGIN_SUCCESS,
@@ -38,3 +39,7 @@ export const userLogin =
         toast.error(err.error);
       });
   };
+
+export const tokenVerify = (token) => {
+  return { type: TOKEN_VERIFY, payload: token };
+};
