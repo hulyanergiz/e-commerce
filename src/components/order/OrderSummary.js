@@ -13,6 +13,15 @@ const OrderSummary = ({ buttonText }) => {
       0
     )
     .toFixed(2);
+
+  const handleClick = () => {
+    if (buttonText === "Sepeti Tamamla") {
+      history.push("/order");
+    } else if (buttonText === "Siparişi Onayla") {
+      history.push("/payment");
+    }
+  };
+
   return (
     <div className="w-[30%]">
       {totalPrice >= 300 && (
@@ -91,7 +100,7 @@ const OrderSummary = ({ buttonText }) => {
               </p>
 
               <button
-                onClick={() => history.push("/order")}
+                onClick={handleClick}
                 className="bg-[#23A6F0] text-white text-lg py-2 px-3 border-none rounded-md cursor-pointer"
               >
                 {buttonText}{" "}
