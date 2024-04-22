@@ -82,11 +82,6 @@ const Order = () => {
     reset();
     setOpenForm(!openForm);
   };
-    dispatch(setAddress(address));
-    setOpenForm(!openForm);
-    reset();
-  };
-
   return (
     <div className="flex flex-row justify-evenly">
       <div className="flex flex-col relative  w-[50%]">
