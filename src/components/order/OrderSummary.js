@@ -1,11 +1,12 @@
 import { faChevronRight, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const OrderSummary = ({ buttonText }) => {
   const cart = useSelector((store) => store.shoppingCart.cart);
   const history = useHistory();
+  const dispatch = useDispatch();
   const totalPrice = cart
     .reduce(
       (total, item) => (item.checked ? total + item.price * item.count : total),
