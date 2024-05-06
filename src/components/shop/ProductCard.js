@@ -18,7 +18,7 @@ const ProductCard = (props) => {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.shoppingCart.cart);
   return (
-    <div className="w-full h-92 flex flex-col justify-between items-center py-6 shadow-md hover:shadow-2xl">
+    <div className="w-full h-92 flex flex-col justify-between items-center py-6 shadow-md hover:shadow-2xl rounded-lg">
       <NavLink href={`/shop/${category_id}/${id}/${name}`}>
         <div className="flex flex-col justify-between items-center h-76">
           <img src={images[0].url} alt="product" className="max-sm:w-[73%]" />
