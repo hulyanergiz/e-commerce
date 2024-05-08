@@ -2,9 +2,11 @@ import { faChevronRight, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { selectAddress } from "../../store/actions/orderActions";
 
 const OrderSummary = ({ buttonText }) => {
   const cart = useSelector((store) => store.shoppingCart.cart);
+  const address = useSelector((store) => store.shoppingCart.address);
   const history = useHistory();
   const dispatch = useDispatch();
   const totalPrice = cart
@@ -19,6 +21,7 @@ const OrderSummary = ({ buttonText }) => {
       history.push("/order");
     } else if (buttonText === "Siparişi Onayla") {
       history.push("/payment");
+      dispatch(selectAddress(address));
     }
   };
 
